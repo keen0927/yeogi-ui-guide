@@ -1,0 +1,53 @@
+/* Reset */
+@import "scss/_variables.scss"; // 변수
+@import "scss/_icon-pack.scss"; // 아이콘 팩
+@import "scss/_reset.scss"; // 리셋
+@import "scss/_layout.scss"; // 레이아웃
+
+@import "scss/_guide-style.scss"; // 가이드
+
+/* 잘난체 */
+@font-face {
+	font-family: 'yg-jalnan';
+	src:  url('../../fonts/yg-jalnan.eot');
+	src:  url('../../fonts/yg-jalnan.eot?#iefix') format('embedded-opentype'),
+		url('../../fonts/yg-jalnan.ttf') format('truetype'),
+		url('../../fonts/yg-jalnan.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* 고딕 A1 */
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1:400');
+
+body {
+    background-color: $body-color;
+    font-family: 'Gothic A1';
+    color: $black-87;
+}
+
+
+.code-wrap {
+    text-align: left;
+}
+
+
+
+.shadow-box {
+    box-shadow: $shadow-type__default;
+}
+
+
+
+
+h1 {
+    margin-bottom: 10px;
+}
+h1 + p {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.color__black-48 {
+    color: $black-48;
+}

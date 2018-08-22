@@ -1,0 +1,82 @@
+.color-list {
+    li {
+        display: inline-block;
+        margin-right: 30px;
+        font-size: 13px;
+        color: $black-72;
+        text-align: center;
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+        }
+        p {
+            padding-top: 5px;
+            line-height: 1.4;
+            b {
+                display: block;
+                color: $black-48;
+            }
+        }
+        &:nth-of-type(1) {
+            span {
+                background: $color-primary;
+            }
+        }
+        &:nth-of-type(2) {
+            span {
+                background: $color-seconday;
+            }
+        }
+        &:nth-of-type(3) {
+            span {
+                background: $color-success;
+            }
+        }
+        &:nth-of-type(4) {
+            span {
+                background: $color-danger;
+            }
+        }
+        &:nth-of-type(5) {
+            span {
+                background: $color-warning;
+            }
+        }
+        &:nth-of-type(6) {
+            span {
+                background: $color-info;
+            }
+        }
+        &:nth-of-type(7) {
+            span {
+                background: $color-light;
+            }
+        }
+        &:nth-of-type(8) {
+            span {
+                background: $color-dark;
+            }
+        }
+    }
+}
+
+.icon-list {
+    li {
+        display: inline-block;
+        width: 135px;
+        height: 120px;
+        margin: 0 0 20px 0;
+        text-align: center;
+        font-size: 13px;
+        cursor: pointer;
+        span {
+            font-size: 50px;
+            display: inline-block;
+            width: 100px;
+            height: 80px;
+            line-height: 100px;
+        }
+    }
+}
