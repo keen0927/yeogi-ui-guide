@@ -1,5 +1,6 @@
 /* Reset */
 @import "scss/_variables.scss"; // 변수
+@import "scss/_override.scss"; // 부트스트랩 오버라이드 스타일
 @import "scss/_icon-pack.scss"; // 아이콘 팩
 @import "scss/_reset.scss"; // 리셋
 @import "scss/_layout.scss"; // 레이아웃
@@ -24,6 +25,7 @@ body {
     background-color: $body-color;
     font-family: 'Gothic A1';
     color: $black-87;
+    line-height: 1.5;
 }
 
 
@@ -40,14 +42,3 @@ body {
 
 
 
-h1 {
-    margin-bottom: 10px;
-}
-h1 + p {
-    margin-bottom: 30px;
-    font-size: 14px;
-}
-
-.color__black-48 {
-    color: $black-48;
-}

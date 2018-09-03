@@ -19,20 +19,41 @@
     <!-- Container -->
     <div id="container">
 
-        <section class="default-section">
-            <h1>Colors</h1>
-            <p>기본 UI템플릿의 Overide컬러값 입니다.</p>
-            <ul class="color-list">
-                <li><span></span><p>primary<b>#3f6ae0</b></p></li>
-                <li><span></span><p>seconday<b>#61738f</b></p></li>
-                <li><span></span><p>success<b>#127e99</b></p></li>
-                <li><span></span><p>danger<b>#e01b35</b></p></li>
-                <li><span></span><p>warning<b>#ffbb33</b></p></li>
-                <li><span></span><p>info<b>#7363e0</b></p></li>
-                <li><span></span><p>light<b>#F7F9FA</b></p></li>
-                <li><span></span><p>dark<b>#333</b></p></li>
-            </ul>
+        <section class="mb-5 p-4 bg-white shadow-box">
+            <h1 class="mb-2">알림 <small>기본형</small></h1>
+            <p class="mb-4 text-muted text-sm">
+                알림창 기본형
+                알림창 기본형 / 알림창 내부의 링크 컬러값 사용법<br>
+                알림창 컨텐츠 / 알림창 닫기 / 자바스크립트 사용법
+            </p>
+
+            <div class="alert alert-primary p-3" role="alert">primary 알림창.</div>
+            <div class="alert alert-secondary p-3" role="alert">secondary 알림창.</div>
+            <div class="alert alert-success p-3" role="alert">success 알림창.</div>
+            <div class="alert alert-danger p-3" role="alert">danger 알림창.</div>
+            <div class="alert alert-warning p-3" role="alert">warning 알림창.</div>
+            <div class="alert alert-info p-3" role="alert">info 알림창.</div>
+            <div class="alert alert-light p-3" role="alert">light 알림창.</div>
+            <div class="alert alert-dark p-3" role="alert">dark 알림창.</div>
+
+<div>
+<pre><code class="html">&lt;div class="alert alert-primary" role="alert"&gt;primary 알림창.&lt;/div&gt;
+&lt;div class="alert alert-secondary" role="alert"&gt;secondary 알림창.&lt;/div&gt;
+&lt;div class="alert alert-success" role="alert"&gt;success 알림창.&lt;/div&gt;
+&lt;div class="alert alert-danger" role="alert"&gt;danger 알림창.&lt;/div&gt;
+&lt;div class="alert alert-warning" role="alert"&gt;warning 알림창.&lt;/div&gt;
+&lt;div class="alert alert-info" role="alert"&gt;info 알림창.&lt;/div&gt;
+&lt;div class="alert alert-light" role="alert"&gt;light 알림창.&lt;/div&gt;
+&lt;div class="alert alert-dark" role="alert"&gt;dark 알림창.&lt;/div&gt;</code></pre>
+</div>
         </section>
+
+        <section class="p-4 bg-white shadow-box">
+            <h1 class="mb-4">알림 <small>링크형</small></h1>
+
+            <div class="alert alert-primary p-3" role="alert">primary <a href="#" class="">링크</a> 알림창.</div>
+        </section>
+
 
     </div>
 
@@ -42,6 +63,12 @@
     <script src="../../static/js/library/w3.js"></script>
     <script src="../../static/js/library/highlight.pack.js"></script>
 
+    <!-- JS : service  -->
+    <script>
+        var depth = 2,
+            subDepthOpen = true,
+            subDepth = 0;
+    </script>
     <script src="../../static/js/service/common.js"></script>
 </body>
 

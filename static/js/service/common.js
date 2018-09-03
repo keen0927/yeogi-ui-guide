@@ -12,7 +12,7 @@ $(function(){
 
 // 진입시 메뉴 액티브 설정
 var snbSelect = function() {
-    var $targetMenuList = $('.snb-menu li');
+    var $targetMenuList = $('.snb-menu > li');
     $targetMenuList.eq(depth).find('> a').addClass('active');
     if ( subDepthOpen == true ) {
         var $targetMenuSubList = $targetMenuList.eq(depth);
@@ -23,7 +23,7 @@ var snbSelect = function() {
 
 w3.includeHTML(snbSelect); // HTML 인클루드 실행
 
-hljs.initHighlightingOnLoad(); // 하이라이트 코드 JS 실행
+hljs.initHighlightingOnLoad();
 
 window.onload = function() {
     $('body').addClass('show');
