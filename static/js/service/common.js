@@ -26,5 +26,7 @@ w3.includeHTML(snbSelect); // HTML 인클루드 실행
 hljs.initHighlightingOnLoad();
 
 window.onload = function() {
-    $('body').addClass('show');
+    setTimeout(function(){
+        $('body').addClass('show');
+    },0);
 };
