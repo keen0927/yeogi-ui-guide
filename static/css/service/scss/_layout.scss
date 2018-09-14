@@ -101,3 +101,15 @@ body {
 #container {
     padding: 30px 30px 30px 210px;
 }
+
+#gnb {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    height: 50px;
+    padding-left: 210px;
+    background: $black-48;
+    box-sizing: border-box;
+}
