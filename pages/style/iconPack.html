@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="stylesheet" href="../../static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="../../static/css/service/style.css">
+</head>
+
+<body class="theme-default">
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div w3-include-html="../home/snb.html"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <span class="icon-outline-keyboard_arrow_down-24px"></span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+            <h2 class="content-head">아이콘 팩</h2>
+            <div class="block">
+                <div class="block-head">아이콘 사용방법</div>
+                <div class="block-content">
+                    <p class="mb-2">
+                        <span class="icon-outline-favorite_border-24px display-3"></span>
+                        <span class="icon-outline-search-24px display-3"></span>
+                        <span class="icon-outline-check_circle-24px display-3"></span>
+                        <span class="icon-outline-home-24px display-3"></span>
+                        <span class="icon-outline-info-24px display-3"></span>
+                    </p>
+                    <p class="mb-2">
+                        <span class="icon-outline-favorite_border-24px display-3 text-primary"></span>
+                        <span class="icon-outline-search-24px display-3 text-success"></span>
+                        <span class="icon-outline-check_circle-24px display-3 text-danger"></span>
+                        <span class="icon-outline-home-24px display-3 text-info"></span>
+                        <span class="icon-outline-info-24px display-3 text-warning"></span>
+                    </p>
+                    <p class="mb-4">
+                        <span class="icon-outline-favorite_border-24px display-3" style="font-size: 32px;"></span>
+                        <span class="icon-outline-search-24px display-3" style="font-size: 32px;"></span>
+                        <span class="icon-outline-check_circle-24px display-3" style="font-size: 32px;"></span>
+                        <span class="icon-outline-home-24px display-3" style="font-size: 32px;"></span>
+                        <span class="icon-outline-info-24px display-3" style="font-size: 32px;"></span>
+                    </p>
+<div class="shadow-box">
+<pre><code class="html">// 복사한 클래스 네임을 원하는 태그에 추가하여 사용
+
+// 기본 사이즈는 부모 엘리먼트에 선언된 font-size를 상속하여 나타내진다.
+&lt;span class="icon-outline-favorite_border-24px"&gt;&lt;/span&gt;
+
+// 사이즈 변경시 부트스트랩 텍스트 크기조절로 수정하거나 font-size:??px CSS를 적용하여 변경
+&lt;span class="icon-outline-favorite_border-24px text-danger" style="font-size: 12px;"&gt;&lt;/span&gt;
+
+// 색상변경시 CSS컨트롤 또는 부트스트랩의 컬러 클래스를 추가하여 사용.
+&lt;span class="icon-outline-favorite_border-24px text-danger"&gt;&lt;/span&gt;</code></pre>
+</div>
+                </div>
+            </div>
+            <ul class="icon-pack">
+                <li>
+                    <span class="icon-outline-toggle_on-24px"></span>
+                    <input type="text" value="icon-outline-toggle_on-24px">
+                </li>
+                <li>
+                    <span class="icon-outline-toggle_off-24px"></span>
+                    <input type="text" value="icon-outline-toggle_off-24px"></li>
+                <li>
+                    <span class="icon-outline-check_box_outline_blank-24px"></span>
+                    <input type="text" value="icon-outline-check_box_outline_blank-24px"></li>
+                <li>
+                    <span class="icon-outline-check_box-24px"></span>
+                    <input type="text" value="icon-outline-check_box-24px"></li>
+                <li>
+                    <span class="icon-outline-radio_button_unchecked-24px"></span>
+                    <input type="text" value="icon-outline-radio_button_unchecked-24px"></li>
+                <li>
+                    <span class="icon-outline-radio_button_unchecked-24px"></span>
+                    <input type="text" value="icon-outline-radio_button_unchecked-24px"></li>
+                <li>
+                    <span class="icon-outline-radio_button_checked-24px"></span>
+                    <input type="text" value="icon-outline-radio_button_checked-24px"></li>
+                <li>
+                    <span class="icon-outline-layers-24px"></span>
+                    <input type="text" value="icon-outline-layers-24px"></li>
+                <li>
+                    <span class="icon-outline-flash_on-24px"></span>
+                    <input type="text" value="icon-outline-flash_on-24px"></li>
+                <li>
+                    <span class="icon-outline-keyboard_arrow_down-24px"></span>
+                    <input type="text" value="icon-outline-keyboard_arrow_down-24px"></li>
+                <li>
+                    <span class="icon-outline-keyboard_arrow_up-24px"></span>
+                    <input type="text" value="icon-outline-keyboard_arrow_up-24px"></li>
+                <li>
+                    <span class="icon-outline-keyboard_backspace-24px"></span>
+                    <input type="text" value="icon-outline-keyboard_backspace-24px"></li>
+                <li>
+                    <span class="icon-outline-keyboard_arrow_right-24px"></span>
+                    <input type="text" value="icon-outline-keyboard_arrow_right-24px"></li>
+                <li>
+                    <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                    <input type="text" value="icon-outline-keyboard_arrow_left-24px"></li>
+                <li>
+                    <span class="icon-outline-attachment-24px"></span>
+                    <input type="text" value="icon-outline-attachment-24px"></li>
+                <li>
+                    <span class="icon-outline-insert_photo-24px"></span>
+                    <input type="text" value="icon-outline-insert_photo-24px"></li>
+                <li>
+                    <span class="icon-outline-bar_chart-24px"></span>
+                    <input type="text" value="icon-outline-bar_chart-24px"></li>
+                <li>
+                    <span class="icon-outline-gps_fixed-24px"></span>
+                    <input type="text" value="icon-outline-gps_fixed-24px"></li>
+                <li>
+                    <span class="icon-outline-sort-24px"></span>
+                    <input type="text" value="icon-outline-sort-24px"></li>
+                <li>
+                    <span class="icon-outline-remove-24px"></span>
+                    <input type="text" value="icon-outline-remove-24px"></li>
+                <li>
+                    <span class="icon-outline-create-24px"></span>
+                    <input type="text" value="icon-outline-create-24px"></li>
+                <li>
+                    <span class="icon-outline-clear-24px"></span>
+                    <input type="text" value="icon-outline-clear-24px"></li>
+                <li>
+                    <span class="icon-outline-add-24px"></span>
+                    <input type="text" value="icon-outline-add-24px"></li>
+                <li>
+                    <span class="icon-outline-phone-24px"></span>
+                    <input type="text" value="icon-outline-phone-24px"></li>
+                <li>
+                    <span class="icon-outline-location_on-24px"></span>
+                    <input type="text" value="icon-outline-location_on-24px"></li>
+                <li>
+                    <span class="icon-outline-email-24px"></span>
+                    <input type="text" value="icon-outline-email-24px"></li>
+                <li>
+                    <span class="icon-outline-warning-24px"></span>
+                    <input type="text" value="icon-outline-warning-24px"></li>
+                <li>
+                    <span class="icon-outline-visibility-24px"></span>
+                    <input type="text" value="icon-outline-visibility-24px"></li>
+                <li>
+                    <span class="icon-outline-search-24px"></span>
+                    <input type="text" value="icon-outline-search-24px"></li>
+                <li>
+                    <span class="icon-outline-list-24px"></span>
+                    <input type="text" value="icon-outline-list-24px"></li>
+                <li>
+                    <span class="icon-outline-lock-24px"></span>
+                    <input type="text" value="icon-outline-lock-24px"></li>
+                <li>
+                    <span class="icon-outline-info-24px"></span>
+                    <input type="text" value="icon-outline-info-24px"></li>
+                <li>
+                    <span class="icon-outline-home-24px"></span>
+                    <input type="text" value="icon-outline-home-24px"></li>
+                <li>
+                    <span class="icon-outline-highlight_off-24px"></span>
+                    <input type="text" value="icon-outline-highlight_off-24px"></li>
+                <li>
+                    <span class="icon-outline-help_outline-24px"></span>
+                    <input type="text" value="icon-outline-help_outline-24px"></li>
+                <li>
+                    <span class="icon-outline-favorite_border-24px"></span>
+                    <input type="text" value="icon-outline-favorite_border-24px"></li>
+                <li>
+                    <span class="icon-outline-done-24px"></span>
+                    <input type="text" value="icon-outline-done-24px"></li>
+                <li>
+                    <span class="icon-outline-copyright-24px"></span>
+                    <input type="text" value="icon-outline-copyright-24px"></li>
+                <li>
+                    <span class="icon-outline-code-24px"></span>
+                    <input type="text" value="icon-outline-code-24px"></li>
+                <li>
+                    <span class="icon-outline-check_circle-24px"></span>
+                    <input type="text" value="icon-outline-check_circle-24px"></li>
+                <li>
+                    <span class="icon-outline-autorenew-24px"></span>
+                    <input type="text" value="icon-outline-autorenew-24px"></li>
+                <li>
+                    <span class="icon-outline-assignment-24px"></span>
+                    <input type="text" value="icon-outline-assignment-24px"></li>
+                <li>
+                    <span class="icon-outline-arrow_right_alt-24px"></span>
+                    <input type="text" value="icon-outline-arrow_right_alt-24px"></li>
+                <li>
+                    <span class="icon-outline-account_circle-24px"></span>
+                    <input type="text" value="icon-outline-account_circle-24px"></li>
+            </ul>
+
+        </div>
+        <!-- //Container -->
+
+    </div>
+    <!-- //Wrap -->
+
+    <!-- JS : library  -->
+    <script src="../../static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="../../static/js/library/popper.min.js"></script>
+    <script src="../../static/js/library/bootstrap.min.js"></script>
+    <script src="../../static/js/library/w3.js"></script>
+    <script src="../../static/js/library/highlight.pack.js"></script>
+    <script src="../../static/js/library/iscroll.js"></script>
+
+    <!-- JS : service  -->
+    <script src="../../static/js/service/common.js"></script>
+    <script>
+        $(function(){
+            $('.icon-pack li').click(function(){
+                var clipText = $(this).children('input');
+                clipText.select();
+                document.execCommand('copy');
+                toastPopup('복사 되었습니다.');
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+/* 토스트팝업 */
+.toast-popup {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    transition: 0.4s;
+    &.show {
+        opacity: 1;
+        bottom: 100px;
+    }
+    div {
+        display: inline-block;
+        padding: 15px 24px;
+        border-radius: 10px;
+        background: $black-48;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #fff;
+    }
+}

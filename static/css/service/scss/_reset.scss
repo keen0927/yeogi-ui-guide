@@ -28,8 +28,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+html {
+    -ms-touch-action: none;
+}
 body {
-    min-width: 1024px;
+    // overflow: hidden;
 	line-height: 1;
 }
 ol, ul {
@@ -54,11 +57,16 @@ a {
     }
 }
 button {
+    border: none;
+    background: #fff;
     cursor: pointer;
-    // outline: 0;
+    outline: 0;
+    &:focus {
+        outline: 0;
+    }
 }
 input, select {
-    // outline: 0;
+    outline: 0;
     -webkit-appearance: none;
 }
 input:-webkit-autofill {

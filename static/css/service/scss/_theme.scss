@@ -1,0 +1,53 @@
+/* 테마 블루 */
+$theme-blue: #3f6ae0;
+
+.theme-blue {
+    nav:after {
+        background: $theme-blue;
+    }
+    .block {
+        .block-head {
+            background-color: $theme-blue;
+            color: #fff;
+        }
+    }
+    .snb .snb-main li.active>a i {
+        color: $theme-blue;
+    }
+}
+
+/* 테마 그린 */
+$theme-green: #127e99;
+
+.theme-green {
+    nav:after {
+        background: $theme-green;
+    }
+    .block {
+        .block-head {
+            background-color: $theme-green;
+            color: #fff;
+        }
+    }
+    .snb .snb-main li.active>a i {
+        color: $theme-green;
+    }
+}
+
+/* 테마 퍼플 */
+$theme-purple: #7363e0;
+
+.theme-purple {
+    nav:after {
+        background: $theme-purple;
+    }
+    .block {
+        .block-head {
+            background-color: $theme-purple;
+            color: #fff;
+        }
+    }
+    .snb .snb-main li.active>a i {
+        color: $theme-purple;
+    }
+}

@@ -20,13 +20,7 @@
     <div id="container">
 
         <section class="mb-5 p-4 bg-white shadow-box">
-            <h1 class="mb-2">알림 <small>기본형</small></h1>
-            <p class="mb-4 text-muted text-sm">
-                알림창 기본형
-                알림창 기본형 / 알림창 내부의 링크 컬러값 사용법<br>
-                알림창 컨텐츠 / 알림창 닫기 / 자바스크립트 사용법
-            </p>
-
+            <h1 class="mb-4">알림 <small class="text-muted">기본형</small></h1>
             <div class="alert alert-primary p-3" role="alert">primary 알림창.</div>
             <div class="alert alert-secondary p-3" role="alert">secondary 알림창.</div>
             <div class="alert alert-success p-3" role="alert">success 알림창.</div>
@@ -48,18 +42,63 @@
 </div>
         </section>
 
-        <section class="p-4 bg-white shadow-box">
-            <h1 class="mb-4">알림 <small>링크형</small></h1>
+        <section class="mb-5 p-4 bg-white shadow-box">
+            <h1 class="mb-4">알림 <small class="text-muted">링크형</small></h1>
 
             <div class="alert alert-primary p-3" role="alert">primary <a href="#" class="">링크</a> 알림창.</div>
+<div>
+<pre><code class="html">&lt;div class="alert alert-primary p-3" role="alert"&gt;primary &lt;a href="#" class=""&gt;링크&lt;/a&gt; 알림창.&lt;/div&gt;</code></pre>
+</div>
         </section>
 
+        <section class="mb-5 p-4 bg-white shadow-box">
+            <h1 class="mb-4">알림 <small class="text-muted">추가텍스트</small></h1>
+
+            <div class="alert alert-success" role="alert">
+                <h4 class="mb-2 alert-heading">제목</h4>
+                <p>중요한 문구를 보여줍니다.</p>
+                <hr>
+                <p class="mb-0">하단 텍스트가 들어갑니다.</p>
+            </div>
+<div>
+<pre><code class="html">&lt;div class="alert alert-success" role="alert"&gt;
+    &lt;h4 class="mb-2 alert-heading"&gt;제목&lt;/h4&gt;
+    &lt;p&gt;중요한 문구를 보여줍니다.&lt;/p&gt;&lt;hr&gt;&lt;p class="mb-0"&gt;하단 텍스트가 들어갑니다.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div>
+        </section>
+
+        <section class="mb-5 p-4 bg-white shadow-box">
+                <h1 class="mb-4">알림 <small class="text-muted">닫기</small></h1>
+                <p class="mb-2 text-muted text-sm">alert 자바스크립트 플러그인을 사용하여 인라인에서 알림을 해제 할 수 있다.</p>
+                <ul class="mb-4">
+                    <li>1. 부트스트랩JS를 로드했는지 확인.</li>
+                    <li>2. <b class="text-danger">alert-dismissible</b> 클래스 추가</li>
+                    <li>3. 버튼에 <b class="text-danger">data-dismiss="alert"</b> 속성을 추가하면 된다.</li>
+                    <li>4. Fade효과를 추가 하고 싶을때 <b class="text-danger">.fade .show</b> 클래스를 추가 하면 된다.</li>
+                </ul>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    닫기 버튼을 누르면 사라집니다.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+<div>
+<pre><code class="html">&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+    닫기 버튼을 누르면 사라집니다.
+    &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;
+        &lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</div>
+            </section>
 
     </div>
 
     <!-- JS : library  -->
     <script src="../../static/js/library/jquery-3.3.1.min.js"></script>
     <script src="../../static/js/library/popper.min.js"></script>
+    <script src="../../static/js/library/bootstrap.min.js"></script>
     <script src="../../static/js/library/w3.js"></script>
     <script src="../../static/js/library/highlight.pack.js"></script>
 
@@ -68,6 +107,10 @@
         var depth = 2,
             subDepthOpen = true,
             subDepth = 0;
+
+        $(function(){
+            $(".alert").alert();
+        });
     </script>
     <script src="../../static/js/service/common.js"></script>
 </body>

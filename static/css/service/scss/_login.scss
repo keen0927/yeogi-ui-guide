@@ -1,0 +1,36 @@
+.auth {
+    text-align: center;
+    // input {
+    //     border-radius: 0;
+    //     border: none;
+    //     border-bottom: 1px solid $black-24;
+    //     background: transparent;
+    // }
+    // select {
+    //     border-radius: 0;
+    //     border: none;
+    //     border-bottom: 1px solid $black-24;
+    //     background-color: transparent;
+    // }
+    address {
+        font-size: 11px;
+        color: $black-36;
+    }
+}
+.auth-login {
+    max-width: 480px;
+    margin: 0 auto;
+    padding-top: 13%;
+    h1 {
+        font-size: 30px;
+        color: $black-87;
+    }
+    h2 {
+        padding-top: 15px;
+        font-size: 16px;
+        color: $black-36;
+    }
+    .form-group {
+        padding: 0 24px;
+    }
+}

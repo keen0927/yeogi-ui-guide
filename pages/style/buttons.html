@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="stylesheet" href="../../static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="../../static/css/library/datatables.css">
+    <link rel="stylesheet" href="../../static/css/service/style.css">
+</head>
+
+<body class="theme-default">
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div w3-include-html="../home/snb.html"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <span class="icon-outline-keyboard_arrow_down-24px"></span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+            <h2 class="content-head">버튼 스타일</h2>
+            <div class="block">
+                <!-- 기본 & 아웃라인 -->
+                <div class="block-head">
+                    기본 & 아웃라인 스타일
+                </div>
+                <div class="block-content">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <small><span class="text-danger">btn</span>클래스를 기본 선언 후 하단의 클래스들과 조합하여 사용.</small>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-primary">Primary</button>
+                            <p class="mt-2 text-danger"><small>btn-primary</small></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-secondary">Secondary</button>
+                            <p class="mt-2 text-danger"><small>btn-secondary</small></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-success">Success</button>
+                            <p class="mt-2 text-danger"><small>btn-success</small></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-info">Info</button>
+                            <p class="mt-2 text-danger"><small>btn-info</small></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-warning">Warning</button>
+                            <p class="mt-2 text-danger"><small>btn-warning</small></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-danger">danger</button>
+                            <p class="mt-2 text-danger"><small>btn-danger</small></p>
+                        </div>
+                        <div class="col-12 pt-3 mb-4">
+                            <small>outline스타일은 다음과 같다.</small>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-outline-primary">Primary</button>
+                            <p class="mt-2 text-danger"><small>btn-outline-primary</small></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-outline-secondary">Secondary</button>
+                            <p class="mt-2 text-danger"><small>btn-outline-secondary</small></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-outline-success">Success</button>
+                            <p class="mt-2 text-danger"><small>btn-outline-success</small></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-outline-info">Info</button>
+                            <p class="mt-2 text-danger"><small>btn-outline-info</small></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-outline-warning">Warning</button>
+                            <p class="mt-2 text-danger"><small>btn-outline-warning</small></p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <button class="btn btn-outline-danger">danger</button>
+                            <p class="mt-2 text-danger"><small>btn-outline-danger</small></p>
+                        </div>
+                    </div>
+<div class="shadow-box mb-6">
+<pre><code class="html">// btn클래스는 디폴트로 넣어주고 컬러 및 스타일은 뒤의 클래스를 수정하여 사용.
+&lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-Success"&gt;Success&lt;/button&gt;
+</code></pre>
+</div>
+                </div>
+            </div>
+            <!-- 사이즈 -->
+            <div class="block">
+                <div class="block-head">
+                    사이즈 & 테두리 & 비활성화
+                </div>
+                <div class="block-content">
+                    <div class="row">
+                        <div class="col-4 mb-3">
+                            <p><button type="button" class="btn btn-sm btn-primary">Small</button></p>
+                            <p class="mt-2 mb-2"><button type="button" class="btn btn-sm btn-outline-primary">Small</button></p>
+                            <small class="text-danger">btn btn-sm</small>
+                        </div>
+                        <div class="col-4 mb-3">
+                            <p><button type="button" class="btn btn-secondary">Normal</button></p>
+                            <p class="mt-2 mb-2"><button type="button" class="btn btn-outline-secondary">Normal</button></p>
+                            <small class="text-danger">btn</small>
+                        </div>
+                        <div class="col-4 mb-3">
+                            <p><button type="button" class="btn btn-lg btn-success">Large</button></p>
+                            <p class="mt-2 mb-2"><button type="button" class="btn btn-lg btn-outline-success">Large</button></p>
+                            <small class="text-danger">btn btn-lg</small>
+                        </div>
+                        <div class="col-4 mb-3">
+                            <p><button type="button" class="btn btn-secondary btn-square">Square</button></p>
+                            <p class="mt-2 mb-2"><button type="button" class="btn btn-outline-secondary btn-square">Square</button></p>
+                            <small class="text-danger">btn-square</small>
+                        </div>
+                        <div class="col-4 mb-3">
+                            <p><button type="button" class="btn btn-info btn-rounded">Rounded</button></p>
+                            <p class="mt-2 mb-2"><button type="button" class="btn btn-outline-info btn-rounded">Rounded</button></p>
+                            <small class="text-danger">btn-rounded</small>
+                        </div>
+                        <div class="col-4 mb-3">
+                            <p><button type="button" class="btn btn-info btn-rounded" disabled>Rounded</button></p>
+                            <p class="mt-2 mb-2"><button type="button" class="btn btn-outline-info btn-rounded" disabled>Rounded</button></p>
+                            <small class="text-danger">disabled</small>
+                        </div>
+                    </div>
+<div class="shadow-box mb-6">
+<pre><code class="html">// 버튼 스몰
+&lt;button class="btn btn-sm btn-primary"&gt;Small&lt;/button&gt;
+
+// 버튼 노멀
+&lt;button class="btn btn-primary"&gt;Normal&lt;/button&gt;
+
+// 버튼 라지
+&lt;button class="btn btn-lg btn-primary"&gt;Large&lt;/button&gt;
+
+// 버튼 사각형
+&lt;button class="btn btn-square btn-primary"&gt;Square&lt;/button&gt;
+
+// 버튼 라운드형
+&lt;button class="btn btn-rounded btn-primary"&gt;Rounded&lt;/button&gt;
+
+// 버튼 비활성화형
+&lt;button class="btn btn-primary" disabled&gt;Square&lt;/button&gt;
+</code></pre>
+</div>
+                </div>
+            </div>
+            <!-- 아이콘 -->
+            <div class="block">
+                <div class="block-head">
+                    아이콘스타일
+                </div>
+                <div class="block-content">
+                    <p class="mb-4">
+                        <small><span class="text-danger">span</span>태그에 아이콘 클래스를 추가한후 button태그 안에 넣어서 사용.</small>
+                    </p>
+                    <p class="mb-4">
+                        <button type="button" class="btn btn-primary btn-square">
+                            <span class="icon-outline-add-24px"></span>
+                            사각형
+                        </button>
+                        <button type="button" class="btn btn-success btn-rounded">
+                            <span class="icon-outline-phone-24px"></span>
+                            사각형
+                        </button>
+                        <button type="button" class="btn btn-success">
+                            <span class="icon-outline-done-24px"></span>
+                        </button>
+                    </p>
+                    <p class="mb-4">
+                        <button type="button" class="btn btn-primary btn-sm btn-square">
+                            <span class="icon-outline-add-24px"></span>
+                            사각형
+                        </button>
+                        <button type="button" class="btn btn-success btn-rounded">
+                            <span class="icon-outline-phone-24px"></span>
+                            사각형
+                        </button>
+                        <button type="button" class="btn btn-success btn-lg">
+                            <span class="icon-outline-done-24px"></span>
+                        </button>
+                    </p>
+<div class="shadow-box mb-6">
+<pre><code class="html">&lt;button type="button" class="btn btn-success btn-lg"&gt;
+    &lt;span class="icon-outline-done-24px"&gt;&lt;/span&gt;
+    버튼이름
+&lt;/button&gt;
+</code></pre>
+</div>
+                </div>
+            </div>
+        </div>
+        <!-- //Container -->
+
+    </div>
+    <!-- //Wrap -->
+
+    <!-- JS : library  -->
+    <script src="../../static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="../../static/js/library/popper.min.js"></script>
+    <script src="../../static/js/library/bootstrap.min.js"></script>
+    <script src="../../static/js/library/w3.js"></script>
+    <script src="../../static/js/library/highlight.pack.js"></script>
+    <script src="../../static/js/library/iscroll.js"></script>
+    <script src="../../static/js/library/datatables.js"></script>
+
+    <!-- JS : service  -->
+    <script src="../../static/js/service/common.js"></script>
+    <script>
+    $(function(){
+        $('#example').DataTable();
+    });
+    </script>
+</body>
+
+</html>

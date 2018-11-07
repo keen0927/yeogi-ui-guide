@@ -1,17 +1,30 @@
+
+/* Break Point */
+$break-point__desktop: 768px;
+
+/* SNB Option */
+$snb-width: 220px;
+$snb-child-background: #f2f2f2;
+
+
+
 /* Color */
-$body-color: rgb(242,242,242);
 $black-87: rgba(0,0,0,0.87);
 $black-72: rgba(0,0,0,0.72);
 $black-48: rgba(0,0,0,0.48);
+$black-36: rgba(0,0,0,0.36);
+$black-24: rgba(0,0,0,0.24);
+$black-12: rgba(0,0,0,0.12);
+$black-10: rgba(0,0,0,0.1);
 
-$color-primary: #3f6ae0 !important;
-$color-secondary: #61738f !important;
-$color-success: #127e99 !important;
-$color-danger: #e01b35 !important;
-$color-warning: #ffbb33 !important;
-$color-info: #7363e0 !important;
-$color-light: #F7F9FA !important;
-$color-dark: #333 !important;
+$color-primary: #3f6ae0;
+$color-secondary: #61738f;
+$color-success: #127e99;
+$color-danger: #e01b35;
+$color-warning: #ffbb33;
+$color-info: #7363e0;
+$color-light: #F7F9FA;
+$color-dark: #333;
 
 /* Shadow */
-$shadow-type__default: 0px 1px 14px 1px rgba(0,0,0,0.083);
+$shadow-type__default: 0px 1px 14px 1px rgba(0,0,0,0.12);

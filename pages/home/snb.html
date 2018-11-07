@@ -1,24 +1,74 @@
-<div id="snb">
-    <a href="#" class="logo">여기어때<span>UI 가이드</span></a>
-    <ul class="snb-menu">
-        <li><a href="../introduce/introduce.html">소개</a></li>
-        <li class="snb-menu__has-ul"><a href="#">스타일<span class="icon-ic_arrow_down"></span></a>
-            <ul>
-                <li><a href="../style/color.html">Color</a></li>
-                <li><a href="../style/jalnan.html">잘난체</a></li>
-                <li><a href="#">Icon Pack</a></li>
+<nav>
+    <div class="snb-scroll">
+        <h1>
+            <a href="../home/index.html" class="logo">
+                여기어때
+                <span>UI 가이드</span>
+            </a>
+        </h1>
+        <button type="button" class="button-nav__close"><i class="icon-outline-clear-24px"></i><span>닫기</span></button>
+        <div class="snb">
+            <ul class="snb-main">
+                <!-- <li><a href="../introduce/introduce.html">소개</a></li> -->
+                <li>
+                    <a href="#" class="snb-sub active">
+                        <i class="icon-outline-assignment-24px"></i>
+                        대시보드
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="snb-sub">
+                        <i class="icon-outline-visibility-24px"></i>
+                        여기어때 UI 가이드 소개
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="snb-sub">
+                        <i class="icon-outline-flash_on-24px"></i>
+                        부트스트랩4 배우기
+                    </a>
+                </li>
+                <li data-snb-main="interface">
+                    <p class="snb-sub-title">인터페이스</p>
+                    <a href="#none" class="snb-sub">
+                        <i class="icon-outline-flash_on-24px"></i>
+                        스타일
+                        <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                    </a>
+                    <ul>
+                        <li><a href="../style/color.html" data-snb-sub="color">컬러</a></li>
+                        <li><a href="../style/table.html">TABLE</a></li>
+                        <li><a href="../style/jalnan.html">잘난체</a></li>
+                        <li><a href="../style/iconPack.html">아이콘</a></li>
+                        <li><a href="../style/buttons.html">버튼</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p class="snb-sub-title">페이지</p>
+                    <!-- Authentication -->
+                    <a href="#none" class="snb-sub">
+                        <i class="icon-outline-lock-24px"></i>
+                        Authentication
+                        <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                    </a>
+                    <ul>
+                        <li><a href="../authentication/login.html" target="_blank">로그인</a></li>
+                        <li><a href="../authentication/passwordSearch.html" target="_blank">비밀번호찾기</a></li>
+                        <li><a href="../authentication/join.html" target="_blank">회원가입</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="snb-sub">
+                        <i class="icon-outline-warning-24px"></i>
+                        Error
+                        <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                    </a>
+                    <ul>
+                        <li><a href="../error/400.html" target="_blank">40X</a></li>
+                        <li><a href="../error/500.html" target="_blank">50X</a></li>
+                    </ul>
+                </li>
             </ul>
-        </li>
-        <li class="snb-menu__has-ul"><a href="#none">컴포넌트<span class="icon-ic_arrow_down"></span></a>
-            <ul>
-                <li><a href="../components/alert.html">알림</a></li>
-                <li><a href="../components/badge.html">Badge</a></li>
-                <li><a href="#">경로</a></li>
-                <li><a href="#">버튼</a></li>
-                <li><a href="#">버튼 그룹</a></li>
-                <li><a href="#">카드</a></li>
-            </ul>
-        </li>
-    </ul>
-    <p class="copyright">ⓒ WITHINNOVATION Corp.</p>
-</div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="stylesheet" href="../../static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/service/style.css">
+</head>
+
+<body class="bg-white">
+    <div class="auth auth-login">
+        <h1 class="font-jalnan"><span class="text-danger">여기어때</span> & <span class="text-primary">호텔타임</span></h1>
+        <h2 class="font-jalnan">서비스를 선택 후 로그인해 주세요</h2>
+        <form action="" id="login">
+            <div class="form-group mt-5">
+                <div>
+                    <select class="form-control form-control custom-select" id="select-service">
+                        <option>서비스를 선택해주세요.</option>
+                        <option>여기어때</option>
+                        <option>호텔타임</option>
+                    </select>
+                    <label for="select-service"></label>
+                </div>
+                <div>
+                    <input type="text" class="form-control form-control" id="login-username" name="login-username" placeholder="아이디를 입력해주세요.">
+                    <label for="login-username" class="error">아이디를 입력해 주세요</label>
+                </div>
+                <div>
+                    <input type="password" class="form-control form-control" id="login-password" name="login-password" placeholder="비밀번호를 입력해주세요.">
+                    <label for="login-username" class="error">비밀번호를 입력해 주세요.</label>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-info btn-lg btn-block btn-rounded">로그인</button>
+                </div>
+                <div class="mt-3">
+                    <address>ⓒ WITHINNOVATION Corp.</address>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<!-- JS : library  -->
+<script src="../../static/js/library/jquery-3.3.1.min.js"></script>
+<script src="../../static/js/library/popper.min.js"></script>
+<script src="../../static/js/library/bootstrap.min.js"></script>
+<script src="../../static/js/library/w3.js"></script>
+<script src="../../static/js/library/highlight.pack.js"></script>
+<script src="../../static/js/library/iscroll.js"></script>
+<script src="../../static/js/library/jquery.validate.min.js"></script>
+
+<!-- JS : service  -->
+<script src="../../static/js/service/common.js"></script>
+
+<script>
+    $(function(){
+        $( "#login" ).validate( {
+            rules: {
+                lastname: "required",
+                username: {
+                    required: true,
+                    minlength: 2
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                }
+            },
+            messages: {
+                firstname: "Please enter your firstname",
+                lastname: "Please enter your lastname",
+                username: {
+                    required: "Please enter a username",
+                    minlength: "Your username must consist of at least 2 characters"
+                },
+                password: {
+                    required: "Please provide a password",
+                    minlength: "Your password must be at least 5 characters long"
+                }
+            },
+            errorElement: "em",
+            errorPlacement: function ( error, element ) {
+                // Add the `help-block` class to the error element
+                error.addClass( "help-block" );
+
+                if ( element.prop( "type" ) === "checkbox" ) {
+                    error.insertAfter( element.parent( "label" ) );
+                } else {
+                    error.insertAfter( element );
+                }
+            },
+            highlight: function ( element, errorClass, validClass ) {
+                $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+            }
+        } );
+    });
+</script>
+</html>
