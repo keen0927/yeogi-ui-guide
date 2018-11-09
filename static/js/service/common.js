@@ -7,6 +7,9 @@ $(function(){
         targetSnb = $('nav');
 
     buttonSnbOpen.click(function(){
+        console.log('클릭');
+
+
         targetSnb.addClass('active');
         if ($('body').hasClass('mobile')) {
             console.log('mobile');

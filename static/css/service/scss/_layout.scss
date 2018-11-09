@@ -20,7 +20,6 @@ h2.content-head {
         padding: 10px 0 8px 0;
         font-size: 22px;
         letter-spacing: -1px;
-        
     }
 }
 
@@ -226,7 +225,7 @@ nav {
     text-size-adjust: none;
     touch-action:none;
     transition: 0.4s;
-    &.open {
+    &.active {
         left: 0;
     }
     &:after {
