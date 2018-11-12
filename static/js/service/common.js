@@ -7,32 +7,35 @@ hljs.initHighlightingOnLoad();
 $(function(){
 
     // SNB 열기
-    var buttonSnbOpen = $('.button-nav__open'),
+    setTimeout(function(){
+        var buttonSnbOpen = $('.button-nav__open'),
         buttonSnbClose = $('.button-nav__close'),
         targetSnb = $('nav');
 
-    buttonSnbOpen.click(function(){
-        console.log('클릭');
+        buttonSnbOpen.click(function(){
+            console.log('클릭');
 
 
-        targetSnb.addClass('active');
-        if ($('body').hasClass('mobile')) {
-            console.log('mobile');
-            // 모바일
-            $('body').removeClass('desktop-snb-control');
-        } else {
-            // 데스크탑
-            if ($('body').hasClass('desktop-snb-control')) {
+            targetSnb.addClass('active');
+            if ($('body').hasClass('mobile')) {
+                console.log('mobile');
+                // 모바일
                 $('body').removeClass('desktop-snb-control');
             } else {
-                $('body').addClass('desktop-snb-control');
+                // 데스크탑
+                if ($('body').hasClass('desktop-snb-control')) {
+                    $('body').removeClass('desktop-snb-control');
+                } else {
+                    $('body').addClass('desktop-snb-control');
+                }
             }
-        }
-    });
+        });
 
-    buttonSnbClose.click(function(){
-        targetSnb.removeClass('active');
-    });
+        buttonSnbClose.click(function(){
+            targetSnb.removeClass('active');
+        });
+    },0)
+
 });
 
 
@@ -42,6 +45,7 @@ function snbSubMenuOpen() {
     var snbList = $('.snb-main > li');
     snbList.each(function(){
         $(this).click(function(){
+            console.log('SNB클릭');
             var childrenCheck = $(this).find('ul');
 
             if ($(this).hasClass('active')) {
