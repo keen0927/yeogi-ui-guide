@@ -18,7 +18,73 @@
     <div class="wrap">
 
         <!-- SNB -->
-        <div w3-include-html="/pages/layout/snb.html"></div>
+        <nav>
+                <div class="snb-scroll">
+                    <h1>
+                        <a href="/index.html" class="logo">
+                            여기어때
+                            <span>UI 가이드</span>
+                        </a>
+                    </h1>
+                    <button type="button" class="button-nav__close"><i class="icon-outline-clear-24px"></i><span>닫기</span></button>
+                    <div class="snb">
+                        <ul class="snb-main">
+                            <li>
+                                <a href="/index.html" class="snb-sub">
+                                    <i class="icon-outline-visibility-24px"></i>
+                                    가이드 소개
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/guide/learn.html" class="snb-sub">
+                                    <i class="icon-outline-flash_on-24px"></i>
+                                    부트스트랩 5분만에 배우기
+                                </a>
+                            </li>
+                            <li data-snb-main="interface">
+                                <p class="snb-sub-title">인터페이스</p>
+                                <a href="#none" class="snb-sub">
+                                    <i class="icon-outline-flash_on-24px"></i>
+                                    스타일
+                                    <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                                </a>
+                                <ul>
+                                    <li><a href="/pages/style/color.html" data-snb-sub="color">컬러</a></li>
+                                    <li><a href="/pages/style/table.html">TABLE</a></li>
+                                    <li><a href="/pages/style/jalnan.html">잘난체</a></li>
+                                    <li><a href="/pages/style/iconPack.html">아이콘</a></li>
+                                    <li><a href="/pages/style/buttons.html">버튼</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p class="snb-sub-title">페이지</p>
+                                <!-- Authentication -->
+                                <a href="#none" class="snb-sub">
+                                    <i class="icon-outline-lock-24px"></i>
+                                    Authentication
+                                    <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                                </a>
+                                <ul>
+                                    <li><a href="/pages/authentication/login.html" target="_blank">로그인</a></li>
+                                    <li><a href="/pages/authentication/passwordSearch.html" target="_blank">비밀번호찾기</a></li>
+                                    <li><a href="/pages/authentication/join.html" target="_blank">회원가입</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="snb-sub">
+                                    <i class="icon-outline-warning-24px"></i>
+                                    Error
+                                    <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                                </a>
+                                <ul>
+                                    <li><a href="/pages/error/400.html" target="_blank">40X</a></li>
+                                    <li><a href="/pages/error/500.html" target="_blank">50X</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
         <!-- Header -->
         <header>
