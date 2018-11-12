@@ -1,3 +1,8 @@
+// HTML 인클루드 실행
+w3.includeHTML(snbSelect);
+
+// 코드 하이라이트
+hljs.initHighlightingOnLoad();
 
 $(function(){
 
@@ -33,6 +38,7 @@ $(function(){
 
 // SNB 서브메뉴 오픈
 function snbSubMenuOpen() {
+    console.log('111');
     var snbList = $('.snb-main > li');
     snbList.each(function(){
         $(this).click(function(){
@@ -64,14 +70,7 @@ function snbSelect(mainTarget, subTarget) {
 
     $(dataSnbMain).addClass('active');
     $(dataSnbSub).addClass('active');
-    console.log('11');
 }
-
-// HTML 인클루드 실행
-w3.includeHTML(snbSelect); 
-
-// 코드 하이라이트
-hljs.initHighlightingOnLoad(); 
 
 // Iscroll
 var sideNavigationScroll;
@@ -204,5 +203,4 @@ var themeControl = {
         $('body').addClass('theme-'+theme);
     }
 }
-
 // themeControl.set('blue');
