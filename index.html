@@ -58,7 +58,7 @@
             <h2 class="content-head">UI가이드 소개</h2>
             <div class="mb-5">
                 여기어때 UI가이드를 소개합니다.<br>
-                본 컨텐츠는 부트스트랩4를 기반으로 제작 되었으며 사용방법 또한 부트스트랩4와 동일합니다.<br>
+                본 컨텐츠는 <b class="text-danger">부트스트랩4</b>를 기반으로 제작 되었으며 사용방법 또한 부트스트랩4와 <b class="text-danger">동일</b>합니다.<br>
                 추가적으로 자주사용하는 자바스크립트 라이브러리와 여기어때 서비스에서 자주 사용되는 모듈들의 사용법과 테스트가능한 샘플코드를 제공합니다.<br>
                 다운로드 패키지는 기본 backoffice 템플릿이며 UI가이드를 통하여 프론트화면을 개발할수있도록 제작되었습니다.
             </div>
@@ -67,7 +67,7 @@
                     CSS
                 </div>
                 <div class="block-content">
-                    <p class="mb-4"><small>CSS를 로드하기 위해 아래의 코드를 <b class="text-danger">&lt;head&gt;</b>의 타 CSS보다 상위에 위치하게 붙여넣기 하세요.</small></p>
+                    <p class="mb-4">CSS를 로드하기 위해 아래의 코드를 <b class="text-danger">&lt;head&gt;</b>의 타 CSS보다 상위에 위치하게 붙여넣기 하세요.</p>
 <div class="shadow-box">
 <pre><code class="html">&lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/bootstrap.min.css"&gt;
 &lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css"&gt;
@@ -80,8 +80,8 @@
                     JS
                 </div>
                 <div class="block-content">
-                    <p class="mb-4"><small>플러그인들은 <b class="text-danger">Javascript</b>를 사용해야 작동합니다. 기본적으로 jQuery, Popper.js 및 자체 자바스크립트 플러그인이 필요합니다.<br>
-                    아래의 script를 <b class="text-danger">&lt;body&gt;</b>태그 바로 앞에 붙여 넣기 해주세요. 순서는 아래와 같이 배치 해야 정상 작동 합니다.</small></p>
+                    <p class="mb-4">플러그인들은 <b class="text-danger">Javascript</b>를 사용해야 작동합니다. 기본적으로 jQuery, Popper.js 및 자체 자바스크립트 플러그인이 필요합니다.<br>
+                    아래의 script를 <b class="text-danger">&lt;body&gt;</b>태그 바로 앞에 붙여 넣기 해주세요. 순서는 아래와 같이 배치 해야 정상 작동 합니다.</p>
 <div class="shadow-box">
 <pre><code class="html">// 라이브러리
 &lt;script src="https://static.goodchoice.kr/static/ui/js/library/jquery-3.3.1.min.js"&gt;&lt;/script&gt;
@@ -116,7 +116,7 @@
     &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
     &lt;title&gt;여기어때 - 표준 템플릿 가이드&lt;/title&gt;
     &lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/bootstrap.min.css"&gt;
-&lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css"&gt;
+    &lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css"&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
@@ -152,6 +152,9 @@
 
     </div>
     <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
 
     <!-- JS : library  -->
     <script src="/static/js/library/jquery-3.3.1.min.js"></script>

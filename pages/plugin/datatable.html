@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/library/datatables.css">
+    <link rel="stylesheet" href="/static/css/service/style.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div w3-include-html="/pages/layout/snb.html"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+            <h2 class="content-head">DataTable.js</h2>
+            <p>
+                플러그인 사이트 : <a href="https://datatables.net" class="text-danger"><u>https://datatables.net/</u></a><br><br>
+                JSON으로 응답받은 정보들을 설정값을 참고하여 테이블렌더링 및 소팅, 페이징, 검색등을 자동생성 해 줍니다.<br>
+                테이블이 완성된 후 특정 액션을 할때마다 API를 재 호출 하지 않기 때문에 검색, 소팅, 페이징등이 바로 동작합니다. <br>
+                첫 Initialize시 데이터를 한번에 불러오기 때문에 "html append"이슈로 인해 로딩 시간이 굉장히 길어 질 수 있습니다.<br>
+                데이터의 규모가 작을때 사용하거나 <a href="https://datatables.net/manual/server-side#Sent-parameters" class="text-danger" target="_blank"><u>Server-side processing</u></a>을 참고하여 <b class="text-danger"></b>Ajax콜</b>을 이용한 작업이 필요합니다.
+
+            </p>
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    샘플
+                </div>
+                <div class="block-content">
+                    <table id="example" class="display" width="100%"></table>
+<div class="shadow-box mt-4">
+<pre><code class="html">// 플러그인 추가 
+&lt;script src="https://static.goodchoice.kr/static/ui/js/library/datatables.js"&gt;&lt;/script&gt;
+
+// 테이블 HTML
+&lt;table id="example" class="display" width="100%"&gt;&lt;/table&gt;</code></pre>
+</div>
+
+            <div class="shadow-box mt-4">
+                    <pre><code class="javascript">// Javascript
+
+// 데이터 : JSON 형식
+var dataSet = [
+    [ "Tiger Nixon", "System Architect", "Edinburgh", "1234", "2011/04/25", "$320,800" ],
+    [ "Garrett Winters", "Accountant", "Tokyo", "5678", "2011/07/25", "$170,750" ],
+]
+
+// 테이블 헤더
+var col_kor = [
+    { title: "이름" },
+    { title: "직위" },
+    { title: "오피스" },
+    { title: "넘버" },
+    { title: "입사일" },
+    { title: "연봉" }
+];
+
+// 설정
+var lang_kor = {
+    "decimal" : "",
+    "emptyTable" : "데이터가 없습니다.",
+    "info" : "_START_ - _END_ (총 _TOTAL_ 명)",
+    "infoEmpty" : "0명",
+    "infoFiltered" : "(전체 _MAX_ 명 중 검색결과)",
+    "infoPostFix" : "",
+    "thousands" : ",",
+    "lengthMenu" : "_MENU_ 개씩 보기",
+    "loadingRecords" : "로딩중...",
+    "processing" : "처리중...",
+    "search" : "검색 : ",
+    "zeroRecords" : "검색된 데이터가 없습니다.",
+    "paginate" : {
+        "first" : "첫 페이지",
+        "last" : "마지막 페이지",
+        "next" : "다음",
+        "previous" : "이전"
+    },
+    "aria" : {
+        "sortAscending" : " :  오름차순 정렬",
+        "sortDescending" : " :  내림차순 정렬"
+    }
+};
+
+// 목표 엘리먼트에 주입
+$(function(){
+    $('#example').DataTable( {
+        data: dataSet,
+        columns: col_kor,
+        language : lang_kor
+    });
+});</code></pre>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- //Container -->
+
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/bootstrap.min.js"></script>
+    <script src="/static/js/library/w3.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+    <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/library/datatables.js"></script>
+
+    <!-- JS : service  -->
+    <script src="/static/js/service/common.js"></script>
+    <script>
+
+    var dataSet = [
+        [ "Tiger Nixon", "System Architect", "Edinburgh", "<span class='badge badge-primary'>Primary</span>", "2011/04/25", "$320,800" ],
+        [ "Garrett Winters", "Accountant", "Tokyo", "<span class='badge badge-danger'>Danger</span>", "2011/07/25", "$170,750" ],
+        [ "Ashton Cox", "Junior Technical Author", "San Francisco", "<span class='badge badge-info'>Info</span>", "2009/01/12", "$86,000" ],
+        [ "Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "<span class='badge badge-primary'>Primary</span>", "2012/03/29", "$433,060" ],
+        [ "Airi Satou", "Accountant", "Tokyo", "<span class='badge badge-primary'>Primary</span>", "2008/11/28", "$162,700" ],
+        [ "Brielle Williamson", "Integration Specialist", "New York", "<span class='badge badge-primary'>Primary</span>", "2012/12/02", "$372,000" ],
+        [ "Herrod Chandler", "Sales Assistant", "San Francisco", "<span class='badge badge-primary'>Primary</span>", "2012/08/06", "$137,500" ],
+        [ "Rhona Davidson", "Integration Specialist", "Tokyo", "<span class='badge badge-primary'>Primary</span>", "2010/10/14", "$327,900" ],
+        [ "Colleen Hurst", "Javascript Developer", "San Francisco", "<span class='badge badge-primary'>Primary</span>", "2009/09/15", "$205,500" ],
+        [ "Sonya Frost", "Software Engineer", "Edinburgh", "<span class='badge badge-primary'>Primary</span>", "2008/12/13", "$103,600" ],
+        [ "Jena Gaines", "Office Manager", "London", "<span class='badge badge-primary'>Primary</span>", "2008/12/19", "$90,560" ],
+        [ "Quinn Flynn", "Support Lead", "Edinburgh", "<span class='badge badge-primary'>Primary</span>", "2013/03/03", "$342,000" ],
+        [ "Charde Marshall", "Regional Director", "San Francisco", "<span class='badge badge-primary'>Primary</span>", "2008/10/16", "$470,600" ],
+        [ "Haley Kennedy", "Senior Marketing Designer", "London", "<span class='badge badge-primary'>Primary</span>", "2012/12/18", "$313,500" ],
+        [ "Tatyana Fitzpatrick", "Regional Director", "London", "<span class='badge badge-primary'>Primary</span>", "2010/03/17", "$385,750" ],
+        [ "Michael Silva", "Marketing Designer", "London", "<span class='badge badge-primary'>Primary</span>", "2012/11/27", "$198,500" ],
+        [ "Paul Byrd", "Chief Financial Officer (CFO)", "New York", "<span class='badge badge-primary'>Primary</span>", "2010/06/09", "$725,000" ],
+        [ "Gloria Little", "Systems Administrator", "New York", "<span class='badge badge-primary'>Primary</span>", "2009/04/10", "$237,500" ],
+        [ "Bradley Greer", "Software Engineer", "London", "<span class='badge badge-primary'>Primary</span>", "2012/10/13", "$132,000" ],
+        [ "Dai Rios", "Personnel Lead", "Edinburgh", "<span class='badge badge-primary'>Primary</span>", "2012/09/26", "$217,500" ],
+        [ "Jenette Caldwell", "Development Lead", "New York", "<span class='badge badge-primary'>Primary</span>", "2011/09/03", "$345,000" ],
+        [ "Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "<span class='badge badge-primary'>Primary</span>", "2009/06/25", "$675,000" ],
+        [ "Caesar Vance", "Pre-Sales Support", "New York", "<span class='badge badge-primary'>Primary</span>", "2011/12/12", "$106,450" ],
+        [ "Doris Wilder", "Sales Assistant", "Sidney", "<span class='badge badge-primary'>Primary</span>", "2010/09/20", "$85,600" ],
+        [ "Angelica Ramos", "Chief Executive Officer (CEO)", "London", "<span class='badge badge-danger'>Danger</span>", "2009/10/09", "$1,200,000" ],
+        [ "Gavin Joyce", "Developer", "Edinburgh", "<span class='badge badge-info'>Info</span>", "2010/12/22", "$92,575" ],
+        [ "Jennifer Chang", "Regional Director", "Singapore", "<span class='badge badge-primary'>Primary</span>", "2010/11/14", "$357,650" ],
+        [ "Brenden Wagner", "Software Engineer", "San Francisco", "<span class='badge badge-primary'>Primary</span>", "2011/06/07", "$206,850" ],
+        [ "Fiona Green", "Chief Operating Officer (COO)", "San Francisco", "<span class='badge badge-primary'>Primary</span>", "2010/03/11", "$850,000" ],
+        [ "Shou Itou", "Regional Marketing", "Tokyo", "<span class='badge badge-primary'>Primary</span>", "2011/08/14", "$163,000" ],
+        [ "Michelle House", "Integration Specialist", "Sidney", "<span class='badge badge-primary'>Primary</span>", "2011/06/02", "$95,400" ],
+        [ "Suki Burks", "Developer", "London", "<span class='badge badge-primary'>Primary</span>", "2009/10/22", "$114,500" ],
+        [ "Prescott Bartlett", "Technical Author", "London", "<span class='badge badge-primary'>Primary</span>", "2011/05/07", "$145,000" ],
+        [ "Gavin Cortez", "Team Leader", "San Francisco", "<span class='badge badge-primary'>Primary</span>", "2008/10/26", "$235,500" ],
+        [ "Martena Mccray", "Post-Sales support", "Edinburgh", "<span class='badge badge-primary'>Primary</span>", "2011/03/09", "$324,050" ],
+        [ "Unity Butler", "Marketing Designer", "San Francisco", "<span class='badge badge-primary'>Primary</span>", "2009/12/09", "$85,675" ]
+    ];
+
+    var col_kor = [
+        { title: "이름" },
+        { title: "직위" },
+        { title: "오피스" },
+        { title: "뱃지" },
+        { title: "입사일" },
+        { title: "연봉" }
+    ];
+
+    // Korean
+    var lang_kor = {
+        "decimal" : "",
+        "emptyTable" : "데이터가 없습니다.",
+        "info" : "_START_ - _END_ (총 _TOTAL_ 명)",
+        "infoEmpty" : "0명",
+        "infoFiltered" : "(전체 _MAX_ 명 중 검색결과)",
+        "infoPostFix" : "",
+        "thousands" : ",",
+        "lengthMenu" : "_MENU_ 개씩 보기",
+        "loadingRecords" : "로딩중...",
+        "processing" : "처리중...",
+        "search" : "검색 : ",
+        "zeroRecords" : "검색된 데이터가 없습니다.",
+        "paginate" : {
+            "first" : "첫 페이지",
+            "last" : "마지막 페이지",
+            "next" : "다음",
+            "previous" : "이전"
+        },
+        "aria" : {
+            "sortAscending" : " :  오름차순 정렬",
+            "sortDescending" : " :  내림차순 정렬"
+        }
+    };
+
+    $(function(){
+        $('#example').DataTable( {
+            data: dataSet,
+            columns: col_kor,
+            language : lang_kor
+        });
+    });
+    </script>
+</body>
+
+</html>

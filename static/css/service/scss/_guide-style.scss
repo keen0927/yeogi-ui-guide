@@ -80,3 +80,24 @@
         }
     }
 }
+
+.tab-menu {
+    overflow: hidden;
+    background: #f7f9f6;
+    li {
+        display: inline-block;
+        a {
+            display: block;
+            min-width: 140px;
+            height: 50px;
+            padding: 0 15px;
+            font-size: 14px;
+            line-height: 50px;
+            color: $black-72;
+            text-align: center;
+            &.active {
+                background: #fff;
+            }
+        }
+    }
+}

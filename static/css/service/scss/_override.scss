@@ -56,6 +56,7 @@
     padding: 10px 15px;
     border: 1px solid transparent;
     border-radius: 4px;
+    font-size: 14px;
 }
 .alert-primary {
     background-color: #e6eefa;
@@ -152,14 +153,68 @@ body.mobile {
     table.dataTable.order-column.stripe tbody tr.even > .sorting_1{
         background: #f7f9f6;
     }
+    .dataTables_wrapper {
+        .dataTables_length {
+            select {
+                height: calc(2.25rem + 2px);
+                margin-bottom: 15px;
+                padding: .375rem 1.75rem .375rem .75rem;
+                border: 1px solid rgba(0,0,0,.15);
+                background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
+                background-size: 8px 10px;
+                font-size: 14px;
+                color: #495057;
+            }
+        }
+        .dataTables_filter {
+            input {
+                padding: .5rem .75rem;
+                line-height: 1.25;
+                border: 1px solid rgba(0,0,0,.15);
+                border-radius: .25rem;
+                font-size: 14px;
+                color: #495057;
+            }
+        }
+        .paginate_button {
+            min-width: 1.5em;
+            padding: 0;
+            margin: 0;
+            margin-top: 5px;
+            padding: 6px 10px 4px 10px;
+            border: none;
+            border-radius: 0;
+            background-color: #f0f2f5;
+            font-size: 13px;
+            &:hover,
+            &:active {
+                min-width: 1.5em;
+                padding: 6px 10px 4px 10px !important;
+                border: none;
+                background: $black-48;
+                font-size: 13px;
+            }
+            &.current {
+                border: none;
+                background: $color-primary;
+                color: #fff !important;
+                &:hover,
+                &:active {
+                    border: none;
+                    background: $color-primary;
+                    color: #fff !important;
+                }
+            }
+        }
+        .dataTables_empty {
+            padding: 40px;
+            font-size: 16px;
+        }
+    }
+
 }
 
 /* Button - Color */
-// .btn {
-//     &:disabled:hover {
-//         background: transparent;
-//     }
-// }
 .btn-primary {
     border: 1px solid transparent;
     background-color: $color-primary;
@@ -364,4 +419,235 @@ body.mobile {
 /* Label Validate */
 form label.error {
     display: none;
+}
+
+/* Form */
+.form-group {
+    label {
+        font-size: 14px;
+    }
+}
+.form-control {
+    font-size: 14px;
+}
+input[type="file"] {
+    font-size: 12px;
+}
+
+/* Input - Radio */
+.css-control {
+    position: relative;
+    display: inline-block;
+    padding: 3px 0;
+    margin: 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+.css-radio {
+    .css-control-input {
+        position: absolute;
+        opacity: 0;
+    }
+    .css-control-input~.css-control-indicator {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: -2px 3px 0 0;
+        border: 1px solid rgba(0,0,0,0.15);
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+    .css-control-input:checked~.css-control-indicator:after {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 4px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    .css-control-input:disabled~.css-control-indicator {
+        opacity: 0.4;
+        &~span{
+            opacity: 0.4;
+        }
+    }
+    .css-control-input:disabled~.css-control-indicator:after {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 4px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+}
+
+/* Input - Checkbox */
+.css-checkbox {
+    .css-control-input {
+        position: absolute;
+        opacity: 0;
+    }
+    .css-control-input~.css-control-indicator {
+        font-family: 'icomoon';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: -2px 3px 0 0;
+        vertical-align: middle;
+        font-size: 13px;
+        line-height: 19px;
+        color: #fff;
+        text-align: center;
+        border: 1px solid rgba(0,0,0,0.15);
+    }
+    .css-control-input:checked~.css-control-indicator:after {
+        display: inline-block;
+        content: "\e923";
+        position: absolute;
+        top: 3px;
+        left: 1px;
+        width: 18px;
+        height: 18px;
+        text-align: center;
+    }
+    .css-control-input:disabled {
+        &:checked {
+            border: 1px solid #000;
+        }
+    }
+    .css-control-input:disabled~.css-control-indicator {
+        opacity: 0.4;
+        &~span{
+            opacity: 0.4;
+        }
+    }
+    .css-control-input:disabled~.css-control-indicator:after {
+        display: inline-block;
+        content: "\e923";
+        position: absolute;
+        top: 3px;
+        left: 1px;
+        width: 18px;
+        height: 18px;
+        // background: $black-56;
+    }
+}
+/* Input - Switch */
+.css-switch {
+    .css-control-input {
+        position: absolute;
+        opacity: 0;
+    }
+    .css-control-input~.css-control-indicator {
+        display: inline-block;
+        width: 36px;
+        height: 20px;
+        margin: -2px 3px 0 0;
+        vertical-align: middle;
+        border-radius: 20px;
+        background: #ddd;
+        transition: 0.35s;
+        &:after {
+            display: inline-block;
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            background: #fff;
+            transition: 0.35s;
+        }
+    }
+    .css-control-input~.css-control-indicator:after {
+        background: #fff;
+    }
+    .css-control-input:checked~.css-control-indicator:after {
+        display: inline-block;
+        position: absolute;
+        top: 4px;
+        left: 18px;
+        width: 16px;
+        height: 16px;
+        background: #fff !important;
+        text-align: center;
+    }
+    .css-control-input:disabled {
+        &:checked {
+            border: 1px solid #000;
+        }
+    }
+    .css-control-input:disabled~.css-control-indicator {
+        opacity: 0.4;
+        &~span{
+            opacity: 0.4;
+        }
+    }
+}
+
+/* Input - Color */
+.css-control-primary {
+    .css-control-input:checked~.css-control-indicator:after {
+        background: $color-primary;
+    }
+    &.css-switch {
+        .css-control-input:checked~.css-control-indicator {
+            background: $color-primary;
+        }
+    }
+}
+.css-control-secondary {
+    .css-control-input:checked~.css-control-indicator:after {
+        background: $color-secondary;
+    }
+    &.css-switch {
+        .css-control-input:checked~.css-control-indicator {
+            background: $color-secondary;
+        }
+    }
+}
+.css-control-info {
+    .css-control-input:checked~.css-control-indicator:after {
+        background: $color-info;
+    }
+    &.css-switch {
+        .css-control-input:checked~.css-control-indicator {
+            background: $color-info;
+        }
+    }
+}
+.css-control-success {
+    .css-control-input:checked~.css-control-indicator:after {
+        background: $color-success;
+    }
+    &.css-switch {
+        .css-control-input:checked~.css-control-indicator {
+            background: $color-success;
+        }
+    }
+}
+.css-control-warning {
+    .css-control-input:checked~.css-control-indicator:after {
+        background: $color-warning;
+    }
+    &.css-switch {
+        .css-control-input:checked~.css-control-indicator {
+            background: $color-warning;
+        }
+    }
+}
+.css-control-danger {
+    .css-control-input:checked~.css-control-indicator:after {
+        background: $color-danger;
+    }
+    &.css-switch {
+        .css-control-input:checked~.css-control-indicator {
+            background: $color-danger;
+        }
+    }
 }

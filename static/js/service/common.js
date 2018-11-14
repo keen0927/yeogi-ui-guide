@@ -76,6 +76,9 @@ function snbSelect(mainTarget, subTarget) {
     $(dataSnbSub).addClass('active');
 }
 
+
+
+
 // Iscroll
 var sideNavigationScroll;
 
@@ -139,7 +142,12 @@ function resizeThrottler() {
 
 // 로딩 페이드 효과
 function fadeLoad() {
-    $('body').addClass('show');
+    setTimeout(function(){
+        $('.wrap').addClass('show');
+        setTimeout(function(){
+            $('.spinner').addClass('hide');
+        },300);
+    },300);
 }
 
 // Default Init

@@ -11,6 +11,7 @@ $snb-child-background: #f2f2f2;
 /* Color */
 $black-87: rgba(0,0,0,0.87);
 $black-72: rgba(0,0,0,0.72);
+$black-56: rgba(0,0,0,0.56);
 $black-48: rgba(0,0,0,0.48);
 $black-36: rgba(0,0,0,0.36);
 $black-24: rgba(0,0,0,0.24);
@@ -28,3 +29,7 @@ $color-dark: #333;
 
 /* Shadow */
 $shadow-type__default: 0px 1px 14px 1px rgba(0,0,0,0.12);
+$shadow-type__input: 0px 1px 2px 1px rgba(0,0,0,0.13);
+
+/* Border */
+$border-default: rgba(0,0,0,0.16);

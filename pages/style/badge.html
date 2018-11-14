@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/service/style.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div w3-include-html="/pages/layout/snb.html"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+
+            <h2 class="content-head">뱃지</h2>
+
+            <div class="block">
+                <div class="block-head">
+                    텍스트 샘플
+                </div>
+                <div class="block-content">
+                    <p class="mb-4">뱃지는 부모 요소의 크기와 일치하도록 <b class="text-danger">자동배율</b> 제작 되어있음.</p>
+                    <h1 class="mb-2">헤드라인 예제 <span class="badge badge-primary">New</span></h1>
+                    <h2 class="mb-2">헤드라인 예제 <span class="badge badge-secondary">New</span></h2>
+                    <h3 class="mb-2">헤드라인 예제 <span class="badge badge-success">New</span></h3>
+                    <h4 class="mb-2">헤드라인 예제 <span class="badge badge-danger">New</span></h4>
+                    <h5 class="mb-2">헤드라인 예제 <span class="badge badge-warning">New</span></h5>
+                    <h6 class="mb-2">헤드라인 예제 <span class="badge badge-light">New</span></h5>
+                    <p class="mb-3">기본텍스트 예제 <span class="badge badge-dark">New</span></p>
+<div class="shadow-box">
+<pre><code class="html">&lt;h1 class="mb-2"&gt;헤드라인 예제 &lt;span class="badge badge-primary"&gt;New&lt;/span&gt;&lt;/h1&gt;
+&lt;h2 class="mb-2"&gt;헤드라인 예제 &lt;span class="badge badge-secondary"&gt;New&lt;/span&gt;&lt;/h2&gt;
+&lt;h3 class="mb-2"&gt;헤드라인 예제 &lt;span class="badge badge-success"&gt;New&lt;/span&gt;&lt;/h3&gt;
+&lt;h4 class="mb-2"&gt;헤드라인 예제 &lt;span class="badge badge-danger"&gt;New&lt;/span&gt;&lt;/h4&gt;
+&lt;h5 class="mb-2"&gt;헤드라인 예제 &lt;span class="badge badge-warning"&gt;New&lt;/span&gt;&lt;/h5&gt;
+&lt;h6 class="mb-2"&gt;헤드라인 예제 &lt;span class="badge badge-light"&gt;New&lt;/span&gt;&lt;/h5&gt;
+&lt;p&gt;기본텍스트 예제 &lt;span class="badge badge-dark"&gt;New&lt;/span&gt;&lt;/p&gt;</code></pre>
+</div>
+                </div>
+
+            </div>
+
+            <div class="block">
+                <div class="block-head">뱃지 기본형</div>
+                <div class="block-content">
+                    <div class="mb-4">
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-secondary">Secondary</span>
+                        <span class="badge badge-success">Success</span>
+                        <span class="badge badge-danger">Danger</span>
+                        <span class="badge badge-warning">Warning</span>
+                        <span class="badge badge-info">Info</span>
+                        <span class="badge badge-light">Light</span>
+                        <span class="badge badge-dark">Dark</span>
+                    </div>
+<div class="shadow-box">
+<pre><code class="html">&lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge badge-secondary"&gt;Secondary&lt;/span&gt;
+&lt;span class="badge badge-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge badge-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="badge badge-warning"&gt;Warning&lt;/span&gt;
+&lt;span class="badge badge-info"&gt;Info&lt;/span&gt;
+&lt;span class="badge badge-light"&gt;Light&lt;/span&gt;
+&lt;span class="badge badge-dark"&gt;Dark&lt;/span&gt;</code></pre>
+</div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="block-head">뱃지 알약형</div>
+                <div class="block-content">
+                    <p class="mb-4">테두리가 둥근 뱃지를 사용하고 싶을때 <b class="text-danger">.badge-pill 클래스</b>를 추가하여 사용.</p>
+                    <div class="mb-4">
+                        <span class="badge badge-pill badge-primary">Primary</span>
+                        <span class="badge badge-pill badge-secondary">Secondary</span>
+                        <span class="badge badge-pill badge-success">Success</span>
+                        <span class="badge badge-pill badge-danger">Danger</span>
+                        <span class="badge badge-pill badge-warning">Warning</span>
+                        <span class="badge badge-pill badge-info">Info</span>
+                        <span class="badge badge-pill badge-light">Light</span>
+                        <span class="badge badge-pill badge-dark">Dark</span>
+                    </div>
+<div class="shadow-box">
+<pre><code class="html">&lt;span class="badge badge-pill badge-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge badge-pill badge-secondary"&gt;Secondary&lt;/span&gt;
+&lt;span class="badge badge-pill badge-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge badge-pill badge-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="badge badge-pill badge-warning"&gt;Warning&lt;/span&gt;
+&lt;span class="badge badge-pill badge-info"&gt;Info&lt;/span&gt;
+&lt;span class="badge badge-pill badge-light"&gt;Light&lt;/span&gt;
+&lt;span class="badge badge-pill badge-dark"&gt;Dark&lt;/span&gt;</code></pre>
+</div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="block-head">뱃지 링크형</div>
+                <div class="block-content">
+                    <p class="mb-4"><b class="text-danger">&lt;a&gt;</b> 요소와 함께 <b class="text-danger">.badge 클래스</b>를 사용하면 hover와 focus 상태가 있는 실행가능한 뱃지를 제공.</p>
+                    <div class="mb-4">
+                        <a href="#" class="badge badge-pill badge-primary">Primary</a>
+                        <a href="#" class="badge badge-pill badge-secondary">Secondary</a>
+                        <a href="#" class="badge badge-pill badge-success">Success</a>
+                        <a href="#" class="badge badge-pill badge-danger">Danger</a>
+                        <a href="#" class="badge badge-pill badge-warning">Warning</a>
+                        <a href="#" class="badge badge-pill badge-info">Info</a>
+                        <a href="#" class="badge badge-pill badge-light">Light</a>
+                        <a href="#" class="badge badge-pill badge-dark">Dark</a>
+                    </div>
+<div class="shadow-box">
+<pre><code class="html">&lt;a href="#" class="badge badge-pill badge-primary"&gt;Primary&lt;/a&gt;
+&lt;a href="#" class="badge badge-pill badge-secondary"&gt;Secondary&lt;/a&gt;
+&lt;a href="#" class="badge badge-pill badge-success"&gt;Success&lt;/a&gt;
+&lt;a href="#" class="badge badge-pill badge-danger"&gt;Danger&lt;/a&gt;
+&lt;a href="#" class="badge badge-pill badge-warning"&gt;Warning&lt;/a&gt;
+&lt;a href="#" class="badge badge-pill badge-info"&gt;Info&lt;/a&gt;
+&lt;a href="#" class="badge badge-pill badge-light"&gt;Light&lt;/a&gt;
+&lt;a href="#" class="badge badge-pill badge-dark"&gt;Dark&lt;/a&gt;</code></pre>
+</div>
+                </div>
+            </div>
+        </div>
+        <!-- //Containder -->
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/w3.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+
+    <!-- JS : service  -->
+    <script src="/static/js/service/common.js"></script>
+</body>
+
+</html>

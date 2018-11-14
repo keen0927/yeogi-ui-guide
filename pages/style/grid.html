@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/service/style.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div w3-include-html="/pages/layout/snb.html"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+            <h2 class="content-head">그리드</h2>
+            <div class="block mb-4">
+                <div class="block-head">그리드 설명</div>
+                <div class="block-content">
+                    기본적으로 12개의 칼럼을 갖고 있으며,<br>
+                    5개의 반응형 계층 (col, col-sm, col-md, col-lg, col-xl)이 있으며<br>
+                    <b class="text-danger">여기어때 UI에서는 기본적으로 col과 col-sm만 사용.</b> (col-md, mixin등 다른 계층을 혼합하여 사용해도 무관)
+                </div>
+            </div>
+            <div class="row m-0 mb-4">
+                <div class="col p-3 bd bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+                <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+            </div>
+
+<div class="bd">
+<pre><code class="html">// 꽉찬 그리드를 만들때 감싸는 row엘리먼트에 m-0 클래스를 추가하여 좌우 마진값을 초기화 시켜사용.
+// col 클래스를 선언 div가 총 12개이므로 가로값 100%를 12로 나눈값을 각 엘리먼트가 나누어 가진다.
+// border 클래스는 엘리먼트의 border를 추가해주고 첫 엘리먼트를 제외한 나머지 엘리먼트의 border-left-0은 중첩되는 보더를 삭제해준다.
+// 보더의 컬러값이며 border- 뒤에 primary, seconday 등 컬러를 변경할 수 있다.
+// bg-white 보더와 마찬가지로 bg- 뒤에 배경컬러를 변경할 수 있다.
+&lt;div class="row m-0"&gt;
+    &lt;div class="col p-3 bd bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+            <h2 class="content-head mt-5">기본 그리드</h2>
+            <p class="mb-4">전체 해상도에 기본 사용 기본적으로 숫자없이 col클래스를 추가하면 모든 칼럼은 동일한 폭이 된다.</p>
+            <div class="row">
+                <div class="col">
+                    <div class="text-center bd bg-white p-3">
+                        col
+                    </div>
+                </div>
+                <div class="col">
+                        <div class="text-center bd bg-white p-3">
+                        col
+                    </div>
+                </div>
+                <div class="col">
+                        <div class="text-center bd bg-white p-3">
+                        col
+                    </div>
+                </div>
+            </div>
+
+<div class="bd mt-4">
+<pre><code class="html">&lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="text-center bd bg-white p-3"&gt;
+            col
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="text-center bd bg-white p-3"&gt;
+            col
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+        &lt;div class="text-center bd bg-white p-3"&gt;
+            col
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+            <div class="row mt-5">
+                <div class="col-6">
+                    <div class="text-center bd bg-white p-3">
+                        col-6
+                    </div>
+                </div>
+                <div class="col-6">
+                        <div class="text-center bd bg-white p-3">
+                        col-6
+                    </div>
+                </div>
+            </div>
+
+<div class="bd mt-4">
+<pre><code class="html">&lt;div class="row"&gt;
+    &lt;div class="col-6"&gt;
+        &lt;div class="text-center bd bg-white p-3"&gt;
+            col-6
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-6"&gt;
+        &lt;div class="text-center bd bg-white p-3"&gt;
+            col-6
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+            <div class="row m-0 mt-5">
+                <div class="col-6 p-3 border bg-white text-center">col</div>
+                <div class="col-6 p-3 border border-left-0 bg-white text-center">col</div>
+            </div>
+
+<div class="bd mt-4">
+<pre><code class="html">&lt;div class="row m-0"&gt;
+    &lt;div class="col-6 p-3 border bg-white text-center"&gt;col&lt;/div&gt;
+    &lt;div class="col-6 p-3 border border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+            <h2 class="content-head mt-5">sm 그리드 576px 미만</h2>
+            <p class="mb-4">해상도 <b class="text-danger">576px미만</b> 일때 각 엘리먼트는 가로 100%로 변경됨.</p>
+            <div class="row">
+                <div class="col-sm-4 mb-4">
+                    <div class="text-center bd bg-white p-3">
+                        col-sm-4
+                    </div>
+                </div>
+                <div class="col-sm-4 mb-4">
+                        <div class="text-center bd bg-white p-3">
+                        col-sm-4
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                        <div class="text-center bd bg-white p-3">
+                        col-sm-4
+                    </div>
+                </div>
+            </div>
+
+<div class="bd">
+<pre><code class="html">&lt;div class="row"&gt;
+    &lt;div class="col-sm-4 mb-4"&gt;
+        &lt;div class="text-center bd bg-white p-3"&gt;
+            col-sm-4
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-4 mb-4"&gt;
+        &lt;div class="text-center bd bg-white p-3"&gt;
+            col-sm-4
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-4"&gt;
+        &lt;div class="text-center bd bg-white p-3"&gt;
+            col-sm-4
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+            <h2 class="content-head mt-5">마진 유틸리티</h2>
+            <p class="mb-4"><b class="text-danger">mr-auto</b> 같은 마진 유틸리티를 사용하여 칼럼을 서로 떨어뜨릴 수 있다.</p>
+            <div class="row m-0 mb-4">
+                <div class="col-4 text-center bd bg-white p-3">.col-4</div>
+                <div class="col-4 text-center bd bg-white p-3 ml-auto">.col-4 .ml-auto</div>
+            </div>
+            <div class="row m-0 mb-4">
+                <div class="col-3 text-center bd bg-white p-3 ml-auto">.col-3 .ml-auto</div>
+                <div class="col-3 text-center bd bg-white p-3 ml-auto">.col-3 .ml-auto</div>
+            </div>
+            <div class="row m-0">
+                <div class="col-auto text-center bd bg-white p-3 mr-auto">.col-auto .mr-auto</div>
+                <div class="col-auto text-center bd bg-white p-3">.col-auto</div>
+            </div>
+
+<div class="bd mt-4 mb-4">
+<pre><code class="html">&lt;div class="row m-0 mb-4"&gt;
+    &lt;div class="col-4 text-center bd bg-white p-3"&gt;.col-4&lt;/div&gt;
+    &lt;div class="col-4 text-center bd bg-white p-3 ml-auto"&gt;.col-4 .ml-auto&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row m-0 mb-4"&gt;
+    &lt;div class="col-3 text-center bd bg-white p-3 ml-auto"&gt;.col-3 .ml-auto&lt;/div&gt;
+    &lt;div class="col-3 text-center bd bg-white p-3 ml-auto"&gt;.col-3 .ml-auto&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row m-0"&gt;
+    &lt;div class="col-auto text-center bd bg-white p-3 mr-auto"&gt;.col-auto .mr-auto&lt;/div&gt;
+    &lt;div class="col-auto text-center bd bg-white p-3"&gt;.col-auto&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+        </div>
+        <!-- //Container -->
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/bootstrap.min.js"></script>
+    <script src="/static/js/library/w3.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+    <script src="/static/js/library/iscroll.js"></script>
+
+    <!-- JS : service  -->
+    <script src="../../static/js/service/common.js"></script>
+    <script>
+        // snbSelect('interface','color');
+    </script>
+</body>
+
+</html>

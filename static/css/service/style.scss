@@ -1,7 +1,7 @@
 /* 고딕체 */
 @import url('https://fonts.googleapis.com/css?family=Gothic+A1:400');
 
-/* 잘난체 */
+/* 잘난서체 */
 @font-face {
 	font-family: 'yg-jalnan';
 	src:  url('../../fonts/yg-jalnan.eot');
@@ -15,8 +15,8 @@
 /* Import CSS */
 @import "scss/_variables.scss"; // 변수
 @import "scss/_theme.scss"; // 테마
-@import "scss/_override.scss"; // 부트스트랩 오버라이드 스타일
 @import "scss/_icon-pack.scss"; // 아이콘 팩
+@import "scss/_override.scss"; // 부트스트랩 오버라이드 스타일
 @import "scss/_reset.scss"; // 리셋
 @import "scss/_layout.scss"; // 레이아웃
 @import "scss/_guide-style.scss"; // 가이드

@@ -1,8 +1,15 @@
 body {
-    background-color: #f7f9f6;
+    background-color: #f9fafb;
     font-family: 'Gothic A1';
     color: $black-87;
     line-height: 1.5;
+}
+
+div {
+    font-size: 14px;
+}
+
+.wrap {
     opacity: 0;
     transition: 0.3s;
     &.show {
@@ -13,7 +20,7 @@ body {
 h2.content-head {
     margin-bottom: 20px;
     padding: 15px 0 8px 0;
-    border-bottom: 1px solid #e7ede4;
+    border-bottom: 1px solid $border-default;
     font-size: 16px;
     @media (min-width: $break-point__desktop) {
         margin-bottom: 25px;
@@ -21,12 +28,18 @@ h2.content-head {
         font-size: 22px;
         letter-spacing: -1px;
     }
+    small {
+        font-size: 16px;
+        color: $color-secondary;
+    }
 }
-
+.bd {
+    border: 1px solid $border-default;
+}
 .block {
     margin-bottom: 14px;
+    border: 1px solid $border-default;
     background: #fff;
-    box-shadow: $shadow-type__default;
     @media (min-width: $break-point__desktop) {
         margin-bottom: 25px;
     }
@@ -239,7 +252,7 @@ nav {
         width: $snb-width;
         min-width: 0;
         left: 0;
-        box-shadow: $shadow-type__default;
+        border-right: 1px solid rgba(0,0,0,0.13);
     }
     .snb-scroll {
         position: absolute;
@@ -314,8 +327,9 @@ nav {
             i {
                 display: inline-block;
                 width: 16px;
-                vertical-align: top;
-                font-size: 13px;
+                margin-top: -1px;
+                vertical-align: middle;
+                font-size: 15px;
                 color: $black-36;
             }
             span {
@@ -418,7 +432,46 @@ header {
     }
 }
 
-/* 잘난체 */
+/* 잘난서체 */
 .font-jalnan {
     font-family: 'yg-jalnan';
+}
+
+/* 스피너 */
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    background-color: $color-secondary;
+    border-radius: 100%;
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+    opacity: 1;
+    transition: 0.5s;
+    &.hide {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes sk-scaleout {
+    0% { -webkit-transform: scale(0) }
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes sk-scaleout {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    } 100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+    }
 }
