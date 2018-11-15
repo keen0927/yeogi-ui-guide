@@ -172,6 +172,8 @@ window.onload = function() {
     },0);
 };
 
+
+
 // 토스트팝업
 var toastPopupShowing = false;
 
