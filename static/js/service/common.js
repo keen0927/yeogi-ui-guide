@@ -6,6 +6,21 @@ hljs.initHighlightingOnLoad();
 
 $(function(){
 
+    // SNB Active
+    var currentPath = location.pathname;
+
+    $('.snb li a').each(function(){
+        var $this = $(this);
+        if($this.attr('href').indexOf(currentPath) !== -1) {
+            if($this.hasClass('snb-sub')) {
+                $(this).parent().addClass('active');
+            } else {
+                $(this).parent().parent().parent().addClass('active');
+            }
+            $this.addClass('active');
+        }
+    });
+
     // SNB 열기
     setTimeout(function(){
         var buttonSnbOpen = $('.button-nav__open'),
@@ -13,12 +28,8 @@ $(function(){
         targetSnb = $('nav');
 
         buttonSnbOpen.click(function(){
-            console.log('클릭');
-
-
             targetSnb.addClass('active');
             if ($('body').hasClass('mobile')) {
-                console.log('mobile');
                 // 모바일
                 $('body').removeClass('desktop-snb-control');
             } else {
@@ -41,14 +52,14 @@ $(function(){
 
 // SNB 서브메뉴 오픈
 function snbSubMenuOpen() {
-    console.log('111');
     var snbList = $('.snb-main > li');
     snbList.each(function(){
         $(this).click(function(){
-            console.log('SNB클릭');
+            console.log('11');
             var childrenCheck = $(this).find('ul');
 
             if ($(this).hasClass('active')) {
+                console.log('22');
                 $(this).removeClass('active');
                 iscrollUpdate();
                 return;
@@ -57,6 +68,7 @@ function snbSubMenuOpen() {
             snbList.removeClass('active');
 
             if (childrenCheck.length > 0) {
+                console.log('33');
                 $(this).addClass('active');
                 iscrollUpdate();
             }
@@ -150,18 +162,14 @@ function fadeLoad() {
     },300);
 }
 
-// Default Init
-(function(){
+// ONLOAD Init
+window.onload = function() {
     setTimeout(function(){
         deviceControl(); // 해상도 컨트롤
         sideNavigationScrollRun(); // SNB 스크롤 효과
         snbSubMenuOpen(); // SNB 서브메뉴 오픈 효과
+        fadeLoad();
     },0);
-})();
-
-// ONLOAD Init
-window.onload = function() {
-    fadeLoad();
 };
 
 // 토스트팝업
