@@ -8,14 +8,21 @@ $(function(){
 
     // SNB Active
     var currentPath = location.pathname;
+    console.log(currentPath);
 
     $('.snb li a').each(function(){
         var $this = $(this);
         if($this.attr('href').indexOf(currentPath) !== -1) {
-            if($this.hasClass('snb-sub')) {
+            if ( currentPath == '/') {
+                $('.snb-main li').eq(0).addClass('active');
+                return;
+            }
+            if ($this.hasClass('snb-sub')) {
                 $(this).parent().addClass('active');
+                console.log('11');
             } else {
                 $(this).parent().parent().parent().addClass('active');
+                console.log('22');
             }
             $this.addClass('active');
         }
@@ -48,7 +55,6 @@ $(function(){
     },0)
 
 });
-
 
 // SNB 서브메뉴 오픈
 function snbSubMenuOpen() {
@@ -197,14 +203,6 @@ function toastPopup(text) {
     }
 }
 
-
-// function themeSetting(name) {
-//     var themeName = name || 'default';
-//     var getThemeName = $('body').attr('data-theme');
-//     console.log(themeName);
-//     console.log(getThemeName);
-
-// }
 // 테마 변경 (UI용)
 $(function(){
     $('button[data-theme-change]').click(function(){
@@ -225,4 +223,3 @@ var themeControl = {
         $('body').addClass('theme-'+theme);
     }
 }
-// themeControl.set('blue');
