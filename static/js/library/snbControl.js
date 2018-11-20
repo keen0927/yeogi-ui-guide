@@ -69,6 +69,21 @@ var snbMake = (function() {
         },
         {
             "route": "#none",
+            "name": "레이아웃",
+            "icon": "icon-outline-insert_photo-24px",
+            "childrenMenu": [
+                {
+                    "route": "/pages/layout/snbIntroduce",
+                    "name": "기본 페이지",
+                },
+                {
+                    "route": "/pages/layout/snbIntroduce",
+                    "name": "사이드 네비게이션",
+                }
+            ]
+        },
+        {
+            "route": "#none",
             "name": "플러그인",
             "icon": "icon-outline-radio_button_checked-24px",
             "childrenMenu": [
@@ -81,11 +96,11 @@ var snbMake = (function() {
                     "name": "Validation",
                 },
                 {
-                    "route": "/pages/plugin/Swiper.html",
+                    "route": "/pages/plugin/swiper.html",
                     "name": "Swiper.js",
                 },
                 {
-                    "route": "/pages/plugin/Dropzone.html",
+                    "route": "/pages/plugin/dropzone.html",
                     "name": "Dropzone.js",
                 },
             ]
@@ -93,7 +108,7 @@ var snbMake = (function() {
         {
             "snbSubTitle": "페이지",
             "route": "#none",
-            "name": "Authentication",
+            "name": "회원가입",
             "icon": "icon-outline-lock-24px",
             "childrenMenu": [
                 {
@@ -168,10 +183,8 @@ var snbMake = (function() {
                 for ( e = 0 ; e < subListLength ; e ++) {
 
                     if ( snbList[i].childrenMenu[e].blank == true) {
-                        console.log('11');
                         subMenuHTML += '<li><a href="' +  snbList[i].childrenMenu[e].route  +'" target="_blank">' + snbList[i].childrenMenu[e].name + '</a></li>';
                     } else {
-                        console.log('22');
                         subMenuHTML += '<li><a href="' +  snbList[i].childrenMenu[e].route  +'">' + snbList[i].childrenMenu[e].name + '</a></li>';
                     }
                 }
@@ -187,21 +200,41 @@ var snbMake = (function() {
 
 })();
 
-// SNB Active
-var currentPath = location.pathname;
+$(function(){
 
-$('.snb li > a').each(function(){
-    var $this = $(this);
-    if($this.attr('href').indexOf(currentPath) !== -1) {
-        if ( currentPath == '/') {
-            $('.snb-main li').eq(0).addClass('active');
-            return;
+    // SNB Active
+    var currentPath = location.pathname;
+
+    $('.snb li > a').each(function(){
+        var $this = $(this);
+        if($this.attr('href').indexOf(currentPath) !== -1) {
+            if ( currentPath == '/') {
+                $('.snb-main li').eq(0).addClass('active');
+                return;
+            }
+            if ($this.hasClass('snb-sub')) {
+                $(this).parent().addClass('active');
+            } else {
+                $(this).parent().parent().parent().addClass('active');
+            }
+            $this.addClass('active');
         }
-        if ($this.hasClass('snb-sub')) {
-            $(this).parent().addClass('active');
-        } else {
-            $(this).parent().parent().parent().addClass('active');
+    });
+
+    $('body').on('click','.snb-main > li > a',function(e){
+        if ($(this).parent().hasClass('snb-main-list')) {
+
+            if ($(this).parent().hasClass('active')) {
+                $(this).parent().removeClass('active');
+            } else {
+                $('.snb-main-list.active').removeClass('active');
+                $(this).parent().addClass('active');
+            }
         }
-        $this.addClass('active');
-    }
+    });
+
+    $('body').on('click','.snb-main-list p',function(e){
+        e.preventDefault();
+    });
+
 });

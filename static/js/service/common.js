@@ -1,8 +1,6 @@
 // 코드 하이라이트
 hljs.initHighlightingOnLoad();
 
-
-
 $(function(){
 
     // SNB 열기
@@ -31,7 +29,7 @@ $(function(){
         });
     },0)
 
-
+    // 코드 카피
     $('.button-copy').click(function(){
         $(this).next().select();
         document.execCommand('copy');
@@ -39,16 +37,6 @@ $(function(){
     });
 });
 
-// SNB 서브메뉴 오픈
-function snbSubMenuOpen() {
-    $('body').on('click','.snb-main-list',function(){
-        if ($(this).find('ul')) {
-            $('.snb-sub.active').parent().removeClass('active');
-            $('.snb-main-list.active').removeClass('active');
-            $(this).addClass('active');
-        }
-    });
-}
 // Iscroll
 var sideNavigationScroll;
 
@@ -126,8 +114,6 @@ function fadeLoad() {
 window.onload = function() {
     deviceControl(); // 해상도 컨트롤
     sideNavigationScrollRun(); // SNB 스크롤 효과
-    snbSubMenuOpen(); // SNB 서브메뉴 오픈 효과
-    codeCopy(); // 코드 카피
     fadeLoad();
 };
 
@@ -173,20 +159,4 @@ var themeControl = {
     set: function(theme) {
         $('body').addClass('theme-'+theme);
     }
-}
-
-function codeCopy() {
-    $('code.html').each(function(){
-        // var buttonCopy = '<button type="button" class="button-copy">Copy</button><input type="text" class="copy-input" value="">';
-        // $(this).append(buttonCopy);
-
-        // $('.button-copy',this).click(function(){
-        //     var thisCode = $(this).parent().text();
-        //     var targetInput = $(this).next();
-        //     targetInput.attr('value',thisCode);
-        //     targetInput.select();
-        //     document.execCommand('copy');
-        //     toastPopup('복사 되었습니다.');
-        // });
-    });
 }
