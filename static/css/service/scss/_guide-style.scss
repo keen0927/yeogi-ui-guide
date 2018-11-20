@@ -103,6 +103,7 @@
 }
 
 .code-copy {
+    display: none;
     position: relative;
     .button-copy {
         position: absolute;
@@ -116,5 +117,26 @@
         position: absolute;
         top: -9999px;
         opacity: 0;
+    }
+}
+.button-code-toggle {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    margin: -9px 0 0 0;
+    background: none;
+    font-size: 18px;
+    color: $black-72;
+    vertical-align: top;
+    &.show {
+        color: $color-danger;
+    }
+    &.button-code-toggle__fullpage {
+        right: 18px;
+        top: 48px;
+        z-index: 100;
     }
 }

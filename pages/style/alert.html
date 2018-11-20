@@ -59,6 +59,9 @@
             <div class="block">
                 <div class="block-head">
                     경고, 알림 기본형
+                    <button type="button" class="button-code-toggle" data-name="code-1">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
                 </div>
                 <div class="block-content">
                     <div class="alert alert-primary p-3" role="alert">primary 알림창.</div>
@@ -69,7 +72,7 @@
                     <div class="alert alert-info p-3" role="alert">info 알림창.</div>
                     <div class="alert alert-light p-3" role="alert">light 알림창.</div>
                     <div class="alert alert-dark p-3" role="alert">dark 알림창.</div>
-<div class="code-copy">
+<div class="code-copy" data-name="code-1">
 <pre><code class="html">&lt;div class="alert alert-primary" role="alert"&gt;primary 알림창.&lt;/div&gt;
 &lt;div class="alert alert-secondary" role="alert"&gt;secondary 알림창.&lt;/div&gt;
 &lt;div class="alert alert-success" role="alert"&gt;success 알림창.&lt;/div&gt;
@@ -96,10 +99,13 @@
             <div class="block">
                 <div class="block-head">
                     경고, 알림 링크형
+                    <button type="button" class="button-code-toggle" data-name="code-2">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
                 </div>
                 <div class="block-content">
                         <div class="alert alert-primary p-3" role="alert">primary <a href="#" class="">링크</a> 알림창.</div>
-<div class="code-copy mb-6">
+<div class="code-copy mb-6" data-name="code-2">
 <pre><code class="html">&lt;div class="alert alert-primary p-3" role="alert"&gt;primary &lt;a href="#" class=""&gt;링크&lt;/a&gt; 알림창.&lt;/div&gt;</code></pre>
 <button type="button" class="button-copy">Copy</button>
 <textarea class="textarea-copy">
@@ -110,7 +116,12 @@
             </div>
 
             <div class="block">
-                <div class="block-head">경고, 알림 추가텍스트</div>
+                <div class="block-head">
+                    경고, 알림 추가텍스트
+                    <button type="button" class="button-code-toggle" data-name="code-3">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
+                </div>
                 <div class="block-content">
                     <div class="alert alert-success" role="alert">
                         <h4 class="mb-2 alert-heading">제목</h4>
@@ -118,7 +129,7 @@
                         <hr>
                         <p class="mb-0">하단 텍스트가 들어갑니다.</p>
                     </div>
-<div class="code-copy">
+<div class="code-copy" data-name="code-3">
 <pre><code class="html">&lt;div class="alert alert-success" role="alert"&gt;
     &lt;h4 class="mb-2 alert-heading"&gt;제목&lt;/h4&gt;
     &lt;p&gt;중요한 문구를 보여줍니다.&lt;/p&gt;&lt;hr&gt;&lt;p class="mb-0"&gt;하단 텍스트가 들어갑니다.&lt;/p&gt;
@@ -135,7 +146,12 @@
             </div>
 
             <div class="block">
-                <div class="block-head">경고, 알림 닫기</div>
+                <div class="block-head">
+                    경고, 알림 닫기
+                    <button type="button" class="button-code-toggle" data-name="code-4">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
+                </div>
                 <div class="block-content">
                     <p>alert 자바스크립트 플러그인을 사용하여 인라인에서 알림을 해제 할 수 있다.</p>
                     <ul class="mt-4 mb-4">
@@ -149,7 +165,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-<div class="code-copy">
+<div class="code-copy" data-name="code-4">
 <pre><code class="html">&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
 닫기 버튼을 누르면 사라집니다.
     &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;

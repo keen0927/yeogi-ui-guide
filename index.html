@@ -65,10 +65,13 @@
             <div class="block">
                 <div class="block-head">
                     CSS
+                    <button type="button" class="button-code-toggle" data-name="code-1">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
                 </div>
                 <div class="block-content">
-                    <p class="mb-4">CSS를 로드하기 위해 아래의 코드를 <b class="text-danger">&lt;head&gt;</b>의 타 CSS보다 상위에 위치하게 붙여넣기 하세요.</p>
-<div class="code-copy">
+                    <p>CSS를 로드하기 위해 아래의 코드를 <b class="text-danger">&lt;head&gt;</b>의 타 CSS보다 상위에 위치하게 붙여넣기 하세요.</p>
+<div class="code-copy mt-4" data-name="code-1">
 <pre><code class="html">&lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/bootstrap.min.css"&gt;
 &lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css"&gt;
 </code></pre>
@@ -83,11 +86,14 @@
             <div class="block">
                 <div class="block-head">
                     JS
+                    <button type="button" class="button-code-toggle" data-name="code-2">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
                 </div>
                 <div class="block-content">
-                    <p class="mb-4">플러그인들은 <b class="text-danger">Javascript</b>를 사용해야 작동합니다. 기본적으로 jQuery, Popper.js 및 자체 자바스크립트 플러그인이 필요합니다.<br>
+                    <p>플러그인들은 <b class="text-danger">Javascript</b>를 사용해야 작동합니다. 기본적으로 jQuery, Popper.js 및 자체 자바스크립트 플러그인이 필요합니다.<br>
                     아래의 script를 <b class="text-danger">&lt;body&gt;</b>태그 바로 앞에 붙여 넣기 해주세요. 순서는 아래와 같이 배치 해야 정상 작동 합니다.</p>
-<div class="code-copy">
+<div class="code-copy mt-4" data-name="code-2">
 <pre><code class="html">// 라이브러리
 &lt;script src="https://static.goodchoice.kr/static/ui/js/library/jquery-3.3.1.min.js"&gt;&lt;/script&gt;
 &lt;script src="https://static.goodchoice.kr/static/ui/js/library/popper.min.js"&gt;&lt;/script&gt;
@@ -117,13 +123,16 @@
             <div class="block">
                 <div class="block-head">
                     기본 템플릿
+                    <button type="button" class="button-code-toggle" data-name="code-3">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
                 </div>
                 <div class="block-content">
-                    <p class="mb-4">
+                    <p>
                         다음은 HTML5 기본 템플릿을 적용한 샘플 페이지 입니다.
                         <!-- TODO: 아래 코드의 확인작업이 필요합니다. opacity:0 관련 -->
                     </p>
-<div class="code-copy">
+<div class="code-copy mt-4" data-name="code-3">
 <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 
@@ -132,7 +141,7 @@
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
     &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
     &lt;title&gt;여기어때 - 표준 템플릿 가이드&lt;/title&gt;
-    &lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/bootstrap.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/bootstrap.min.css"&gt;
     &lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css"&gt;
 &lt;/head&gt;
 
@@ -161,44 +170,6 @@
 &lt;/html&gt;
 
 </code></pre>
-<button type="button" class="button-copy">Copy</button>
-<textarea class="textarea-copy">
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>여기어때 - 표준 템플릿 가이드</title>
-    <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/bootstrap.min.css">
-    <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css">
-</head>
-
-<body>
-
-    <!-- Wrap -->
-    <div class="wrap">
-
-        <!-- Container -->
-        <div class="container">
-
-            Hello, World!
-
-        </div>
-        <!-- //Container -->
-
-    </div>
-    <!-- //Wrap -->
-
-    <!-- JS : library  -->
-    <script src="https://static.goodchoice.kr/static/ui/js/library/jquery-3.3.1.min.js"></script>
-    <script src="https://static.goodchoice.kr/static/ui/js/library/popper.min.js"></script>
-    <script src="https://static.goodchoice.kr/static/ui/js/library/bootstrap.min.js"></script>
-</body>
-
-</html>
-</textarea>
 </div>
                 </div>
             </div>

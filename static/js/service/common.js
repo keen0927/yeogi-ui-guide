@@ -35,6 +35,31 @@ $(function(){
         document.execCommand('copy');
         toastPopup('복사 되었습니다.');
     });
+
+    // 코드 보여주기
+    $('.button-code-toggle').each(function(){
+        $(this).click(function(){
+            if ($(this).hasClass('button-code-toggle__all')) {
+                if ($(this).hasClass('show')) {
+                    $(this).removeClass('show');
+                    $('.code-copy').fadeOut(250);
+                } else {
+                    $(this).addClass('show');
+                    $('.code-copy').fadeIn(250);
+                }
+            } else {
+                var thisData = $(this).attr('data-name');
+
+                if ($(this).hasClass('show')) {
+                    $('.code-copy[data-name="' + thisData +'"]').fadeOut(250);
+                    $(this).removeClass('show');
+                } else {
+                    $('.code-copy[data-name="' + thisData +'"]').fadeIn(250);
+                    $(this).addClass('show');
+                }
+            }
+        });
+    });
 });
 
 // Iscroll
@@ -114,7 +139,7 @@ function fadeLoad() {
 window.onload = function() {
     deviceControl(); // 해상도 컨트롤
     sideNavigationScrollRun(); // SNB 스크롤 효과
-    fadeLoad();
+    fadeLoad(); // 화면 Show
 };
 
 // 토스트팝업

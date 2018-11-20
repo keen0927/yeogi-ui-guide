@@ -58,23 +58,397 @@
             <h2 class="content-head">테이블</h2>
             <div class="block">
                 <div class="block-head">
-                    기본 HTML 테이블
+                    기본형
+                    <button type="button" class="button-code-toggle" data-name="code-1">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
                 </div>
                 <div class="block-content">
-                    <table>
-                        <tr>
-                            <th>제목1</th>
-                            <th>제목2</th>
-                            <th>제목3</th>
-                            <th>제목4</th>
-                        </tr>
-                        <tr>
-                            <td>내용1</td>
-                            <td>내용2</td>
-                            <td>내용3</td>
-                            <td>내용4</td>
-                        </tr>
+                    <p class="mb-4"><b class="text-danger">table</b>태그에 클래스 <b class="text-danger">table</b> 추가하여 사용</p>
+                    <table class="table">
+                        <colgroup>
+                            <col width="50px">
+                            <col width="35%">
+                            <col width="35%">
+                            <col width="">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>이름</th>
+                                <th>날짜</th>
+                                <th>아이콘</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>가나다</td>
+                                <td>가나다 1</td>
+                                <td><span class="badge badge-primary">Primary</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>가나다</td>
+                                <td>가나다 2</td>
+                                <td><span class="badge badge-primary">Primary</span></td>
+                            </tr>
+                        </tbody>
                     </table>
+<div class="code-copy" data-name="code-1">
+<pre><code class="html">&lt;table class="table"&gt;
+    &lt;colgroup&gt;
+        &lt;col width="50px"&gt;
+        &lt;col width="35%"&gt;
+        &lt;col width="35%"&gt;
+        &lt;col width=""&gt;
+    &lt;/colgroup&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;/th&gt;
+            &lt;th&gt;이름&lt;/th&gt;
+            &lt;th&gt;날짜&lt;/th&gt;
+            &lt;th&gt;아이콘&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;가나다&lt;/td&gt;
+            &lt;td&gt;가나다 1&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;가나다&lt;/td&gt;
+            &lt;td&gt;가나다 2&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<table class="table">
+    <colgroup>
+        <col width="50px">
+        <col width="35%">
+        <col width="35%">
+        <col width="">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>이름</th>
+            <th>날짜</th>
+            <th>아이콘</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>가나다</td>
+            <td>가나다 1</td>
+            <td><span class="badge badge-primary">Primary</span></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>가나다</td>
+            <td>가나다 2</td>
+            <td><span class="badge badge-primary">Primary</span></td>
+        </tr>
+    </tbody>
+</table>
+</textarea>
+</div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="block-head">
+                    스트라이프 테이블
+                    <button type="button" class="button-code-toggle" data-name="code-2">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
+                </div>
+                <div class="block-content">
+                    <p class="mb-4"><b class="text-danger">table</b>태그에 클래스 <b class="text-danger">table</b>과 <b class="text-danger">table-striped</b> 추가하여 사용</p>
+                    <table class="table table-striped">
+                        <colgroup>
+                            <col width="50px">
+                            <col width="35%">
+                            <col width="35%">
+                            <col width="">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>이름</th>
+                                <th>날짜</th>
+                                <th>아이콘</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>가나다</td>
+                                <td>가나다 1</td>
+                                <td><span class="badge badge-primary">Primary</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>가나다</td>
+                                <td>가나다 2</td>
+                                <td><span class="badge badge-info">info</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>가나다</td>
+                                <td>가나다 3</td>
+                                <td><span class="badge badge-success">success</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>가나다</td>
+                                <td>가나다 4</td>
+                                <td><span class="badge badge-secondary">secondary</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+<div class="code-copy" data-name="code-2">
+<pre><code class="html">&lt;table class="table table-striped"&gt;
+    &lt;colgroup&gt;
+        &lt;col width="50px"&gt;
+        &lt;col width="35%"&gt;
+        &lt;col width="35%"&gt;
+        &lt;col width=""&gt;
+    &lt;/colgroup&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;/th&gt;
+            &lt;th&gt;이름&lt;/th&gt;
+            &lt;th&gt;날짜&lt;/th&gt;
+            &lt;th&gt;아이콘&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;가나다&lt;/td&gt;
+            &lt;td&gt;가나다 1&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;가나다&lt;/td&gt;
+            &lt;td&gt;가나다 2&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge badge-info"&gt;info&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;가나다&lt;/td&gt;
+            &lt;td&gt;가나다 3&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge badge-success"&gt;success&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;4&lt;/td&gt;
+            &lt;td&gt;가나다&lt;/td&gt;
+            &lt;td&gt;가나다 4&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge badge-secondary"&gt;secondary&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<table class="table table-striped">
+    <colgroup>
+        <col width="50px">
+        <col width="35%">
+        <col width="35%">
+        <col width="">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>이름</th>
+            <th>날짜</th>
+            <th>아이콘</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>가나다</td>
+            <td>가나다 1</td>
+            <td><span class="badge badge-primary">Primary</span></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>가나다</td>
+            <td>가나다 2</td>
+            <td><span class="badge badge-info">info</span></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>가나다</td>
+            <td>가나다 3</td>
+            <td><span class="badge badge-success">success</span></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>가나다</td>
+            <td>가나다 4</td>
+            <td><span class="badge badge-secondary">secondary</span></td>
+        </tr>
+    </tbody>
+</table>
+</textarea>
+</div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="block-head">
+                    호버 테이블
+                    <button type="button" class="button-code-toggle" data-name="code-3">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
+                </div>
+                <div class="block-content">
+                    <p class="mb-4"><b class="text-danger">table</b>태그에 클래스 <b class="text-danger">table</b>과 <b class="text-danger">table-hover</b> 추가하여 사용</p>
+                    <table class="table table-hover">
+                        <colgroup>
+                            <col width="50px">
+                            <col width="35%">
+                            <col width="35%">
+                            <col width="">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>이름</th>
+                                <th>날짜</th>
+                                <th>아이콘</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>가나다</td>
+                                <td>가나다 1</td>
+                                <td><span class="badge badge-primary">Primary</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>가나다</td>
+                                <td>가나다 2</td>
+                                <td><span class="badge badge-info">info</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>가나다</td>
+                                <td>가나다 3</td>
+                                <td><span class="badge badge-success">success</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>가나다</td>
+                                <td>가나다 4</td>
+                                <td><span class="badge badge-secondary">secondary</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+<div class="code-copy" data-name="code-3">
+<pre><code class="html">&lt;table class="table table-hover"&gt;
+    &lt;colgroup&gt;
+        &lt;col width="50px"&gt;
+        &lt;col width="35%"&gt;
+        &lt;col width="35%"&gt;
+        &lt;col width=""&gt;
+    &lt;/colgroup&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;/th&gt;
+            &lt;th&gt;이름&lt;/th&gt;
+            &lt;th&gt;날짜&lt;/th&gt;
+            &lt;th&gt;아이콘&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;가나다&lt;/td&gt;
+            &lt;td&gt;가나다 1&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;가나다&lt;/td&gt;
+            &lt;td&gt;가나다 2&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge badge-info"&gt;info&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;3&lt;/td&gt;
+            &lt;td&gt;가나다&lt;/td&gt;
+            &lt;td&gt;가나다 3&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge badge-success"&gt;success&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;4&lt;/td&gt;
+            &lt;td&gt;가나다&lt;/td&gt;
+            &lt;td&gt;가나다 4&lt;/td&gt;
+            &lt;td&gt;&lt;span class="badge badge-secondary"&gt;secondary&lt;/span&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<table class="table table-hover">
+    <colgroup>
+        <col width="50px">
+        <col width="35%">
+        <col width="35%">
+        <col width="">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>이름</th>
+            <th>날짜</th>
+            <th>아이콘</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>가나다</td>
+            <td>가나다 1</td>
+            <td><span class="badge badge-primary">Primary</span></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>가나다</td>
+            <td>가나다 2</td>
+            <td><span class="badge badge-info">info</span></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>가나다</td>
+            <td>가나다 3</td>
+            <td><span class="badge badge-success">success</span></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>가나다</td>
+            <td>가나다 4</td>
+            <td><span class="badge badge-secondary">secondary</span></td>
+        </tr>
+    </tbody>
+</table>
+</textarea>
+</div>
                 </div>
             </div>
         </div>

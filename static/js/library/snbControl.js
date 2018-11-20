@@ -149,7 +149,7 @@ var snbMake = (function() {
 
     // 기본 레이아웃
     var html = '<nav><div class="snb-scroll">';
-        html += '<h1><a href="/index.html" class="logo">여기어때<span>UI 가이드</span></h1>';
+        html += '<h1><a href="/index.html" class="logo">여기어때<span>UI 가이드</span><em>ver Beta.</em></a></h1>';
         html += '<button type="button" class="button-nav__close"><i class="icon-outline-clear-24px"></i><span>닫기</span></button>';
         html += '<div class="snb"><ul class="snb-main"></ul></div>';
         html += '</div></nav>';
