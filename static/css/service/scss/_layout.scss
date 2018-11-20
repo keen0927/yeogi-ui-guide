@@ -327,7 +327,7 @@ nav {
             i {
                 display: inline-block;
                 width: 16px;
-                margin-top: -1px;
+                margin-top: -2px;
                 vertical-align: middle;
                 font-size: 15px;
                 color: $black-36;
@@ -361,6 +361,10 @@ nav {
                 li {
                     a {
                         padding-left: 46px;
+                        &:hover {
+                            background: rgba(0,0,0,0.08);
+                            transition: 0.7s;
+                        }
                     }
                 }
             }
@@ -369,12 +373,12 @@ nav {
                 a {
                     color: $black-48;
                     &.active {
-                        font-weight: bold;
+                        // font-weight: bold;
                         color: $black-72;
                     }
                 }
                 > a {
-                    font-weight: bold;
+                    color: $color-success !important;
                     i {
                         color: $color-success;
                     }
@@ -384,6 +388,9 @@ nav {
                     top: 0;
                     padding: 15px 0;
                     opacity: 1;
+                    .active {
+                        font-weight: bold;
+                    }
                 }
                 .snb-sub {
                     span {

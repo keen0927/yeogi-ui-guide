@@ -18,7 +18,7 @@
     <div class="wrap">
 
         <!-- SNB -->
-        <div w3-include-html="/pages/layout/snb.html"></div>
+        <div id="snb"></div>
 
         <!-- Header -->
         <header>
@@ -79,7 +79,7 @@
                 <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
             </div>
 
-<div class="bd">
+<div class="code-copy">
 <pre><code class="html">// 꽉찬 그리드를 만들때 감싸는 row엘리먼트에 m-0 클래스를 추가하여 좌우 마진값을 초기화 시켜사용.
 // col 클래스를 선언 div가 총 12개이므로 가로값 100%를 12로 나눈값을 각 엘리먼트가 나누어 가진다.
 // border 클래스는 엘리먼트의 border를 추가해주고 첫 엘리먼트를 제외한 나머지 엘리먼트의 border-left-0은 중첩되는 보더를 삭제해준다.
@@ -100,6 +100,23 @@
     &lt;div class="col p-3 bd border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div class="row m-0">
+    <div class="col p-3 bd bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+    <div class="col p-3 bd border-left-0 bg-white text-center">col</div>
+</div>
+</textarea>
 </div>
 
             <h2 class="content-head mt-5">기본 그리드</h2>
@@ -122,7 +139,7 @@
                 </div>
             </div>
 
-<div class="bd mt-4">
+<div class="code-copy mt-4">
 <pre><code class="html">&lt;div class="row"&gt;
     &lt;div class="col"&gt;
         &lt;div class="text-center bd bg-white p-3"&gt;
@@ -141,6 +158,26 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div class="row">
+    <div class="col">
+        <div class="text-center bd bg-white p-3">
+            col
+        </div>
+    </div>
+    <div class="col">
+        <div class="text-center bd bg-white p-3">
+            col
+        </div>
+    </div>
+    <div class="col">
+        <div class="text-center bd bg-white p-3">
+            col
+        </div>
+    </div>
+</div>
+</textarea>
 </div>
 
             <div class="row mt-5">
@@ -156,7 +193,7 @@
                 </div>
             </div>
 
-<div class="bd mt-4">
+<div class="code-copy mt-4">
 <pre><code class="html">&lt;div class="row"&gt;
     &lt;div class="col-6"&gt;
         &lt;div class="text-center bd bg-white p-3"&gt;
@@ -170,6 +207,21 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div class="row">
+    <div class="col-6">
+        <div class="text-center bd bg-white p-3">
+            col-6
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="text-center bd bg-white p-3">
+            col-6
+        </div>
+    </div>
+</div>
+</textarea>
 </div>
 
             <div class="row m-0 mt-5">
@@ -177,12 +229,19 @@
                 <div class="col-6 p-3 border border-left-0 bg-white text-center">col</div>
             </div>
 
-<div class="bd mt-4">
+<div class="code-copy mt-4">
 <pre><code class="html">&lt;div class="row m-0"&gt;
     &lt;div class="col-6 p-3 border bg-white text-center"&gt;col&lt;/div&gt;
     &lt;div class="col-6 p-3 border border-left-0 bg-white text-center"&gt;col&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div class="row m-0">
+    <div class="col-6 p-3 border bg-white text-center">col</div>
+    <div class="col-6 p-3 border border-left-0 bg-white text-center">col</div>
+</div>
+</textarea>
 </div>
 
             <h2 class="content-head mt-5">sm 그리드 576px 미만</h2>
@@ -205,7 +264,7 @@
                 </div>
             </div>
 
-<div class="bd">
+<div class="code-copy">
 <pre><code class="html">&lt;div class="row"&gt;
     &lt;div class="col-sm-4 mb-4"&gt;
         &lt;div class="text-center bd bg-white p-3"&gt;
@@ -224,6 +283,26 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div class="row">
+    <div class="col-sm-4 mb-4">
+        <div class="text-center bd bg-white p-3">
+            col-sm-4
+        </div>
+    </div>
+    <div class="col-sm-4 mb-4">
+        <div class="text-center bd bg-white p-3">
+            col-sm-4
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="text-center bd bg-white p-3">
+            col-sm-4
+        </div>
+    </div>
+</div>
+</textarea>
 </div>
 
             <h2 class="content-head mt-5">마진 유틸리티</h2>
@@ -241,7 +320,7 @@
                 <div class="col-auto text-center bd bg-white p-3">.col-auto</div>
             </div>
 
-<div class="bd mt-4 mb-4">
+<div class="code-copy mt-4 mb-4">
 <pre><code class="html">&lt;div class="row m-0 mb-4"&gt;
     &lt;div class="col-4 text-center bd bg-white p-3"&gt;.col-4&lt;/div&gt;
     &lt;div class="col-4 text-center bd bg-white p-3 ml-auto"&gt;.col-4 .ml-auto&lt;/div&gt;
@@ -255,6 +334,21 @@
     &lt;div class="col-auto text-center bd bg-white p-3"&gt;.col-auto&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div class="row m-0 mb-4">
+    <div class="col-4 text-center bd bg-white p-3">.col-4</div>
+    <div class="col-4 text-center bd bg-white p-3 ml-auto">.col-4 .ml-auto</div>
+</div>
+<div class="row m-0 mb-4">
+    <div class="col-3 text-center bd bg-white p-3 ml-auto">.col-3 .ml-auto</div>
+    <div class="col-3 text-center bd bg-white p-3 ml-auto">.col-3 .ml-auto</div>
+</div>
+<div class="row m-0">
+    <div class="col-auto text-center bd bg-white p-3 mr-auto">.col-auto .mr-auto</div>
+    <div class="col-auto text-center bd bg-white p-3">.col-auto</div>
+</div>
+</textarea>
 </div>
         </div>
         <!-- //Container -->
@@ -268,9 +362,9 @@
     <script src="/static/js/library/jquery-3.3.1.min.js"></script>
     <script src="/static/js/library/popper.min.js"></script>
     <script src="/static/js/library/bootstrap.min.js"></script>
-    <script src="/static/js/library/w3.js"></script>
     <script src="/static/js/library/highlight.pack.js"></script>
     <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/library/snbControl.js"></script>
 
     <!-- JS : service  -->
     <script src="../../static/js/service/common.js"></script>

@@ -18,7 +18,7 @@
     <div class="wrap">
 
         <!-- SNB -->
-        <div w3-include-html="/pages/layout/snb.html"></div>
+        <div id="snb"></div>
 
         <!-- Header -->
         <header>
@@ -69,7 +69,7 @@
                     <div class="alert alert-info p-3" role="alert">info 알림창.</div>
                     <div class="alert alert-light p-3" role="alert">light 알림창.</div>
                     <div class="alert alert-dark p-3" role="alert">dark 알림창.</div>
-<div class="shadow-box">
+<div class="code-copy">
 <pre><code class="html">&lt;div class="alert alert-primary" role="alert"&gt;primary 알림창.&lt;/div&gt;
 &lt;div class="alert alert-secondary" role="alert"&gt;secondary 알림창.&lt;/div&gt;
 &lt;div class="alert alert-success" role="alert"&gt;success 알림창.&lt;/div&gt;
@@ -78,6 +78,17 @@
 &lt;div class="alert alert-info" role="alert"&gt;info 알림창.&lt;/div&gt;
 &lt;div class="alert alert-light" role="alert"&gt;light 알림창.&lt;/div&gt;
 &lt;div class="alert alert-dark" role="alert"&gt;dark 알림창.&lt;/div&gt;</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div class="alert alert-primary" role="alert">primary 알림창.</div>
+<div class="alert alert-secondary" role="alert">secondary 알림창.</div>
+<div class="alert alert-success" role="alert">success 알림창.</div>
+<div class="alert alert-danger" role="alert">danger 알림창.</div>
+<div class="alert alert-warning" role="alert">warning 알림창.</div>
+<div class="alert alert-info" role="alert">info 알림창.</div>
+<div class="alert alert-light" role="alert">light 알림창.</div>
+<div class="alert alert-dark" role="alert">dark 알림창.</div>
+</textarea>
 </div>
                 </div>
             </div>
@@ -88,8 +99,12 @@
                 </div>
                 <div class="block-content">
                         <div class="alert alert-primary p-3" role="alert">primary <a href="#" class="">링크</a> 알림창.</div>
-<div class="shadow-box mb-6">
+<div class="code-copy mb-6">
 <pre><code class="html">&lt;div class="alert alert-primary p-3" role="alert"&gt;primary &lt;a href="#" class=""&gt;링크&lt;/a&gt; 알림창.&lt;/div&gt;</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div class="alert alert-primary p-3" role="alert">primary <a href="#" class="">링크</a> 알림창.</div>
+</textarea>
 </div>
                 </div>
             </div>
@@ -103,11 +118,18 @@
                         <hr>
                         <p class="mb-0">하단 텍스트가 들어갑니다.</p>
                     </div>
-<div class="shadow-box">
+<div class="code-copy">
 <pre><code class="html">&lt;div class="alert alert-success" role="alert"&gt;
     &lt;h4 class="mb-2 alert-heading"&gt;제목&lt;/h4&gt;
     &lt;p&gt;중요한 문구를 보여줍니다.&lt;/p&gt;&lt;hr&gt;&lt;p class="mb-0"&gt;하단 텍스트가 들어갑니다.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div class="alert alert-success" role="alert">
+    <h4 class="mb-2 alert-heading">제목</h4>
+    <p>중요한 문구를 보여줍니다.</p><hr><p class="mb-0">하단 텍스트가 들어갑니다.</p>
+</div>
+</textarea>
 </div>
                 </div>
             </div>
@@ -127,13 +149,22 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-<div class="shadow-box">
+<div class="code-copy">
 <pre><code class="html">&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
 닫기 버튼을 누르면 사라집니다.
     &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;
     &lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
     &lt;/button&gt;
 &lt;/div&gt;</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    닫기 버튼을 누르면 사라집니다.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
+</div>
+</textarea>
 </div>
                 </div>
             </div>
@@ -151,10 +182,10 @@
     <script src="/static/js/library/jquery-3.3.1.min.js"></script>
     <script src="/static/js/library/popper.min.js"></script>
     <script src="/static/js/library/bootstrap.min.js"></script>
-    <script src="/static/js/library/w3.js"></script>
     <script src="/static/js/library/highlight.pack.js"></script>
     <script src="/static/js/library/iscroll.js"></script>
     <script src="/static/js/library/datatables.js"></script>
+    <script src="/static/js/library/snbControl.js"></script>
 
     <!-- JS : service  -->
     <script src="/static/js/service/common.js"></script>

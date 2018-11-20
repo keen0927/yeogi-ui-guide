@@ -18,7 +18,7 @@
     <div class="wrap">
 
         <!-- SNB -->
-        <div w3-include-html="/pages/layout/snb.html"></div>
+        <div id="snb"></div>
 
         <!-- Header -->
         <header>
@@ -80,7 +80,7 @@
                         <span class="icon-outline-home-24px display-3" style="font-size: 32px;"></span>
                         <span class="icon-outline-info-24px display-3" style="font-size: 32px;"></span>
                     </p>
-<div class="shadow-box">
+<div class="code-copy">
 <pre><code class="html">// 복사한 클래스 네임을 원하는 태그에 추가하여 사용
 
 // 기본 사이즈는 부모 엘리먼트에 선언된 font-size를 상속하여 나타내진다.
@@ -91,6 +91,10 @@
 
 // 색상변경시 CSS컨트롤 또는 부트스트랩의 컬러 클래스를 추가하여 사용.
 &lt;span class="icon-outline-favorite_border-24px text-danger"&gt;&lt;/span&gt;</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<span class="icon-outline-favorite_border-24px"></span>
+</textarea>
 </div>
                     <p class="mt-4">아이콘 클릭시 클립보드에 클래스가 <b class="text-danger">복사</b> 됩니다.</p>
                     <ul class="icon-pack mt-4">
@@ -243,9 +247,9 @@
     <script src="/static/js/library/jquery-3.3.1.min.js"></script>
     <script src="/static/js/library/popper.min.js"></script>
     <script src="/static/js/library/bootstrap.min.js"></script>
-    <script src="/static/js/library/w3.js"></script>
     <script src="/static/js/library/highlight.pack.js"></script>
     <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/library/snbControl.js"></script>
 
     <!-- JS : service  -->
     <script src="/static/js/service/common.js"></script>

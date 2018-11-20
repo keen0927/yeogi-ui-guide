@@ -493,6 +493,7 @@ input[type="file"] {
     }
     .css-control-input~.css-control-indicator {
         font-family: 'icomoon';
+        overflow: hidden;
         display: inline-block;
         width: 20px;
         height: 20px;
@@ -511,7 +512,7 @@ input[type="file"] {
         top: 3px;
         left: 1px;
         width: 18px;
-        height: 18px;
+        height: 19px;
         text-align: center;
     }
     .css-control-input:disabled {
@@ -649,5 +650,17 @@ input[type="file"] {
         .css-control-input:checked~.css-control-indicator {
             background: $color-danger;
         }
+    }
+}
+
+// 코드 하이라이트
+.hljs {
+    position: relative;
+    .button-copy {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: none;
+        color: greenyellow;
     }
 }

@@ -19,7 +19,7 @@
     <div class="wrap">
 
         <!-- SNB -->
-        <div w3-include-html="/pages/layout/snb.html"></div>
+        <div id="snb"></div>
 
         <!-- Header -->
         <header>
@@ -71,15 +71,20 @@
                 </div>
                 <div class="block-content">
                     <table id="example" class="display" width="100%"></table>
-<div class="shadow-box mt-4">
+<div class="code-copy mt-4">
 <pre><code class="html">// 플러그인 추가 
 &lt;script src="https://static.goodchoice.kr/static/ui/js/library/datatables.js"&gt;&lt;/script&gt;
 
 // 테이블 HTML
 &lt;table id="example" class="display" width="100%"&gt;&lt;/table&gt;</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<script src="https://static.goodchoice.kr/static/ui/js/library/datatables.js"></script>
+<table id="example" class="display" width="100%"></table>
+</textarea>
 </div>
 
-            <div class="shadow-box mt-4">
+            <div class="code-copy mt-4">
                     <pre><code class="javascript">// Javascript
 
 // 데이터 : JSON 형식
@@ -132,6 +137,59 @@ $(function(){
         language : lang_kor
     });
 });</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+// 데이터 : JSON 형식
+var dataSet = [
+    [ "Tiger Nixon", "System Architect", "Edinburgh", "1234", "2011/04/25", "$320,800" ],
+    [ "Garrett Winters", "Accountant", "Tokyo", "5678", "2011/07/25", "$170,750" ],
+]
+
+// 테이블 헤더
+var col_kor = [
+    { title: "이름" },
+    { title: "직위" },
+    { title: "오피스" },
+    { title: "넘버" },
+    { title: "입사일" },
+    { title: "연봉" }
+];
+
+// 설정
+var lang_kor = {
+    "decimal" : "",
+    "emptyTable" : "데이터가 없습니다.",
+    "info" : "_START_ - _END_ (총 _TOTAL_ 명)",
+    "infoEmpty" : "0명",
+    "infoFiltered" : "(전체 _MAX_ 명 중 검색결과)",
+    "infoPostFix" : "",
+    "thousands" : ",",
+    "lengthMenu" : "_MENU_ 개씩 보기",
+    "loadingRecords" : "로딩중...",
+    "processing" : "처리중...",
+    "search" : "검색 : ",
+    "zeroRecords" : "검색된 데이터가 없습니다.",
+    "paginate" : {
+        "first" : "첫 페이지",
+        "last" : "마지막 페이지",
+        "next" : "다음",
+        "previous" : "이전"
+    },
+    "aria" : {
+        "sortAscending" : " :  오름차순 정렬",
+        "sortDescending" : " :  내림차순 정렬"
+    }
+};
+
+// 목표 엘리먼트에 주입
+$(function(){
+    $('#example').DataTable( {
+        data: dataSet,
+        columns: col_kor,
+        language : lang_kor
+    });
+});
+</textarea>
                     </div>
 
 
@@ -150,10 +208,10 @@ $(function(){
     <script src="/static/js/library/jquery-3.3.1.min.js"></script>
     <script src="/static/js/library/popper.min.js"></script>
     <script src="/static/js/library/bootstrap.min.js"></script>
-    <script src="/static/js/library/w3.js"></script>
     <script src="/static/js/library/highlight.pack.js"></script>
     <script src="/static/js/library/iscroll.js"></script>
     <script src="/static/js/library/datatables.js"></script>
+    <script src="/static/js/library/snbControl.js"></script>
 
     <!-- JS : service  -->
     <script src="/static/js/service/common.js"></script>

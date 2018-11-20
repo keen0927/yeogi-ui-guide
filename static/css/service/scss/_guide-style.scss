@@ -101,3 +101,20 @@
         }
     }
 }
+
+.code-copy {
+    position: relative;
+    .button-copy {
+        position: absolute;
+        top: 3px;
+        right: 0;
+        background: none;
+        font-size: 12px;
+        color: greenyellow;
+    }
+    .textarea-copy {
+        position: absolute;
+        top: -9999px;
+        opacity: 0;
+    }
+}

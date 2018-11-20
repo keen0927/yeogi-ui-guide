@@ -18,7 +18,7 @@
     <div class="wrap">
 
         <!-- SNB -->
-        <div w3-include-html="/pages/layout/snb.html"></div>
+        <div id="snb"></div>
 
         <!-- Header -->
         <header>
@@ -118,11 +118,13 @@
                             <p class="mt-2 text-danger">btn-outline-danger</p>
                         </div>
                     </div>
-<div class="shadow-box mb-6">
+<div class="code-copy mb-6">
 <pre><code class="html">// btn클래스는 디폴트로 넣어주고 컬러 및 스타일은 뒤의 클래스를 수정하여 사용.
 &lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
 &lt;button type="button" class="btn btn-outline-Success"&gt;Success&lt;/button&gt;
 </code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy"><button type="button" class="btn btn-primary">Primary</button></textarea>
 </div>
                 </div>
             </div>
@@ -164,7 +166,7 @@
                             <p class="text-danger">disabled</p>
                         </div>
                     </div>
-<div class="shadow-box mb-6">
+<div class="code-copy mb-6">
 <pre><code class="html">// 버튼 스몰
 &lt;button class="btn btn-sm btn-primary"&gt;Small&lt;/button&gt;
 
@@ -183,7 +185,17 @@
 // 버튼 비활성화형
 &lt;button class="btn btn-primary" disabled&gt;Square&lt;/button&gt;
 </code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<button class="btn btn-sm btn-primary">Small</button>
+<button class="btn btn-primary">Normal</button>
+<button class="btn btn-lg btn-primary">Large</button>
+<button class="btn btn-square btn-primary">Square</button>
+<button class="btn btn-rounded btn-primary">Rounded</button>
+<button class="btn btn-primary" disabled>Square</button>
+</textarea>
 </div>
+
                 </div>
             </div>
             <!-- 아이콘 -->
@@ -221,12 +233,19 @@
                             <span class="icon-outline-done-24px"></span>
                         </button>
                     </p>
-<div class="shadow-box mb-6">
+<div class="code-copy mb-6">
 <pre><code class="html">&lt;button type="button" class="btn btn-success btn-lg"&gt;
     &lt;span class="icon-outline-done-24px"&gt;&lt;/span&gt;
     버튼이름
 &lt;/button&gt;
 </code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<button type="button" class="btn btn-success btn-lg">
+    <span class="icon-outline-done-24px"></span>
+    버튼이름
+</button>
+</textarea>
 </div>
                 </div>
             </div>
@@ -243,10 +262,10 @@
     <script src="/static/js/library/jquery-3.3.1.min.js"></script>
     <script src="/static/js/library/popper.min.js"></script>
     <script src="/static/js/library/bootstrap.min.js"></script>
-    <script src="/static/js/library/w3.js"></script>
     <script src="/static/js/library/highlight.pack.js"></script>
     <script src="/static/js/library/iscroll.js"></script>
     <script src="/static/js/library/datatables.js"></script>
+    <script src="/static/js/library/snbControl.js"></script>
 
     <!-- JS : service  -->
     <script src="/static/js/service/common.js"></script>
