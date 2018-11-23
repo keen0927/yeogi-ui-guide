@@ -1,6 +1,3 @@
-// 코드 하이라이트
-hljs.initHighlightingOnLoad();
-
 $(function(){
 
     // SNB 열기
