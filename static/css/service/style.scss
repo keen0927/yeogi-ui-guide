@@ -1,17 +1,3 @@
-/* 고딕체 */
-@import url('https://fonts.googleapis.com/css?family=Gothic+A1:400');
-
-/* 잘난서체 */
-@font-face {
-	font-family: 'yg-jalnan';
-	src:  url('../../fonts/yg-jalnan.eot');
-	src:  url('../../fonts/yg-jalnan.eot?#iefix') format('embedded-opentype'),
-		url('../../fonts/yg-jalnan.ttf') format('truetype'),
-		url('../../fonts/yg-jalnan.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
 /* Import CSS */
 @import "scss/_variables.scss"; // 변수
 @import "scss/_theme.scss"; // 테마

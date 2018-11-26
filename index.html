@@ -8,7 +8,9 @@
     <title>여기어때 - 표준 템플릿 가이드</title>
     <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/service/font-icon-load.css">
+    <!-- <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css"> -->
     <link rel="stylesheet" href="/static/css/service/style.css">
 </head>
 
@@ -61,115 +63,51 @@
                 본 컨텐츠는 <b class="text-danger">부트스트랩4</b>를 기반으로 제작 되었으며 사용방법 또한 부트스트랩4와 <b class="text-danger">동일</b>합니다.<br>
                 추가적으로 자주사용하는 자바스크립트 라이브러리와 여기어때 서비스에서 자주 사용되는 모듈들의 사용법과 테스트가능한 샘플코드를 제공합니다.<br>
                 다운로드 패키지는 기본 backoffice 템플릿이며 UI가이드를 통하여 프론트화면을 개발할수있도록 제작되었습니다.
+                <p class="mt-4">
+                    <a href="https://static.goodchoice.kr/static/ui/zip/181126.zip" class="btn btn-primary">기본샘플 다운로드</a></p>
             </div>
             <div class="block">
                 <div class="block-head">
-                    CSS
+                    기본샘플 다운로드 후 설정
                     <button type="button" class="button-code-toggle" data-name="code-1">
                         <span class="icon-outline-code-24px"></span>
                     </button>
                 </div>
                 <div class="block-content">
-                    <p>CSS를 로드하기 위해 아래의 코드를 <b class="text-danger">&lt;head&gt;</b>의 타 CSS보다 상위에 위치하게 붙여넣기 하세요.</p>
+                    <p>
+                        처음 설정해주어야 하는부분은 font디렉토리의 자원을 임의의 사용자가 작업하는 작업경로로 이동 하고,<br>
+                        CSS의 아이콘팩과 잘난체 경로를 <b class="text-danger">절대경로</b> 수정 해 주세요.<br><br>
+                        1. static > fonts 의 파일들을 사용자가 작업하는 작업경로의 자원 디렉토리로 옮긴후,<br>
+                        2. static > css > service 디렉토리의 <b class="text-danger">font-icon-load.css</b> 안의 절대경로를 1에서 이동한 경로로 수정 해 주세요.
+                    </p>
 <div class="code-copy mt-4" data-name="code-1">
-<pre><code class="html">&lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/bootstrap.min.css"&gt;
-&lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css"&gt;
+<pre><code class="css">/* 아래의 상대경로를 사용자가 작업하는 환경의 절대경로로 수정 해 주세요. */
+
+/* 잘난서체 */
+@font-face {
+	font-family: 'yg-jalnan';
+	src:  url('../../fonts/yg-jalnan.eot');
+	src:  url('../../fonts/yg-jalnan.eot?#iefix') format('embedded-opentype'),
+		url('../../fonts/yg-jalnan.ttf') format('truetype'),
+		url('../../fonts/yg-jalnan.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* 아이콘팩 */
+@font-face {
+    font-family: 'icomoon';
+    src: url('../../fonts/icomoon.eot');
+    src: url('../../fonts/icomoon.eot#iefix') format('embedded-opentype'), url('../../fonts/icomoon.ttf') format('truetype'), url('../../fonts/icomoon.woff') format('woff'), url('../../fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 </code></pre>
 <button type="button" class="button-copy">Copy</button>
 <textarea class="textarea-copy">
     <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/bootstrap.min.css">
     <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css">
 </textarea>
-</div>
-                </div>
-            </div>
-            <div class="block">
-                <div class="block-head">
-                    JS
-                    <button type="button" class="button-code-toggle" data-name="code-2">
-                        <span class="icon-outline-code-24px"></span>
-                    </button>
-                </div>
-                <div class="block-content">
-                    <p>플러그인들은 <b class="text-danger">Javascript</b>를 사용해야 작동합니다. 기본적으로 jQuery, Popper.js 및 자체 자바스크립트 플러그인이 필요합니다.<br>
-                    아래의 script를 <b class="text-danger">&lt;body&gt;</b>태그 바로 앞에 붙여 넣기 해주세요. 순서는 아래와 같이 배치 해야 정상 작동 합니다.</p>
-<div class="code-copy mt-4" data-name="code-2">
-<pre><code class="html">// 라이브러리
-&lt;script src="https://static.goodchoice.kr/static/ui/js/library/jquery-3.3.1.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://static.goodchoice.kr/static/ui/js/library/popper.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://static.goodchoice.kr/static/ui/js/library/bootstrap.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://static.goodchoice.kr/static/ui/js/library/iscroll.js"&gt;&lt;/script&gt;
-&lt;script src="https://static.goodchoice.kr/static/ui/js/library/datatables.js"&gt;&lt;/script&gt;
-
-// 서비스
-&lt;script src="https://static.goodchoice.kr/static/ui/js/service/common.js"&gt;&lt;/script&gt;
-</code></pre>
-<button type="button" class="button-copy">Copy</button>
-<textarea class="textarea-copy">
-// 라이브러리
-<script src="https://static.goodchoice.kr/static/ui/js/library/jquery-3.3.1.min.js"></script>
-<script src="https://static.goodchoice.kr/static/ui/js/library/popper.min.js"></script>
-<script src="https://static.goodchoice.kr/static/ui/js/library/bootstrap.min.js"></script>
-<script src="https://static.goodchoice.kr/static/ui/js/library/iscroll.js"></script>
-<script src="https://static.goodchoice.kr/static/ui/js/library/datatables.js"></script>
-
-// 서비스
-<script src="https://static.goodchoice.kr/static/ui/js/service/common.js"></script>
-</textarea>
-</div>
-                </div>
-            </div>
-
-            <div class="block">
-                <div class="block-head">
-                    기본 템플릿
-                    <button type="button" class="button-code-toggle" data-name="code-3">
-                        <span class="icon-outline-code-24px"></span>
-                    </button>
-                </div>
-                <div class="block-content">
-                    <p>
-                        다음은 HTML5 기본 템플릿을 적용한 샘플 페이지 입니다.
-                        <!-- TODO: 아래 코드의 확인작업이 필요합니다. opacity:0 관련 -->
-                    </p>
-<div class="code-copy mt-4" data-name="code-3">
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
-    &lt;title&gt;여기어때 - 표준 템플릿 가이드&lt;/title&gt;
-    &lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/bootstrap.min.css"&gt;
-    &lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css"&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-
-    &lt;!-- Wrap --&gt;
-    &lt;div class="wrap"&gt;
-
-        &lt;!-- Container --&gt;
-        &lt;div class="container"&gt;
-
-            Hello, World!
-
-        &lt;/div&gt;
-        &lt;!-- //Container --&gt;
-
-    &lt;/div&gt;
-    &lt;!-- //Wrap --&gt;
-
-    &lt;!-- JS : library  --&gt;
-    &lt;script src="https://static.goodchoice.kr/static/ui/js/library/jquery-3.3.1.min.js"&gt;&lt;/script&gt;
-    &lt;script src="https://static.goodchoice.kr/static/ui/js/library/popper.min.js"&gt;&lt;/script&gt;
-    &lt;script src="https://static.goodchoice.kr/static/ui/js/library/bootstrap.min.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-
-</code></pre>
 </div>
                 </div>
             </div>
@@ -183,15 +121,16 @@
     <div class="spinner"></div>
 
     <!-- JS : library  -->
-    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
-    <script src="/static/js/library/popper.min.js"></script>
-    <script src="/static/js/library/bootstrap.min.js"></script>
-    <script src="/static/js/library/highlight.pack.js"></script>
-    <script src="/static/js/library/iscroll.js"></script>
-    <script src="/static/js/library/datatables.js"></script>
-    <script src="/static/js/library/snbControl.js"></script>
+    <script src="https://static.goodchoice.kr/static/ui/js/library/jquery-3.3.1.min.js"></script>
+    <script src="https://static.goodchoice.kr/static/ui/js/library/popper.min.js"></script>
+    <script src="https://static.goodchoice.kr/static/ui/js/library/bootstrap.min.js"></script>
+    <script src="https://static.goodchoice.kr/static/ui/js/library/highlight.pack.js"></script>
+    <script src="https://static.goodchoice.kr/static/ui/js/library/iscroll.js"></script>
+    <script src="https://static.goodchoice.kr/static/ui/js/library/datatables.js"></script>
+    <script src="https://static.goodchoice.kr/static/ui/js/library/snbControl.js"></script>
 
     <!-- JS : service  -->
+    <!-- <script src="https://static.goodchoice.kr/static/ui/js/service/common.js"></script> -->
     <script src="/static/js/service/common.js"></script>
     <script>
     // 코드 하이라이트
