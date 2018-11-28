@@ -62,25 +62,239 @@
                 URL 엔드포인트에 쿼리스트링이나 다른 분기가 필요한 타입은 일반 HTML을 참고하여 타임리프를 통해 개발을 진행 해 주세요.<br>
                 그 외에 작업은 자바스크립트 버전으로 작업을 진행 해 주세요.
             </p>
+            <p class="mt-3">
+                <b>메뉴 아이콘 변경은 <a href="/pages/style/iconPack.html" class="text-danger"><u>아이콘페이지</u></a>의 클래스를 참고해서 클래스 명을 변경하여 사용합니다.</b>
+            </p>
 
             <div class="block mt-4">
-                <div class="block-head">자바스크립트 버전
+                <div class="block-head">자바스크립트 버전 <small>기본 링크 방식으로 사용시</small>
                     <button type="button" class="button-code-toggle" data-name="code-1">
                         <span class="icon-outline-code-24px"></span>
                     </button>
                 </div>
                 <div class="block-content">
-                    <b class="text-danger">snbControl.js</b>를 참고하여 메뉴를 구성할 수 있습니다.<br><br>
+                    <ol>
+                        <li>1. <b class="text-danger">snbControl.js</b>를 참고하여 메뉴를 구성할 수 있습니다.</li>
+                        <li>2. snbList 변수에 key,value를 수정하여 메뉴를 자동생성 할 수 있습니다.</li>
+                    </ol>
 <div class="code-copy mt-4" data-name="code-1">
-<pre><code class="js">
-
-
+<pre><code class="js">var snbList = [
+    {
+        "route": "/index.html", // 라우팅 주소
+        "name": "가이드소개", // 메뉴명
+        "icon":  "icon-outline-visibility-24px", // 아이콘 클래스네임
+    },
+    {
+        "route": "/pages/guide/learn.html",
+        "name": "부트스트랩 시작",
+        "icon": "icon-outline-account_circle-24px",
+    },
+    {
+        "route": "#none", // 자식 메뉴가 있을때 #none으로 설정
+        "name": "샘플페이지",
+        "icon": "icon-outline-assignment-24px",
+        "childrenMenu": [
+            {
+                "route": "/pages/samplePage/page_01.html",
+                "name": "기본형",
+            },
+            {
+                "route": "/pages/samplePage/page_01.html",
+                "name": "기본형",
+                "blank": true, // 새창으로 띄워줄때 값 추가
+            }
+        ]
+    },
+]
 
 </code></pre>
 <button type="button" class="button-copy">Copy</button>
 <textarea class="textarea-copy">
-<link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/bootstrap.min.css">
-<link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/service/style.css">
+
+</textarea>
+</div>
+                </div>
+            </div>
+
+            <div class="block mt-4">
+                <div class="block-head">HTML 버전 <small>타임리프등 템플릿으로 개발시</small>
+                    <button type="button" class="button-code-toggle" data-name="code-2">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
+                </div>
+                <div class="block-content">
+                    <ol>
+                        <li>1. <b class="text-danger">snbControl.js</b>가 아닌 <b class="text-danger">snbControlHtml.js</b>를 사용합니다.</li>
+                        <li>2. 하단 코드를 카피하여 인클루드할 파일에 추가하여 작업을 진행한다.</li>
+                        <li>3. 복사된 HTML코드의 위치는 wrap 클래스 바로 안에 넣어주면 정상 작동 합니다.</li>
+                    </ol>
+<div class="code-copy mt-4" data-name="code-2">
+<pre><code class="html">&lt;div class="wrap"&gt;
+    // wrap 클래스 안 바로 앞에 위치
+    &lt;div id="snb"&gt;
+        복사된 코드 내용..
+    &lt;/div&gt;
+</code></pre></div>
+
+<div class="code-copy mt-4" data-name="code-2">
+<pre><code class="html">&lt;div id="snb"&gt;
+    &lt;nav&gt;
+        &lt;div class="snb-scroll"&gt;
+            &lt;h1&gt;
+                &lt;a href="/index.html" class="logo"&gt;
+                    여기어때
+                    &lt;span&gt;UI 가이드&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/h1&gt;
+            &lt;button type="button" class="button-nav__close"&gt;&lt;i class="icon-outline-clear-24px"&gt;&lt;/i&gt;&lt;span&gt;닫기&lt;/span&gt;&lt;/button&gt;
+            &lt;div class="snb"&gt;
+                &lt;ul class="snb-main"&gt;
+                    &lt;li&gt;
+                        &lt;a href="/index.html" class="snb-sub"&gt;
+                            &lt;i class="icon-outline-visibility-24px"&gt;&lt;/i&gt;
+                            메뉴 1
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="/pages/guide/learn.html" class="snb-sub"&gt;
+                            &lt;i class="icon-outline-account_circle-24px"&gt;&lt;/i&gt;
+                            메뉴 2
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="#" class="snb-sub"&gt;
+                            &lt;i class="icon-outline-assignment-24px"&gt;&lt;/i&gt;
+                            메뉴 3
+                            &lt;span class="icon-outline-keyboard_arrow_left-24px"&gt;&lt;/span&gt;
+                        &lt;/a&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/pages/page_01.html"&gt;자식메뉴 1&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;p class="snb-sub-title"&gt;타이틀 1&lt;/p&gt;
+                        &lt;a href="#none" class="snb-sub"&gt;
+                            &lt;i class="icon-outline-flash_on-24px"&gt;&lt;/i&gt;
+                            메뉴 4
+                            &lt;span class="icon-outline-keyboard_arrow_left-24px"&gt;&lt;/span&gt;
+                        &lt;/a&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/pages/page_01.html"&gt;자식메뉴 1&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="/pages/page_01.html"&gt;자식메뉴 2&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="/pages/page_01.html"&gt;자식메뉴 3&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href="#" class="snb-sub"&gt;
+                            &lt;i class="icon-outline-radio_button_checked-24px"&gt;&lt;/i&gt;
+                            메뉴 5
+                            &lt;span class="icon-outline-keyboard_arrow_left-24px"&gt;&lt;/span&gt;
+                        &lt;/a&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/pages/page_01.html"&gt;자식메뉴 1&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="/pages/page_01.html"&gt;자식메뉴 2&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="/pages/page_01.html"&gt;자식메뉴 3&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;p class="snb-sub-title"&gt;타이틀2&lt;/p&gt;
+                        &lt;a href="#none" class="snb-sub"&gt;
+                            &lt;i class="icon-outline-lock-24px"&gt;&lt;/i&gt;
+                            메뉴 6
+                            &lt;span class="icon-outline-keyboard_arrow_left-24px"&gt;&lt;/span&gt;
+                        &lt;/a&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="/pages/page_01.html"&gt;blank 메뉴 1&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="/pages/page_01.html"&gt;blank 메뉴 2&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="/pages/page_01.html"&gt;blank 메뉴 3&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/div&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div id="snb">
+    <nav>
+        <div class="snb-scroll">
+            <h1>
+                <a href="/index.html" class="logo">
+                    여기어때
+                    <span>UI 가이드</span>
+                </a>
+            </h1>
+            <button type="button" class="button-nav__close"><i class="icon-outline-clear-24px"></i><span>닫기</span></button>
+            <div class="snb">
+                <ul class="snb-main">
+                    <li>
+                        <a href="/index.html" class="snb-sub">
+                            <i class="icon-outline-visibility-24px"></i>
+                            메뉴 1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pages/guide/learn.html" class="snb-sub">
+                            <i class="icon-outline-account_circle-24px"></i>
+                            메뉴 2
+                        </a>
+                    </li>
+                    <li class="snb-main-list">
+                        <a href="#" class="snb-sub">
+                            <i class="icon-outline-assignment-24px"></i>
+                            메뉴 3
+                            <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                        </a>
+                        <ul>
+                            <li><a href="/pages/page_01.html">자식메뉴 1</a></li>
+                        </ul>
+                    </li>
+                    <li class="snb-main-list">
+                        <p class="snb-sub-title">타이틀 1</p>
+                        <a href="#none" class="snb-sub">
+                            <i class="icon-outline-flash_on-24px"></i>
+                            메뉴 4
+                            <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                        </a>
+                        <ul>
+                            <li><a href="/pages/page_01.html">자식메뉴 1</a></li>
+                            <li><a href="/pages/page_01.html">자식메뉴 2</a></li>
+                            <li><a href="/pages/page_01.html">자식메뉴 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="snb-main-list">
+                        <a href="#" class="snb-sub">
+                            <i class="icon-outline-radio_button_checked-24px"></i>
+                            메뉴 5
+                            <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                        </a>
+                        <ul>
+                            <li><a href="/pages/page_01.html">자식메뉴 1</a></li>
+                            <li><a href="/pages/page_01.html">자식메뉴 2</a></li>
+                            <li><a href="/pages/page_01.html">자식메뉴 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="snb-main-list">
+                        <p class="snb-sub-title">타이틀2</p>
+                        <!-- Authentication -->
+                        <a href="#none" class="snb-sub">
+                            <i class="icon-outline-lock-24px"></i>
+                            메뉴 6
+                            <span class="icon-outline-keyboard_arrow_left-24px"></span>
+                        </a>
+                        <ul>
+                            <li><a href="/pages/page_01.html">blank 메뉴 1</a></li>
+                            <li><a href="/pages/page_01.html">blank 메뉴 2</a></li>
+                            <li><a href="/pages/page_01.html">blank 메뉴 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
 </textarea>
 </div>
                 </div>
@@ -103,6 +317,7 @@
     <script src="/static/js/library/iscroll.js"></script>
     <script src="/static/js/library/datatables.js"></script>
     <script src="/static/js/service/snbControl.js"></script>
+    <!-- <script src="/static/js/service/snbControlHtml.js"></script> -->
 
     <!-- JS : service  -->
     <script src="/static/js/service/common.js"></script>

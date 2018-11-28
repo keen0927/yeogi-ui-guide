@@ -74,10 +74,6 @@ var snbMake = (function() {
             "childrenMenu": [
                 {
                     "route": "/pages/layout/snbIntroduce.html",
-                    "name": "기본 페이지",
-                },
-                {
-                    "route": "/pages/layout/snbIntroduce.html",
                     "name": "사이드 네비게이션",
                 }
             ]
