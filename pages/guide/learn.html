@@ -8,6 +8,7 @@
     <title>여기어때 - 표준 템플릿 가이드</title>
     <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/atom-one-dark.css">
     <link rel="stylesheet" href="/static/css/service/font-icon-load.css">
     <link rel="stylesheet" href="/static/css/service/style.css">
 </head>
@@ -55,9 +56,48 @@
 
         <!-- Container -->
         <div class="container">
-            <h2 class="content-head">부트스트랩 시작하기</h2>
-                <!-- <a href="/static/zip/template.zip" class="btn btn-primary">릿 다운로드</a> -->
-                <p class="mt-4">부트스트랩 핵심내용 준비중..</p>
+            <h2 class="content-head">부트스트랩 시작</h2>
+                <p class="mt-4">부트스트랩 사용시 알아두어야 할 기본 CSS클래스들에 대한 설명 입니다.</p>
+                <div class="block mt-4">
+                    <div class="block-head">
+                        간격(마진, 패딩) 조정
+                    </div>
+                    <div class="block-content">
+                        엘리먼트의 마진, 패딩값 조절은 사용방법이 같다.<br>
+                        마진은 <b class="text-danger">m-수치</b><br>
+                        패딩은 <b class="text-danger">p-수치</b> 수치는 1에서 5까지 조절 할 수 있다.<br><br>
+                        마진,패딩의 상,하,좌,우 값에만 주고 싶을때는 <b class="text-danger">p방향-수치, m방향-수치</b>를 사용한다.<br>
+                        방향은 top, right, bottom, left의 앞글자인 <b class="text-danger">t,r,b,l</b>을 사용한다.
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">// 마진값 조정 접두사 m은 margin의 m 이며 뒤의 수치값으로 간격 조절이 가능
+&lt;div class="m-0"&gt;마진값 조정&lt;/div&gt;
+&lt;div class="m-1"&gt;마진값 조정&lt;/div&gt;
+&lt;div class="m-2"&gt;마진값 조정&lt;/div&gt;
+&lt;div class="m-3"&gt;마진값 조정&lt;/div&gt;
+&lt;div class="m-4"&gt;마진값 조정&lt;/div&gt;
+&lt;div class="m-5"&gt;마진값 조정&lt;/div&gt;
+
+// 패딩값 조정 접두사 p는 padding의 p 이며 뒤의 수치값으로 간격 조절이 가능
+&lt;div class="p-0"&gt;패딩값 조정&lt;/div&gt;
+
+// 상,하,좌,우 특정 부분에만 값을 지정하고 싶을때
+&lt;div class="mt-1"&gt;마진값 상단 조정&lt;/div&gt;
+&lt;div class="pt-1"&gt;패딩값 상단 조정&lt;/div&gt;
+
+&lt;div class="mr-1"&gt;마진값 우측 조정&lt;/div&gt;
+&lt;div class="pr-1"&gt;패딩값 우측 조정&lt;/div&gt;
+
+&lt;div class="mb-1"&gt;마진값 하단 조정&lt;/div&gt;
+&lt;div class="pb-1"&gt;패딩값 하단 조정&lt;/div&gt;
+
+&lt;div class="ml-1"&gt;마진값 좌측 조정&lt;/div&gt;
+&lt;div class="pl-1"&gt;패딩값 좌측 조정&lt;/div&gt;
+</code></pre>
+</div>
+
+                    </div>
+                </div>
             </div>
         </div>
         <!-- //Container -->
