@@ -73,11 +73,11 @@ var snbMake = (function() {
             "icon": "icon-outline-insert_photo-24px",
             "childrenMenu": [
                 {
-                    "route": "/pages/layout/snbIntroduce",
+                    "route": "/pages/layout/snbIntroduce.html",
                     "name": "기본 페이지",
                 },
                 {
-                    "route": "/pages/layout/snbIntroduce",
+                    "route": "/pages/layout/snbIntroduce.html",
                     "name": "사이드 네비게이션",
                 }
             ]
