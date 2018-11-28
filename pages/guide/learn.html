@@ -57,9 +57,16 @@
         <!-- Container -->
         <div class="container">
             <h2 class="content-head">부트스트랩 시작</h2>
-                <p class="mt-4">부트스트랩 사용시 알아두어야 할 기본 CSS클래스들에 대한 설명 입니다.</p>
+                <div class="mt-4">
+                    부트스트랩 사용시 알아두어야 할 기본 CSS클래스들에 대한 설명 입니다.
+                    <ol class="mt-4">
+                        <li class="pb-2"><a href="#section-01" class="text-info">1. <u>간격(마진, 패딩) 조정</u></a></li>
+                        <li class="pb-2"><a href="#section-02" class="text-info">2. <u>그리드 설명</u></a></li>
+                        <li class="pb-2"><a href="#section-03" class="text-info">3. <u>텍스트 컨트롤</u></a></li>
+                    </ol>
+                </div>
                 <div class="block mt-4">
-                    <div class="block-head">
+                    <div class="block-head" id="section-01">
                         간격(마진, 패딩) 조정
                     </div>
                     <div class="block-content">
@@ -93,6 +100,73 @@
 
 &lt;div class="ml-1"&gt;마진값 좌측 조정&lt;/div&gt;
 &lt;div class="pl-1"&gt;패딩값 좌측 조정&lt;/div&gt;
+</code></pre>
+</div>
+
+                    </div>
+                </div>
+
+                <div class="block mt-4">
+                    <div class="block-head" id="section-02">
+                        그리드 설명
+                    </div>
+                    <div class="block-content">
+                        그리드페이지를 참고 해 주세요. <a href="/pages/style/grid.html" class="text-danger" target="_blank"><u>링크</u></a>
+                    </div>
+                </div>
+
+                <div class="block mt-4">
+                    <div class="block-head" id="section-03">
+                        텍스트 컨트롤
+                    </div>
+                    <div class="block-content">
+                        <p>
+                            1. 정렬<br><br>
+                            텍스트 정렬은 <b class="text-danger">text-방향</b>을 사용한다. 방향은 총 <b class="text-danger">center, right, left</b> 3가지 이다.
+                        </p>
+
+                        <div class="block mt-4 p-2 text-center">텍스트 중앙</div>
+                        <div class="block p-2 text-right">텍스트 오른쪽</div>
+                        <div class="block p-2 text-left">텍스트 왼쪽</div>
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">&lt;div class="text-center"&gt;가운데&lt;/div&gt;
+&lt;div class="text-right"&gt;오른쪽&lt;/div&gt;
+&lt;div class="text-left"&gt;왼쪽&lt;/div&gt;
+</code></pre>
+</div>
+                        <p class="mt-5">
+                            2. 컬러<br><br>
+                            컬러는 <b class="text-danger">text-부트스트랩클래스</b> 를 사용한다.<br>primary, secondary, success, danger, warning, info, light, dark 자세한사항은 컬러 페이지에서 확인 가능합니다. <a href="/pages/style/color.html" class="text-danger" target="_blank"><u>링크</u></a>
+                        </p>
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">&lt;div class="text-danger"&gt;텍스트 danger 컬러&lt;/div&gt;
+&lt;div class="text-secondary"&gt;텍스트 seconday 컬러&lt;/div&gt;
+</code></pre>
+</div>
+
+                        <p class="mt-5">
+                            3. 텍스트 요소<br><br>
+                            <p>mark 태그를 사용하여 텍스트를 <mark>강조</mark> 표시 할 수 있습니다.</p>
+                            <p><del>삭제된 텍스트로 간주됩니다.</del></p>
+                            <p><s>더 이상 정확하지 않은 것으로 간주됩니다.</s></p>
+                            <p><ins>문서에 추가되는 것으로 간주됩니다.</ins></p>
+                            <p><u>밑줄이 그어질것입니다</u></p>
+                            <p><small>작은 글자로 취급 됩니다.</small></p>
+                            <p><strong>굵게 표시 됩니다.</strong></p>
+                            <p><em>기울임 텍스트로 표시 됩니다.</em></p>
+                        </p>
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">&lt;p&gt;mark 태그를 사용하여 텍스트를 &lt;mark&gt;강조&lt;/mark&gt; 표시 할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;삭제된 텍스트로 간주됩니다.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;더 이상 정확하지 않은 것으로 간주됩니다.&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;&lt;ins&gt;문서에 추가되는 것으로 간주됩니다.&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;밑줄이 그어질것입니다&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;작은 글자로 취급 됩니다.&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;굵게 표시 됩니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;기울임 텍스트로 표시 됩니다.&lt;/em&gt;&lt;/p&gt;
 </code></pre>
 </div>
 
