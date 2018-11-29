@@ -114,6 +114,11 @@
 }
 
 /* Table */
+.table {
+    th, td {
+        background: #fff;
+    }
+}
 body.desktop,
 body.mobile {
     table {
@@ -140,6 +145,9 @@ body.mobile {
                 border-bottom: 0;
             }
         }
+    }
+    table.dataTable thead th, table.dataTable thead td {
+        border-bottom: 1px solid #ddd;
     }
     table.dataTable.stripe tbody tr.odd,
     table.dataTable.display tbody tr.odd{
@@ -212,6 +220,9 @@ body.mobile {
         }
     }
 
+}
+.table-hover tbody tr:hover {
+    background-color: rgba(0,0,0,.015);
 }
 
 /* Button - Color */
@@ -662,5 +673,29 @@ input[type="file"] {
         right: 0;
         background: none;
         color: greenyellow;
+    }
+}
+
+/* 페이지네이션 */
+.pagination {
+    .page-item:first-child .page-link,
+    .page-item:last-child .page-link {
+        border-radius: 0;
+    }
+    .page-item.disabled .page-link {
+        // background: #f0f2f5; 
+        background: none; 
+    }
+    .page-link {
+        padding: 8px 13px 6px 13px;
+        border: none;
+        background-color: #f0f2f5;
+        font-size: 13px;
+        color: #333;
+    }
+    .page-item.active {
+        .page-link {
+            background: #3f6ae0;
+        }
     }
 }

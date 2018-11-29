@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/service/font-icon-load.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/service/style.css">
+</head>
+
+<body class="theme-default">
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div id="snb"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+            <h2 class="content-head">페이지네이션</h2>
+
+            <div class="block">
+                <div class="block-head">
+                    설명
+                    <button type="button" class="button-code-toggle button-code-toggle__all">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
+                </div>
+                <div class="block-content">
+                    <p>
+                        페이지 링크는 상황에 따라 사용자 정의가 가능합니다.<br>
+                        li태그에 클래스 <b class="text-danger">disabled</b>와 <b class="text-danger">active</b>로 비활성, 활성 상태를 나타낼 수 있습니다.<br><br>
+                        페이지네이션의 정렬은 ul태그에 <b class="text-danger">justify-content-center</b>와 <b class="text-danger">justify-content-end</b>를 통해 정렬이 가능합니다.
+                    </p>
+
+                    <div class="mt-4">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">이전</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">다음</a>
+                            </li>
+                        </ul>
+                    </div>
+
+<div class="code-copy mt-4">
+<pre><code class="html">&lt;ul class="pagination"&gt;
+    &lt;li class="page-item disabled"&gt;
+        &lt;a class="page-link" href="#"&gt;이전&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+        &lt;a class="page-link" href="#"&gt;1&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item active"&gt;
+        &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item"&gt;
+        &lt;a class="page-link" href="#"&gt;다음&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<ul class="pagination">
+    <li class="page-item disabled">
+        <a class="page-link" href="#">이전</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item active">
+        <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+        <a class="page-link" href="#">다음</a>
+    </li>
+</ul>
+</textarea>
+</div>
+
+                    <div class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">이전</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">다음</a>
+                            </li>
+                        </ul>
+                    </div>
+
+<div class="code-copy mt-4">
+<pre><code class="html">&lt;ul class="pagination justify-content-center"&gt;
+    &lt;li class="page-item disabled"&gt;
+        &lt;a class="page-link" href="#"&gt;이전&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+        &lt;a class="page-link" href="#"&gt;1&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item active"&gt;
+        &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item"&gt;
+        &lt;a class="page-link" href="#"&gt;다음&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+        <a class="page-link" href="#">이전</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item active">
+        <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+        <a class="page-link" href="#">다음</a>
+    </li>
+</ul>
+</textarea>
+</div>
+
+                    <div class="mt-4">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item">
+                                <a class="page-link" href="#">이전</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">다음</a>
+                            </li>
+                        </ul>
+                    </div>
+
+<div class="code-copy mt-4">
+<pre><code class="html">&lt;ul class="pagination justify-content-end"&gt;
+    &lt;li class="page-item disabled"&gt;
+        &lt;a class="page-link" href="#"&gt;이전&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;
+        &lt;a class="page-link" href="#"&gt;1&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item active"&gt;
+        &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item"&gt;
+        &lt;a class="page-link" href="#"&gt;다음&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<ul class="pagination justify-content-end">
+    <li class="page-item disabled">
+        <a class="page-link" href="#">이전</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item active">
+        <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+        <a class="page-link" href="#">다음</a>
+    </li>
+</ul>
+</textarea>
+</div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- //Container -->
+
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/bootstrap.min.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+    <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/service/snbControl.js"></script>
+
+    <!-- JS : service  -->
+    <script src="/static/js/service/common.js"></script>
+
+    <script>
+    // 코드 하이라이트
+    hljs.initHighlightingOnLoad();
+    </script>
+</body>
+
+</html>

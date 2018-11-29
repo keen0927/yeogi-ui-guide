@@ -65,6 +65,10 @@ var snbMake = (function() {
                     "route": "/pages/style/badge.html",
                     "name": "뱃지",
                 },
+                {
+                    "route": "/pages/style/pagination.html",
+                    "name": "페이지네이션",
+                },
             ]
         },
         {
