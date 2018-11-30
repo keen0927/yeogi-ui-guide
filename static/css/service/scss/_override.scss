@@ -118,6 +118,20 @@
     th, td {
         background: #fff;
     }
+    &.table-striped {
+        tr:nth-of-type(odd) {
+            td {
+                background: rgba(0,0,0,0.001);
+            }
+        }
+    }
+    &.table-hover {
+        tr:hover {
+            td {
+                background: rgba(0,0,0,0.001);
+            }
+        }
+    }
 }
 body.desktop,
 body.mobile {
@@ -409,6 +423,17 @@ body.mobile {
     height: 40px;
     line-height: 40px;
     padding: 0 20px;
+}
+
+.btn-default {
+    border: 1px solid rgba(0,0,0,0.16);
+    color: $black-87;
+    font-size: 14px;
+    &.active,
+    &:hover {
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+    }
 }
 
 /* button - Style */

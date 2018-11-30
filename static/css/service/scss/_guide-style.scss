@@ -140,3 +140,32 @@
         z-index: 100;
     }
 }
+
+/* 탭메뉴 */
+.nav-tabs {
+    overflow: hidden;
+    background: #f7f9f6;
+    border-bottom: none;
+    li {
+        display: block;
+        float: left;
+        min-width: 100px;
+        height: 51px;
+        padding: 0 15px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 51px;
+        text-align: center;
+        box-sizing: border-box;
+        a {
+            display: block;
+            color: $black-72;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+        &.active {
+            background: #fff;
+        }
+    }
+}

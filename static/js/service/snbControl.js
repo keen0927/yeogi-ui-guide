@@ -79,6 +79,10 @@ var snbMake = (function() {
                 {
                     "route": "/pages/layout/snbIntroduce.html",
                     "name": "사이드 네비게이션",
+                },
+                {
+                    "route": "/pages/layout/snbIntroduce.html",
+                    "name": "사이드 네비게이션",
                 }
             ]
         },
