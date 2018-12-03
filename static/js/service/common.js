@@ -127,7 +127,7 @@ function fadeLoad() {
     setTimeout(function(){
         $('.wrap').addClass('show');
         setTimeout(function(){
-            $('.spinner').addClass('hide');
+            $('.spinner').remove();
         },300);
     },300);
 }

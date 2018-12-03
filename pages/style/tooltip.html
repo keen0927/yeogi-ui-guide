@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/service/font-icon-load.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/service/style.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div id="snb"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+            <h2 class="content-head">툴팁</h2>
+            <div class="block">
+                <div class="block-head">
+                    기본형
+                    <button type="button" class="button-code-toggle" data-name="code-1">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
+                </div>
+                <div class="block-content">
+                    <p class="pb-4">
+                        툴팁팝업 사용시 JS호출이 필요합니다.<br>
+                        data-toggle="tooltip"은 고정으로 들어가야하며<br>
+                        data-placement="top" 속성에 <b class="text-danger">top right bottom left</b> 값으로 위치를 지정할 수 있습니다.
+                    </p>
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="툴팁 입니다!">
+                    툴팁 상단
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="툴팁 입니다!">
+                    툴팁 우측
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="툴팁 입니다!">
+                    툴팁 하단
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="툴팁 입니다!">
+                    툴팁 좌측
+                    </button>
+
+<div class="code-copy mt-4" data-name="code-1">
+<pre><code class="js">$('[data-toggle="tooltip"]').tooltip();
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">$('[data-toggle="tooltip"]').tooltip()</textarea>
+</div>
+
+<div class="code-copy mt-4" data-name="code-1">
+<pre><code class="html">&lt;button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="툴팁 입니다!"&gt;
+    툴팁 상단
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="툴팁 입니다!"&gt;
+    툴팁 우측
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="툴팁 입니다!"&gt;
+    툴팁 하단
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="툴팁 입니다!"&gt;
+    툴팁 좌측
+&lt;/button&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="툴팁 입니다!">
+툴팁 상단
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="툴팁 입니다!">
+툴팁 우측
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="툴팁 입니다!">
+툴팁 하단
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="툴팁 입니다!">
+툴팁 좌측
+</button>
+</textarea>
+</div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="block-head">
+                    커스텀형
+                    <button type="button" class="button-code-toggle" data-name="code-2">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
+                </div>
+                <div class="block-content">
+                    <p class="pb-4">
+                        해당 태그의 <b class="text-danger">title속성안에 html값을 추가</b>하여 커스텀 툴팁이 제작 가능합니다.<br>
+                        툴팁이 계속 위치하려면 부모 버튼에 클릭이 된 상태여야 노출이 계속 이루어집니다.
+                    </p>
+                    <button type="button" class="btn btn-danger" data-toggle="tooltip" data-html="true" title='
+                    <a href="/pages/style/grid.html" class="btn btn-sm btn-success">그리드</a>
+                    <a href="/pages/style/color.html" class="btn btn-sm btn-secondary">컬러</a>
+                    <a href="/pages/style/table.html" class="btn btn-sm btn-info">테이블</a>
+                    '>
+                    클릭시 노출</button>
+
+<div class="code-copy mt-4" data-name="code-2">
+    <pre><code class="html">&lt;button type="button" class="btn btn-danger" data-toggle="tooltip" data-html="true" title='
+&lt;a href="/pages/style/grid.html" class="btn btn-sm btn-success"&gt;그리드&lt;/a&gt;
+&lt;a href="/pages/style/color.html" class="btn btn-sm btn-secondary"&gt;컬러&lt;/a&gt;
+&lt;a href="/pages/style/table.html" class="btn btn-sm btn-info"&gt;테이블&lt;/a&gt;
+'&gt;클릭시 노출&lt;/button&gt;
+    </code></pre>
+    <button type="button" class="button-copy">Copy</button>
+    <textarea class="textarea-copy">
+<button type="button" class="btn btn-danger" data-toggle="tooltip" data-html="true" title='
+<a href="/pages/style/grid.html" class="btn btn-sm btn-success">그리드</a>
+<a href="/pages/style/color.html" class="btn btn-sm btn-secondary">컬러</a>
+<a href="/pages/style/table.html" class="btn btn-sm btn-info">테이블</a>
+'>클릭시 노출</button>
+</textarea>
+</div>
+                </div>
+            </div>
+        </div>
+        <!-- //Container -->
+
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/bootstrap.min.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+    <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/service/snbControl.js"></script>
+
+    <!-- JS : service  -->
+    <script src="/static/js/service/common.js"></script>
+
+    <script>
+    // 코드 하이라이트
+    hljs.initHighlightingOnLoad();
+
+    $(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
+</body>
+
+</html>

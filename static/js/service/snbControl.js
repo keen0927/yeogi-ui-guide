@@ -69,6 +69,10 @@ var snbMake = (function() {
                     "route": "/pages/style/pagination.html",
                     "name": "페이지네이션",
                 },
+                {
+                    "route": "/pages/style/tooltip.html",
+                    "name": "툴팁",
+                },
             ]
         },
         {
