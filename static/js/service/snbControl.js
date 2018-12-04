@@ -85,8 +85,8 @@ var snbMake = (function() {
                     "name": "사이드 네비게이션",
                 },
                 {
-                    "route": "/pages/layout/snbIntroduce.html",
-                    "name": "사이드 네비게이션",
+                    "route": "/pages/layout/tabMenu.html",
+                    "name": "탭메뉴",
                 }
             ]
         },

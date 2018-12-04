@@ -57,6 +57,25 @@ $(function(){
             }
         });
     });
+
+    // 탭메뉴
+    $('[data-name="nav-tabs-block"]').each(function(){
+
+        var elementParent = $(this);
+
+        $('.nav-tabs li',this).click(function(e){
+            e.preventDefault();
+            var thisIndex = $(this).index();
+            var elementBlock = $('[data-name="nav-tabs-content"]',elementParent);
+
+            if (!$(this).hasClass('active')) {
+                $('li.active',elementParent).removeClass('active');
+                $(this).addClass('active');
+                elementBlock.hide();
+                elementBlock.eq(thisIndex).show();
+            }
+        });
+    });
 });
 
 // Iscroll

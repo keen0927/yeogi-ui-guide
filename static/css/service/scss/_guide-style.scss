@@ -169,3 +169,11 @@
         }
     }
 }
+[data-name="nav-tabs-block"] {
+    .block-content {
+        display: none;
+        &:nth-of-type(1) {
+            display: block;
+        }
+    }
+}
