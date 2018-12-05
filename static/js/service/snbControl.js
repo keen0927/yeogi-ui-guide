@@ -19,7 +19,11 @@ var snbMake = (function() {
             "childrenMenu": [
                 {
                     "route": "/pages/samplePage/page_01.html",
-                    "name": "기본형",
+                    "name": "기본형 1",
+                },
+                {
+                    "route": "/pages/samplePage/page_02.html",
+                    "name": "기본형 2",
                 }
             ]
         },
@@ -100,17 +104,21 @@ var snbMake = (function() {
                     "name": "DataTable.js",
                 },
                 {
-                    "route": "/pages/plugin/validation.html",
-                    "name": "Validation",
+                    "route": "/pages/plugin/dateRangePicker.html",
+                    "name": "Date Range Picker",
                 },
-                {
-                    "route": "/pages/plugin/swiper.html",
-                    "name": "Swiper.js",
-                },
-                {
-                    "route": "/pages/plugin/dropzone.html",
-                    "name": "Dropzone.js",
-                },
+                // {
+                //     "route": "/pages/plugin/validation.html",
+                //     "name": "Validation",
+                // },
+                // {
+                //     "route": "/pages/plugin/swiper.html",
+                //     "name": "Swiper.js",
+                // },
+                // {
+                //     "route": "/pages/plugin/dropzone.html",
+                //     "name": "Dropzone.js",
+                // },
             ]
         },
         {
@@ -244,5 +252,4 @@ $(function(){
     $('body').on('click','.snb-main-list p',function(e){
         e.preventDefault();
     });
-
 });

@@ -478,6 +478,9 @@ input[type="file"] {
     margin: 0;
     font-size: 14px;
     cursor: pointer;
+    &.css-control-sm {
+        font-size: 12px;
+    }
 }
 .css-radio {
     .css-control-input {
@@ -518,6 +521,24 @@ input[type="file"] {
         width: 12px;
         height: 12px;
         border-radius: 50%;
+    }
+    &.css-control-sm {
+        .css-control-input~.css-control-indicator {
+            width: 14px;
+            height: 14px;
+        }
+        .css-control-input:checked~.css-control-indicator:after {
+            top: 8px;
+            left: 3px;
+            width: 8px;
+            height: 8px;
+        }
+        .css-control-input:disabled~.css-control-indicator:after {
+            top: 8px;
+            left: 3px;
+            width: 8px;
+            height: 8px;
+        }
     }
 }
 
@@ -571,6 +592,29 @@ input[type="file"] {
         width: 18px;
         height: 18px;
         // background: $black-56;
+    }
+
+    &.css-control-sm {
+        .css-control-input~.css-control-indicator {
+            width: 14px;
+            height: 14px;
+        }
+        .css-control-input:checked~.css-control-indicator:after {
+            top: 6px;
+            left: 1px;
+            width: 12px;
+            height: 12px;
+            font-size: 10px;
+            line-height: 1.4;
+        }
+        .css-control-input:disabled~.css-control-indicator:after {
+            top: 6px;
+            left: 1px;
+            width: 12px;
+            height: 12px;
+            font-size: 10px;
+            line-height: 1.4;
+        }
     }
 }
 /* Input - Switch */
@@ -727,7 +771,11 @@ input[type="file"] {
 
 /* 툴팁 */
 $tooltip-color: #333;
+
 .tooltip {
+    &.show {
+        opacity: 1;
+    }
     .tooltip-inner {
         max-width: 600px;
         padding: 10px;
@@ -740,3 +788,5 @@ $tooltip-color: #333;
 .tooltip.bs-tooltip-auto[x-placement^=right] .arrow::before,.tooltip.bs-tooltip-right .arrow::before{border-right-color:$tooltip-color}
 .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before,.tooltip.bs-tooltip-bottom .arrow::before{border-bottom-color:$tooltip-color}
 .tooltip.bs-tooltip-auto[x-placement^=left] .arrow::before,.tooltip.bs-tooltip-left .arrow::before{border-left-color:$tooltip-color}
+
+

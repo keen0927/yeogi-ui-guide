@@ -44,6 +44,7 @@ h2.content-head {
         margin-bottom: 25px;
     }
     .block-head {
+        display: flex;
         position: relative;
         padding: 16px;
         background-color: #f7f9f6;
@@ -51,6 +52,14 @@ h2.content-head {
         line-height: 1;
         small {
             font-size: 11px;
+        }
+        .block-title {
+            flex: 1 1 auto;
+            min-height: 28px;
+            line-height: 28px;
+        }
+        .block-content {
+            flex: 0 0 auto;
         }
         @media (min-width: $break-point__desktop) {
             padding: 18px 24px;

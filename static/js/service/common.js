@@ -76,6 +76,10 @@ $(function(){
             }
         });
     });
+
+    $('body').on('click','.snb-sub',function(e){
+        iscrollUpdate();
+    });
 });
 
 // Iscroll
