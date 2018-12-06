@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/service/font-icon-load.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/service/style.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div id="snb"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+
+            <h2 class="content-head">셀렉트박스</h2>
+
+            <div class="block">
+                <div class="block-head">
+                    셀렉트박스 샘플
+                    <button type="button" class="button-code-toggle" data-name="code-1">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
+                </div>
+                <div class="block-content">
+                    <p>1.  var selectbox = new SelectBox(targetElement, options) 로 셀렉트박스를 생성한다.</p>
+                    <p>2. selectbox.create()하여 DOM에 그린다.</p><br>
+                    <p>- 제공 api</p>
+                    <ul>
+                        <li>
+                                * selectbox.getSelectedValue() : 사용자가 선택한 value를 가져온다.
+                        </li>
+                        <li>
+                                * selectbox.getSelectedText() : 사용자가 선택한 text를 가져온다.
+                        </li>
+                    </ul><br/>
+                    <div id="checkbox1"></div>
+                    <!-- 셀렉트박스 예제 -->
+                    <div class="code-copy mt-4" data-name="code-1">
+                        <pre><code class="js">
+// selectBox 생성
+var selectboxTarget = $('#checkbox1');
+var selectbox = new SelectBox(selectboxTarget, {
+    attributes: { name: 'name', id: 'Example', class: 'selectbox-example' }, //selectbox attributes
+    values: [{ value: 'bnn', text: 'banana' }, { value: 'app', text: 'apple' }, { value: 'grp', text: 'grape' }] //데이터 객체
+});
+
+// selected value를 가져온다.
+
+selectbox.create(); // dom에 그리는 시점(필수)
+
+var callback = function() {
+    alert(selectbox.getSelectedValue() + '가 선택 되었습니다.'); // select된 value을 가져온다.
+    console.log(selectbox.getSelectedText() + '가 선택 되었습니다.');// select된 text를 가져온다.
+}; 
+selectbox.onChange(callback); // onChange event에 콜백을 보낸다.
+                        </code></pre>
+                        <button type="button" class="button-copy">Copy</button>
+                        <textarea class="textarea-copy">
+                    </textarea>
+                    </div>
+
+                </div>
+
+            </div>
+
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/bootstrap.min.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+    <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/library/datatables.js"></script>
+    <script src="/static/js/service/snbControl.js"></script>
+
+    <!-- JS : service  -->
+    <script src="/static/js/service/common.js"></script>
+    <script src="/static/js/service/modules/selectbox.js"></script>
+    <script>
+    // 코드 하이라이트
+    hljs.initHighlightingOnLoad();
+    // selectBox 생성
+    var selectboxTarget = $('#checkbox1');
+    var selectbox = new SelectBox(selectboxTarget, {
+        attributes: { name: 'name', id: 'Example', class: 'selectbox-example' },
+        values: [{ value: 'bnn', text: 'banana' }, { value: 'app', text: 'apple' }, { value: 'grp', text: 'grape' }],
+    });
+
+    // selected value를 가져온다.
+
+    selectbox.create(); // dom에 그리는 시점(필수)
+
+    var callback = function() {
+        alert(selectbox.getSelectedValue() + '가 선택 되었습니다.'); // select된 value을 가져온다.
+        console.log(selectbox.getSelectedText() + '가 선택 되었습니다.');// select된 text를 가져온다.
+    }; 
+    selectbox.onChange(callback); // onChange event에 콜백을 보낸다.
+    </script>
+</body>
+
+</html>
