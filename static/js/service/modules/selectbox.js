@@ -38,41 +38,51 @@ var SelectBox = function(target, options) {
 		return template.children('option:selected').text();
 	};
 
+	/**
+	 * create 후에 callback 을 전달받을 수 있다.
+	 * @param { function } callback
+	 */
 	this.create = function(callback) {
 		_bindTemplate(this.target, this.options);
-		if (callback) {
+		if (callback && typeof callback === 'function') {
 			callback();
 		}
 	};
 
+	/**
+	 * 사용자가 선택한 밸류를 가져온다.
+	 * @return { String }
+	 */
 	this.getSelectedValue = function() {
 		return _getSelectedValue();
 	};
 
+	/**
+	 * 사용자가 선택한 텍스트를 가져온다.
+	 * @return { String }
+	 */
 	this.getSelectedText = function() {
 		return _getSelectedText();
 	};
 
+	/**
+	 * value를 재셋팅한다.
+	 * @param { Array } arr
+	 */
+	this.setValues = function(arr) {
+		if (arr) {
+			template.text('');
+			for (var i = 0; i < arr.length; i++) {
+				template.append('<option value="' + arr[i].value + '">' + arr[i].text + '</option>');
+			}
+		}
+	};
+
 	this.onChange = function(callback) {
-		this.target.children().on('change', function() {
-			callback();
-		});
+		if (callback && typeof callback === 'function') {
+			this.target.children().on('change', function() {
+				callback();
+			});
+		}
 	};
 };
-// // selectBox 생성
-// var selectboxTarget1 = $('#checkbox1');
-// //TODO: 2예제 2개.
-// var selectbox1 = new SelectBox(selectboxTarget1, {
-// 	attributes: { name: 'name', id: 'Example', class: 'selectbox-example' },
-// 	values: [{ value: 'bnn', text: 'banana' }, { value: 'app', text: 'apple' }, { value: 'grp', text: 'grape' }],
-// });
-
-// // selected value를 가져온다.
-
-// selectbox1.create(); // do(필수)
-
-// var callback = function() {
-// 	alert(selectbox1.getSelectedValue() + '가 선택 되었습니다.'); // select된 value을 가져온다.
-// 	console.log(selectbox1.getSelectedText() + '가 선택 되었습니다.'); // select된 text를 가져온다.
-// };
-// selectbox1.onChange(callback); // onChange event에 콜백을 보낸다.

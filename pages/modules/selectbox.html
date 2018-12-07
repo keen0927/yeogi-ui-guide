@@ -96,35 +96,40 @@
 //---- 테스트 코드 1: selectBox1 생성
 var selectboxTarget1 = $('#checkbox1');
 var selectbox1 = new SelectBox(selectboxTarget1, {
-    attributes: { name: 'name', id: 'Example', class: 'selectbox-example' },
-    values: [
-        { value: 'bnn', text: 'banana' },
-        { value: 'app', text: 'apple' },
-        { value: 'grp', text: 'grape' },
-    ],
+	attributes: { name: 'name', id: 'Example', class: 'selectbox-example' },
+	values: [
+		{ value: 'bnn', text: 'banana' },
+		{ value: 'app', text: 'apple' },
+		{ value: 'grp', text: 'grape' },
+	],
 });
 
 selectbox1.create(); // dom에 그리는 시점(필수)
 
 var callback1 = function() {
-    alert(selectbox1.getSelectedValue() + '가 선택 되었습니다.'); // select된 value을 가져온다.
+	console.log(selectbox1.getSelectedValue() + '가 선택 되었습니다.'); // select된 value을 가져온다.
+	alert(selectbox1.getSelectedText()); // select된 text를 가져온다.
 };
 selectbox1.onChange(callback1); // onChange event에 콜백을 보낸다.
 
 //----- 테스트 코드2: selectBox2 생성
 var selectbox2 = new SelectBox($('#checkbox2'), {
-    attributes: { name: 'name2', id: 'Example2', class: 'selectbox-example' },
-    values: [
-        { value: 'bnn', text: 'banana' },
-        { value: 'app', text: 'apple' },
-        { value: 'grp', text: 'grape' },
-    ],
+	attributes: { name: 'name2', id: 'Example2', class: 'selectbox-example' },
+	values: [
+		{ value: 'bnn', text: 'banana' },
+		{ value: 'app', text: 'apple' },
+		{ value: 'grp', text: 'grape' },
+	],
 });
 
 selectbox2.create();
 
 var callback2 = function() {
-    console.log(selectbox2.getSelectedText() + '가 선택 되었습니다.'); // select된 text를 가져온다.
+	// 새 데이터를 배열로 set한다.
+	selectbox2.setValues([
+		{ value: 'test', text: 'test' }, 
+		{ value: 'test2', text: 'test2' }
+	]);
 };
 selectbox2.onChange(callback2);
                         
@@ -155,6 +160,10 @@ selectbox2.onChange(callback2);
 					<tr>
 						<td>selectbox.onChange(callback)</td>
 						<td>셀렉트박스 onChange event에 콜백을 전달한다</td>
+					</tr>
+					<tr>
+						<td>selectbox.setValues(arr)</td>
+						<td>셀렉트박스에 새 데이터를 배열로 set한다.</td>
 					</tr>
 				</table>
 			</div>
@@ -194,7 +203,8 @@ selectbox2.onChange(callback2);
 			selectbox1.create(); // dom에 그리는 시점(필수)
 
 			var callback1 = function() {
-				alert(selectbox1.getSelectedValue() + '가 선택 되었습니다.'); // select된 value을 가져온다.
+				console.log(selectbox1.getSelectedValue() + '가 선택 되었습니다.'); // select된 value을 가져온다.
+				alert(selectbox1.getSelectedText()); // select된 text를 가져온다.
 			};
 			selectbox1.onChange(callback1); // onChange event에 콜백을 보낸다.
 
@@ -211,7 +221,8 @@ selectbox2.onChange(callback2);
 			selectbox2.create();
 
 			var callback2 = function() {
-				console.log(selectbox2.getSelectedText() + '가 선택 되었습니다.'); // select된 text를 가져온다.
+				// 데이터를 set한다.
+				selectbox2.setValues([{ value: 'test', text: 'test' }, { value: 'test2', text: 'test2' }]);
 			};
 			selectbox2.onChange(callback2);
 		</script>
