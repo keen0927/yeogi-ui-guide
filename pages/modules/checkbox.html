@@ -87,13 +87,11 @@
 						<p>1. var selectbox = new SelectBox(targetElement, options) 로 셀렉트박스를 생성한다.</p>
 						<p>2. selectbox.create()하여 DOM에 그린다.</p>
 						<br />
+						<button id="checkAll" class="btn btn-primary">전체선택</button>
+						<button id="uncheckAll" class="btn btn-primary">전체해제</button>
 						<div id="checkbox1" class="mt-2"></div>
-						<label class="css-control css-control-sm css-checkbox css-control-primary mr-2">
-							<input type="checkbox" class="css-control-input" name="" />
-							<span class="css-control-indicator"></span><span>전체</span>
-						</label>
-
 						<div id="checkbox2" class="mt-2"></div>
+						<button id="getSelectedValue" class="btn btn-primary">선택된 값</button>
 						<!-- 셀렉트박스 예제 -->
 						<div class="code-copy mt-4" data-name="code-1">
 							<pre><code class="js">
