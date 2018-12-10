@@ -129,6 +129,10 @@ var snbMake = (function() {
 					route: '/pages/modules/selectbox.html',
 					name: 'selectbox.js',
 				},
+				{
+					route: '/pages/modules/checkbox.html',
+					name: 'checkbox.js',
+				},
 			],
 		},
 		{
