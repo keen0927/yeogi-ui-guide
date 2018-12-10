@@ -176,7 +176,7 @@ $('#uncheckAll').on('click', function() {
 
 		<!-- JS : service -->
 		<script src="/static/js/service/common.js"></script>
-		<script src="/static/js/service/modules/checkbox.js"></script>
+		<script src="http://static.goodchoice.kr/static/ui/js/service/modules/checkbox.js"></script>
 		<script>
 			// 코드 하이라이트
 			hljs.initHighlightingOnLoad();
@@ -190,7 +190,7 @@ $('#uncheckAll').on('click', function() {
 			];
 
 			var checkbox1 = new CheckBox(checkboxTarget1, {
-				attributes: { name: 'name', class: 'mr-2' },
+				attributes: { name: 'name', class: 'mr-2' }, // mr-1, mr-2로 체크박스 크기 조정
 				values: examValues,
 			});
 
