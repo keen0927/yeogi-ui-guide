@@ -21,7 +21,7 @@
 			var values = options.values[i];
 			var checkBoxWrapper = createElement(
 				'<label />',
-				'css-control css-control-sm css-checkbox css-control-primary mr-2'
+				'css-control css-control-sm css-checkbox css-control-primary'
 			);
 
 			var checkBoxInput = $('<input />', {
@@ -36,7 +36,7 @@
 			var checkboxTitle = $('<span>' + values.text + '</span>');
 
 			if (attr.class) {
-				checkBoxInput.addClass(attr.class);
+				checkBoxWrapper.addClass(attr.class);
 			}
 			if (!!values.disable) {
 				checkBoxInput.attr('disabled', true);
@@ -53,7 +53,7 @@
 
 		var _getChecked = function() {
 			var options = self.options;
-			var checkedBox = $('input[name=' + options.attributes.name + ']:checked');
+			var checkedBox = self.target.find('input[name=' + options.attributes.name + ']:checked');
 			return checkedBox;
 		};
 
@@ -125,32 +125,3 @@
 
 	exports.CheckBox = CheckBox;
 })(window, document);
-var checkboxTarget1 = $('#checkbox1');
-var examValues = [
-	{ value: 'bnn', text: 'banana', checked: false, disable: false },
-	{ value: 'app', text: 'apple', checked: true, disable: false },
-	{ value: 'grp', text: 'grape', checked: false, disable: true },
-	{ value: 'tmt', text: 'tomato', checked: false, disable: false },
-];
-
-var checkbox1 = new CheckBox(checkboxTarget1, {
-	attributes: { name: 'name', class: 'selected' },
-	values: examValues,
-});
-
-checkbox1.create();
-$('#getSelectedValue').on('click', function() {
-	alert(checkbox1.getCheckedValue());
-});
-
-$('#checkAll').on('click', function() {
-	checkbox1.checkAll();
-});
-
-$('#uncheckAll').on('click', function() {
-	checkbox1.unCheckAll();
-});
-
-//TODO: Check all
-//TODO: Uncheck all
-//TODO: onChange event callback
