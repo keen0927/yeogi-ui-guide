@@ -56,6 +56,8 @@
         <!-- Container -->
         <div class="container">
             <h2 class="content-head">툴팁</h2>
+
+            <!-- #1 Block -->
             <div class="block">
                 <div class="block-head">
                     기본형
@@ -121,7 +123,9 @@
 </div>
                 </div>
             </div>
+            <!-- //#1 Block -->
 
+            <!-- #2 Block -->
             <div class="block">
                 <div class="block-head">
                     커스텀형
@@ -132,7 +136,8 @@
                 <div class="block-content">
                     <p class="pb-4">
                         해당 태그의 <b class="text-danger">title속성안에 html값을 추가</b>하여 커스텀 툴팁이 제작 가능합니다.<br>
-                        툴팁이 계속 위치하려면 부모 버튼에 클릭이 된 상태여야 노출이 계속 이루어집니다.
+                        툴팁이 계속 위치하려면 부모 버튼에 클릭이 된 상태여야 노출이 계속 이루어집니다.<br>
+                        <b class="text-danger">데이터 값을 컨트롤해야 하는 작업에는 사용을 지양합니다.</b>
                     </p>
                     <button type="button" class="btn btn-danger" data-toggle="tooltip" data-html="true" title='
                     <a href="/pages/style/grid.html" class="btn btn-sm btn-success">그리드</a>
@@ -159,6 +164,52 @@
 </div>
                 </div>
             </div>
+            <!-- //#2 Block -->
+
+            <!-- #3 Block -->
+            <div class="block">
+                <div class="block-head">
+                    드랍다운 형
+                    <button type="button" class="button-code-toggle" data-name="code-3">
+                        <span class="icon-outline-code-24px"></span>
+                    </button>
+                </div>
+                <div class="block-content">
+
+                    <p class="pb-2">
+                        버튼 클릭시 부모 자식간의 데이터 컨트롤이 필요할 때 사용을 권장합니다.<br>
+                        <b class="text-danger">dropdown-menu-left / dropdown-menu-right</b>로 드랍메뉴 정렬이 가능합니다.
+                    </p>
+
+                    <button class="btn btn-info" type="button" id="dropdownTest" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">드랍다운 노출</button>
+                    <div class="dropdown-menu dropdown-menu-left text-center pl-2 pr-2" aria-labelledby="dropdownTest">
+                        <button type="button" class="btn btn-primary btn-sm">테스트 1</button>
+                        <button type="button" class="btn btn-primary btn-sm">테스트 2</button>
+                        <button type="button" class="btn btn-primary btn-sm">테스트 3</button>
+                    </div>
+
+<div class="code-copy mt-4" data-name="code-3">
+<pre><code class="html">&lt;button class="btn btn-info" type="button" id="dropdownTest" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">드랍다운 노출&lt;/button&gt;
+&lt;div class="dropdown-menu dropdown-menu-left text-center pl-2 pr-2" aria-labelledby="dropdownTest"&gt;
+    &lt;button type="button" class="btn btn-primary btn-sm"&gt;
+    &lt;button type="button" class="btn btn-primary btn-sm"&gt;
+    &lt;button type="button" class="btn btn-primary btn-sm"&gt;
+&lt;/div&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<button class="btn btn-info" type="button" id="dropdownTest" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">드랍다운 노출</button>
+<div class="dropdown-menu dropdown-menu-left text-center pl-2 pr-2" aria-labelledby="dropdownTest">
+    <button type="button" class="btn btn-primary btn-sm">테스트 1</button>
+    <button type="button" class="btn btn-primary btn-sm">테스트 2</button>
+    <button type="button" class="btn btn-primary btn-sm">테스트 3</button>
+</div>
+</textarea>
+</div>
+
+                </div>
+            </div>
+            <!-- //#3 Block -->
         </div>
         <!-- //Container -->
 
@@ -187,6 +238,17 @@
         $('[data-toggle="tooltip"]').tooltip();
     });
     </script>
+
+
+    <script>
+        $(function(){
+            console.log('111');
+        });
+    </script>
+
+
+
+
 </body>
 
 </html>
