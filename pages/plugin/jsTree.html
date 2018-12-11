@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/service/style.css">
+    <link rel="stylesheet" href="/static/css/library/datatables.css">
+    <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/jsTree/style.min.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div id="snb"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+            <h2 class="content-head">JsTree</h2>
+            <p>
+                플러그인 사이트 : <a href="https://www.jstree.com/" class="text-danger"><u>https://www.jstree.com/</u></a><br><br>
+                jsTree는 jQuery기반으로 HTML, JSON 데이터를 Tree 컨트롤로 웹에 출력해 주는 자바스크립트 라이브러리 입니다.
+            </p>
+            <!-- #1 Block -->
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    플러그인 추가
+                    <!-- <button type="button" class="button-code-toggle button-code-toggle__all">
+                        <span class="icon-outline-code-24px"></span>
+                    </button> -->
+                </div>
+                <div class="block-content">
+                    기본 CSS와 JS를 추가 해 주세요. <b class="text-danger">(CSS는 head안에 JS는 jQuery하단에 위치하도록 정의)</b>
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">// CSS
+https://static.goodchoice.kr/static/ui/css/library/jsTree/style.min.css
+
+// JS
+https://static.goodchoice.kr/static/ui/js/library/jsTree/jstree.min.js
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+https://static.goodchoice.kr/static/ui/css/library/jsTree/style.min.css
+https://static.goodchoice.kr/static/ui/js/library/jsTree/jstree.min.js
+</textarea>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- //#1 Block -->
+
+            <!-- #2 Block : HTML DEMO -->
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    HTML 데모
+                </div>
+                <div class="block-content">
+                    <div id="html" class="demo">
+                        <ul>
+                            <li data-jstree='{ "opened" : true }'>루트 노드
+                                <ul>
+                                    <li data-jstree='{ "selected" : true }'>자식 노드 1</li>
+                                    <li>자식 노드 2</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">&lt;div id="html" class="demo"&gt;
+    &lt;ul&gt;
+        &lt;li data-jstree='{ "opened" : true }'&gt;루트 노드
+            &lt;ul&gt;
+                &lt;li data-jstree='{ "selected" : true }'&gt;자식 노드 1&lt;/li&gt;
+                &lt;li&gt;자식 노드 2&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+<div id="html" class="demo">
+    <ul>
+        <li data-jstree='{ "opened" : true }'>루트 노드
+            <ul>
+                <li data-jstree='{ "selected" : true }'>자식 노드 1</li>
+                <li>자식 노드 2</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</textarea>
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="js">$('#html').jstree();</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+$('#html').jstree();
+</textarea>
+</div>
+                    </div>
+                </div>
+            </div>
+            <!-- //#2 Block -->
+
+            <!-- #3 Block : inline data DEMO -->
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    인라인 데이타 데모
+                </div>
+                <div class="block-content">
+                    <div id="data" class="demo"></div>
+<div class="code-copy mt-4 d-block">
+<pre><code class="js">$('#data').jstree({
+    'core' : {
+        'data' : [
+            { "text" : "Root node", "children" : [
+                    { "text" : "Child node 1" },
+                    { "text" : "Child node 2" }
+            ]}
+        ]
+    }
+});
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+$('#data').jstree({
+    'core' : {
+        'data' : [
+            { "text" : "Root node", "children" : [
+                    { "text" : "Child node 1" },
+                    { "text" : "Child node 2" }
+            ]}
+        ]
+    }
+});
+</textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- //#3 Block : inline data DEMO -->
+
+            <!-- #4 Block : data format DEMO -->
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    데이타 포맷 데모
+                </div>
+                <div class="block-content">
+                    <div id="frmt" class="demo"></div>
+<div class="code-copy mt-4 d-block">
+<pre><code class="js">$('#frmt').jstree({
+    'core' : {
+        'data' : [
+            {
+                "text" : "Root node",
+                "state" : { "opened" : true },
+                "children" : [
+                    {
+                        "text" : "Child node 1",
+                        "state" : { "selected" : true },
+                        "icon" : "jstree-file"
+                    },
+                    { "text" : "Child node 2", "state" : { "disabled" : true } }
+                ]
+            }
+        ]
+    }
+});
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+$('#frmt').jstree({
+    'core' : {
+        'data' : [
+            {
+                "text" : "Root node",
+                "state" : { "opened" : true },
+                "children" : [
+                    {
+                        "text" : "Child node 1",
+                        "state" : { "selected" : true },
+                        "icon" : "jstree-file"
+                    },
+                    { "text" : "Child node 2", "state" : { "disabled" : true } }
+                ]
+            }
+        ]
+    }
+});
+</textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- //#4 Block : data format DEMO -->
+
+            <!-- #5 Block : Ajax Demo -->
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    Ajax 데모
+                </div>
+                <div class="block-content">
+                    <div id="ajax" class="demo"></div>
+<div class="code-copy mt-4 d-block">
+<pre><code class="js">$('#ajax').jstree({
+    'core' : {
+        'data' : {
+            "url" : "/static/js/library/jsTree/root.json",
+            "dataType" : "json" // needed only if you do not supply JSON headers
+        }
+    }
+});
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+$('#ajax').jstree({
+    'core' : {
+        'data' : {
+            "url" : "/static/js/library/jsTree/root.json",
+            "dataType" : "json" // needed only if you do not supply JSON headers
+        }
+    }
+});
+</textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- //#5 Block : Ajax Demo -->
+
+            <!-- #6 Block : Lazy load Demo -->
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    Lazy Load 데모
+                </div>
+                <div class="block-content">
+                    <div id="lazy" class="demo"></div>
+<div class="code-copy mt-4 d-block">
+<pre><code class="js">$('#lazy').jstree({
+    'core' : {
+        'data' : {
+            "url" : "//www.jstree.com/fiddle/?lazy",
+            "data" : function (node) {
+                return { "id" : node.id };
+            }
+        }
+    }
+});
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+$('#lazy').jstree({
+    'core' : {
+        'data' : {
+            "url" : "//www.jstree.com/fiddle/?lazy",
+            "data" : function (node) {
+                return { "id" : node.id };
+            }
+        }
+    }
+});
+</textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- //#6 Block : Lazy load Demo -->
+
+            <!-- #7 Block : data from callback -->
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    콜백 데모
+                </div>
+                <div class="block-content">
+                    <div id="clbk" class="demo"></div>
+<div class="code-copy mt-4 d-block">
+<pre><code class="js">$('#clbk').jstree({
+    'core' : {
+        'data' : function (node, cb) {
+            if(node.id === "#") {
+                cb([{"text" : "Root", "id" : "1", "children" : true}]);
+            }
+            else {
+                cb(["Child"]);
+            }
+        }
+    }
+});
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+$('#clbk').jstree({
+    'core' : {
+        'data' : function (node, cb) {
+            if(node.id === "#") {
+                cb([{"text" : "Root", "id" : "1", "children" : true}]);
+            }
+            else {
+                cb(["Child"]);
+            }
+        }
+    }
+});
+</textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- //#7 Block : data from callback -->
+
+            <!-- #8 Block : interaction and event -->
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    콜백 데모
+                </div>
+                <div class="block-content">
+                    <button id="evts_button" class="btn btn-primary">id가 1인 노드값을 선택</button>
+                    <div id="evts" class="demo mt-3"></div>
+<div class="code-copy mt-4 d-block">
+<pre><code class="js">$('#evts_button').on("click", function () {
+    var instance = $('#evts').jstree(true);
+    instance.deselect_all();
+    instance.select_node('1');
+});
+$('#evts')
+    .on("changed.jstree", function (e, data) {
+        if(data.selected.length) {
+            alert('선택된 노드는 : ' + data.instance.get_node(data.selected[0]).text);
+        }
+    })
+    .jstree({
+        'core' : {
+            'multiple' : false,
+            'data' : [
+                { "text" : "Root node", "children" : [
+                        { "text" : "Child node 1", "id" : 1 },
+                        { "text" : "Child node 2" }
+                ]}
+            ]
+        }
+    });
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">
+$('#evts_button').on("click", function () {
+    var instance = $('#evts').jstree(true);
+    instance.deselect_all();
+    instance.select_node('1');
+});
+$('#evts')
+    .on("changed.jstree", function (e, data) {
+        if(data.selected.length) {
+            alert('선택된 노드는 : ' + data.instance.get_node(data.selected[0]).text);
+        }
+    })
+    .jstree({
+        'core' : {
+            'multiple' : false,
+            'data' : [
+                { "text" : "Root node", "children" : [
+                        { "text" : "Child node 1", "id" : 1 },
+                        { "text" : "Child node 2" }
+                ]}
+            ]
+        }
+    });
+</textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- //#8 Block : interaction and event -->
+        </div>
+        <!-- //Container -->
+
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/bootstrap.min.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+    <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/service/snbControl.js"></script>
+    <script src="https://static.goodchoice.kr/static/ui/js/library/jsTree/jstree.min.js"></script>
+
+    <!-- JS : service  -->
+    <script src="/static/js/service/common.js"></script>
+    <script>
+
+    // 코드 하이라이트
+    hljs.initHighlightingOnLoad();
+
+    // JsTree
+    $(function(){
+        // #1 html demo
+        $('#html').jstree();
+
+        // inline data demo
+        $('#data').jstree({
+            'core' : {
+                'data' : [
+                    { "text" : "Root node", "children" : [
+                            { "text" : "Child node 1" },
+                            { "text" : "Child node 2" }
+                    ]}
+                ]
+            }
+        });
+
+        // data format demo
+        $('#frmt').jstree({
+            'core' : {
+                'data' : [
+                    {
+                        "text" : "Root node",
+                        "state" : { "opened" : true },
+                        "children" : [
+                            {
+                                "text" : "Child node 1",
+                                "state" : { "selected" : true },
+                                "icon" : "jstree-file"
+                            },
+                            { "text" : "Child node 2", "state" : { "disabled" : true } }
+                        ]
+                    }
+                ]
+            }
+        });
+
+        // ajax demo
+        $('#ajax').jstree({
+            'core' : {
+                'data' : {
+                    "url" : "/static/js/library/jsTree/root.json",
+                    "dataType" : "json" // needed only if you do not supply JSON headers
+                }
+            }
+        });
+
+        // lazy demo
+        $('#lazy').jstree({
+            'core' : {
+                'data' : {
+                    "url" : "//www.jstree.com/fiddle/?lazy",
+                    "data" : function (node) {
+                        return { "id" : node.id };
+                    }
+                }
+            }
+        });
+
+        // data from callback
+        $('#clbk').jstree({
+            'core' : {
+                'data' : function (node, cb) {
+                    if(node.id === "#") {
+                        cb([{"text" : "Root", "id" : "1", "children" : true}]);
+                    }
+                    else {
+                        cb(["Child"]);
+                    }
+                }
+            }
+        });
+
+        // interaction and events
+        $('#evts_button').on("click", function () {
+            var instance = $('#evts').jstree(true);
+            instance.deselect_all();
+            instance.select_node('1');
+        });
+        $('#evts').on("changed.jstree", function (e, data) {
+            if(data.selected.length) {
+                alert('선택된 노드는 : ' + data.instance.get_node(data.selected[0]).text);
+            }
+        }).jstree({
+            'core' : {
+                'multiple' : false,
+                'data' : [
+                    { "text" : "Root node", "children" : [
+                            { "text" : "Child node 1", "id" : 1 },
+                            { "text" : "Child node 2" }
+                    ]}
+                ]
+            }
+        });
+    });
+
+
+    </script>
+</body>
+
+</html>

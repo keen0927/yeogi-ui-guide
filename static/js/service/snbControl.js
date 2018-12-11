@@ -110,6 +110,10 @@ var snbMake = (function() {
 					route: '/pages/plugin/dateRangePicker.html',
 					name: 'Date Range Picker',
 				},
+				{
+					route: '/pages/plugin/jsTree.html',
+					name: 'jsTree',
+				}
 				// {
 				//     "route": "/pages/plugin/validation.html",
 				//     "name": "Validation",
