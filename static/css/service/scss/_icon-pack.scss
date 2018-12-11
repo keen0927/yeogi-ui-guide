@@ -1,3 +1,12 @@
+/* 고딕체 */
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1:400');
+
+/* 잘난서체 */
+@import url('https://static.goodchoice.kr/fonts/jalnan/font.css');
+
+/* 아이콘팩 */
+@import url('http://static.goodchoice.kr/static/ui/icon/iconPack.css');
+
 .icon-pack {
     li {
         display: inline-block;
@@ -215,4 +224,10 @@
 }
 .icon-baseline-play_circle_outline-24px:before {
     content: "\e92e";
+}
+.icon-baseline-stop-24px:before {
+    content: "\e92f";
+}
+.icon-baseline-play_arrow-24px:before {
+    content: "\e930";
 }
