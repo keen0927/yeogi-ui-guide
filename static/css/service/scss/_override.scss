@@ -789,4 +789,14 @@ $tooltip-color: #333;
 .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before,.tooltip.bs-tooltip-bottom .arrow::before{border-bottom-color:$tooltip-color}
 .tooltip.bs-tooltip-auto[x-placement^=left] .arrow::before,.tooltip.bs-tooltip-left .arrow::before{border-left-color:$tooltip-color}
 
-
+/* 모달 팝업 */
+.modal-content {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0px 4px 5px rgba(0,0,0,0.1);
+}
+.modal-backdrop {
+    &.show {
+        opacity: .7;
+    }
+}

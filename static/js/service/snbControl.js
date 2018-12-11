@@ -76,6 +76,10 @@ var snbMake = (function() {
 					route: '/pages/style/tooltip.html',
 					name: '툴팁',
 				},
+				{
+					route: '/pages/style/modal.html',
+					name: '모달 팝업',
+				},
 			],
 		},
 		{
