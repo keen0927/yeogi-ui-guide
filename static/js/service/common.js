@@ -80,6 +80,7 @@ $(function(){
     $('body').on('click','.snb-sub',function(e){
         iscrollUpdate();
     });
+   
 });
 
 // Iscroll
@@ -151,8 +152,8 @@ function fadeLoad() {
         $('.wrap').addClass('show');
         setTimeout(function(){
             $('.spinner').remove();
-        },300);
-    },300);
+        },900);
+    },900);
 }
 
 // ONLOAD Init
@@ -182,6 +183,28 @@ function toastPopup(text) {
             $('.toast-popup').remove();
             toastPopupShowing = false;
         },2200);
+    }
+}
+
+// spinner
+function spinner(ctr){
+    var elBody = $('body'),
+        $dims = $('<div>').attr('class','modal-backdrop fade show'),
+        $svgRoding = $('<div>').attr('class','spinner-item').html('<svg class="spinner_i"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg>'),
+        spinnerObj = $('.spinner-item'),
+        modal = $('.modal-backdrop');
+    if(ctr=='show') spinnerShow();
+    if(ctr=='hide') spinnerHide();
+    // spinner off 
+    function spinnerHide() { 
+        modal.remove();
+        spinnerObj.remove();
+        elBody.removeClass('spinner-active');
+    }      
+    // spinner show
+    function spinnerShow() {
+        elBody.append($dims,$svgRoding);
+        elBody.addClass('spinner-active');
     }
 }
 
