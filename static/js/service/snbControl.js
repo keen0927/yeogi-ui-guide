@@ -100,7 +100,7 @@ var snbMake = (function() {
 		{
 			route: '#none',
 			name: '플러그인',
-			icon: 'icon-outline-radio_button_checked-24px',
+			icon: 'icon-outline-gps_fixed-24px',
 			childrenMenu: [
 				{
 					route: '/pages/plugin/datatable.html',
@@ -113,11 +113,15 @@ var snbMake = (function() {
 				{
 					route: '/pages/plugin/jsTree.html',
 					name: 'jsTree',
-				}
-				// {
-				//     "route": "/pages/plugin/validation.html",
-				//     "name": "Validation",
-				// },
+				},
+				{
+				    route: "/pages/plugin/chart.html",
+				    name: "Chart.js",
+				},
+				{
+				    route: "/pages/plugin/summernote.html",
+				    name: "에디터툴 - summernote",
+				},
 				// {
 				//     "route": "/pages/plugin/swiper.html",
 				//     "name": "Swiper.js",

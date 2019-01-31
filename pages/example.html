@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body class="default-font">
+
+        <p class="font-10px">$font-10px: 0.625rem</p>
+        <p class="font-11px">font-11px: 0.688rem</p>
+        <p class="font-12px">font-12px: 0.750rem</p>
+        <p class="font-13px">font-13px: 0.813rem</p>
+        <p class="font-14px">font-14px: 0.875rem</p>
+        <p class="font-15px">font-15px: 0.938rem</p>
+        <p class="font-16px">font-16px: 1rem</p>
+        <p class="font-17px">font-17px: 1.063rem</p>
+        <p class="font-18px">font-18px: 1.125rem</p>
+        <p class="font-19px">font-19px: 1.188rem</p>
+        <p class="font-20px">font-20px: 1.250rem</p>
+        <p class="font-21px">font-21px: 1.313rem</p>
+        <p class="font-22px">font-22px: 1.375rem</p>
+        <p class="font-23px">font-23px: 1.438rem</p>
+        <p class="font-24px">font-24px: 1.500rem</p>
+
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            var ua = navigator.userAgent.toLowerCase(),
+                isAndroid = ua.indexOf("android") > -1;
+            iOS = ua.match(/(iphone|ipod|ipad)/);
+            if(isAndroid) {
+                $('html').css('font-size','15px');
+            }
+            if(iOS){
+                $('html').css('font-size','16px');
+            }
+        });
+    </script>
+</body>
+
+</html>
