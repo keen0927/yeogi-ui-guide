@@ -80,10 +80,6 @@ var snbMake = (function() {
 					route: '/pages/style/modal.html',
 					name: '모달 팝업',
 				},
-				{
-					route: '/pages/style/spinner.html',
-					name: '스피너',
-				},
 			],
 		},
 		{
