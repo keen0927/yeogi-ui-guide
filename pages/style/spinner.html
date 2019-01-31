@@ -67,7 +67,7 @@
                 </div>
                 <div class="block-content">
                     <p>
-                        <button type="button" class="btn btn-primary mr-1" onclick="spinner('show')">
+                        <button type="button" class="btn btn-primary mr-1" onclick="spinner()">
                             스피너 실행
                         </button>
                         <button type="button" class="btn btn-primary" style="position: absolute; z-index: 1050;" onclick="spinner('hide')">
@@ -76,16 +76,19 @@
                     </p>
                     <p class="mt-4">
                         자바스크립트를 통한 호출을 하고 싶은 경우
-                        <b class="text-danger">spinner('show') / spinner('hide')</b> 를 통하여 컨트롤이 가능합니다.
+                        <b class="text-danger">spinner('show') / spinner('hide')</b> 를 통하여 컨트롤이 가능합니다. <br>
+                        parameter 값이 없을 경우 ( <b class="text-danger">spinner()</b> ) 'show' 와 동일하게 스피너가 실행됩니다. 
                     </p>
 <div class="code-copy mb-6 mt-4 d-block">
-<pre><code class="js">spinner('show');
-spinner('hide');
+<pre><code class="js">spinner();  // 실행   
+spinner('show');  // 실행   
+spinner('hide');  // 종료   
 </code></pre>
 <button type="button" class="button-copy">Copy</button>
 <textarea class="textarea-copy">
-spinner('show');
-spinner('hide');
+spinner();  // 실행   
+spinner('show');  // 실행
+spinner('hide');  // 종료
 </textarea>
 </div>
                 </div>
@@ -97,7 +100,9 @@ spinner('hide');
 
     </div>
     <!-- //Wrap -->
-    
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
     <!-- JS : library  -->
     <script src="/static/js/library/jquery-3.3.1.min.js"></script>
     <script src="/static/js/library/popper.min.js"></script>
