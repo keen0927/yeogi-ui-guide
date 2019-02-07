@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/service/style.css">
+    <link rel="stylesheet" href="/static/css/library/datatables.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div id="snb"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+            <h2 class="content-head">핑거프린트</h2>
+            <p>
+                <!-- 플러그인 사이트 : <a href="https://www.jstree.com/" class="text-danger"><u>https://www.jstree.com/</u></a><br><br>
+                jsTree는 jQuery기반으로 HTML, JSON 데이터를 Tree 컨트롤로 웹에 출력해 주는 자바스크립트 라이브러리 입니다. -->
+            </p>
+            <!-- #1 Block -->
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    플러그인 추가
+                </div>
+                <div class="block-content">
+                    JS를 추가 해 주세요.
+<div class="code-copy mt-4 mb-4 d-block">
+<pre><code class="html">// JS
+http://static.goodchoice.kr/static/ui/js/library/fingerprint/fingerprint.js
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">http://static.goodchoice.kr/static/ui/js/library/fingerprint/fingerprint.js
+</textarea>
+                    </div>
+
+                    해당 코드를 삽입 해 주세요.
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="js">var fingerprintReport = (function () {
+    Fingerprint2.get(function(components) {
+        var murmur = Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31);
+        console.log(murmur); // 콘솔로그로 확인
+    });
+})();
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">var fingerprintReport = (function () {
+    Fingerprint2.get(function(components) {
+        var murmur = Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31);
+        console.log(murmur); // 콘솔로그 테스트용
+    });
+})();
+</textarea>
+</div>
+
+                    <h2 class="pt-4">My Fingerprint is <p class="pt-2 text-success"><small id="fingerPrint"></small></p></h2>
+                </div>
+            </div>
+            <!-- //#1 Block -->
+
+
+
+        </div>
+        <!-- //Container -->
+
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/bootstrap.min.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+    <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/service/snbControl.js"></script>
+    <script src="http://static.goodchoice.kr/static/ui/js/library/fingerprint/fingerprint.js"></script>
+
+    <!-- JS : service  -->
+    <script src="/static/js/service/common.js"></script>
+    <script>
+
+    // 코드 하이라이트
+    hljs.initHighlightingOnLoad();
+
+    // 핑거프린트
+    var fingerprintReport = (function () {
+
+        var text = document.cookie,
+            findStr = "FINGERPRINT";
+
+        if (text.indexOf(findStr) != -1) {
+            return null;
+        } else {
+            Fingerprint2.get(function(components) {
+                var fingerPrint = Fingerprint2.x64hash128(components.map(function (pair) { return pair.value }).join(), 31);
+
+                function setCookie(cName, cValue, cDay){
+                    var expire = new Date();
+
+                    expire.setDate(expire.getDate() + cDay);
+                    cookies = cName + '=' + escape(cValue) + '; path=/ ';
+                    if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+                    document.cookie = cookies;
+                }
+                setTimeout(function(){
+                    setCookie('FINGERPRINT',fingerPrint);
+                },0);
+            });
+        }
+    })();
+
+
+    var printFingerPrint = {
+        name: 'FINGERPRINT',
+        getCookie: function() {
+            var value = document.cookie.match('(^|;) ?' + this.name + '=([^;]*)(;|$)');
+
+            return value? value[2] : null;
+        }
+    };
+    document.getElementById('fingerPrint').innerHTML = printFingerPrint.getCookie();
+    </script>
+</body>
+
+</html>
