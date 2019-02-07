@@ -126,10 +126,10 @@ var snbMake = (function() {
 				    route: "/pages/plugin/summernote.html",
 				    name: "에디터툴 - summernote",
 				},
-				// {
-				//     "route": "/pages/plugin/swiper.html",
-				//     "name": "Swiper.js",
-				// },
+				{
+				    route: "/pages/plugin/fingerPrint.html",
+				    name: "핑거프린트",
+				},
 				// {
 				//     "route": "/pages/plugin/dropzone.html",
 				//     "name": "Dropzone.js",
