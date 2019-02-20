@@ -101,7 +101,7 @@
                         <div class="input-group-prepend">
                             <i class="icon-baseline-calendar_today-24px"></i>
                         </div>
-                        <input type="text" id="datePickerTest01" class="form-control">
+                        <input type="text" class="form-control datePickerTest01">
                     </div>
 
 <div class="code-copy mt-4" data-name="code-1">
@@ -109,7 +109,7 @@
     &lt;div class="input-group-prepend"&gt;
         &lt;i class="icon-baseline-calendar_today-24px"&gt;&lt;/i&gt;
     &lt;/div&gt;
-    &lt;input type="text" id="datePickerTest01" class="form-control"&gt;
+    &lt;input type="text" class="form-control datePickerTest01"&gt;
 &lt;/div&gt;</code></pre>
 <button type="button" class="button-copy">Copy</button>
 <textarea class="textarea-copy">
@@ -117,19 +117,19 @@
     <div class="input-group-prepend">
         <i class="icon-baseline-calendar_today-24px"></i>
     </div>
-    <input type="text" id="datePickerTest01" class="form-control">
+    <input type="text" class="form-control datePickerTest01">
 </div>
 </textarea>
 </div>
 
 <div class="code-copy mt-4" data-name="code-1">
-<pre><code class="js">$('#datePickerTest01').daterangepicker({
+<pre><code class="js">$('.datePickerTest01').daterangepicker({
     singleDatePicker: true, 
 });
 </code></pre>
 <button type="button" class="button-copy">Copy</button>
 <textarea class="textarea-copy">
-$('#datePickerTest01').daterangepicker({
+$('.datePickerTest01').daterangepicker({
     singleDatePicker: true,
 });
 </textarea>
@@ -150,7 +150,7 @@ $('#datePickerTest01').daterangepicker({
                         <div class="input-group-prepend">
                             <i class="icon-baseline-calendar_today-24px"></i>
                         </div>
-                        <input type="text" id="datePickerTest02" class="form-control">
+                        <input type="text" class="form-control datePickerTest02">
                     </div>
 
 
@@ -159,22 +159,22 @@ $('#datePickerTest01').daterangepicker({
     &lt;div class="input-group-prepend"&gt;
         &lt;i class="icon-baseline-calendar_today-24px"&gt;&lt;/i&gt;
     &lt;/div&gt;
-    &lt;input type="text" id="datePickerTest02" class="form-control"&gt;
+    &lt;input type="text" class="form-control datePickerTest02"&gt;
 &lt;/div&gt;</code></pre>
 <button type="button" class="button-copy">Copy</button>
 <textarea class="textarea-copy">
-<input type="text" id="datePickerTest01" class="form-control" style="width: 200px">
+<input type="text" class="form-control datePickerTest02" style="width: 200px">
 </textarea>
 </div>
 
 <div class="code-copy mt-4" data-name="code-2">
-<pre><code class="js">$('#datePickerTest01').daterangepicker({
+<pre><code class="js">$('.datePickerTest02').daterangepicker({
     autoApply: true,
 });
 </code></pre>
 <button type="button" class="button-copy">Copy</button>
 <textarea class="textarea-copy">
-$('#datePickerTest01').daterangepicker({
+$('.datePickerTest02').daterangepicker({
     autoApply: true,
 });
 </textarea>
@@ -208,11 +208,11 @@ $('#datePickerTest01').daterangepicker({
 
     // Date Picker
     $(function(){
-        $('#datePickerTest01').daterangepicker({
+        $('.datePickerTest01').daterangepicker({
             singleDatePicker: true,
         });
 
-        $('#datePickerTest02').daterangepicker({
+        $('.datePickerTest02').daterangepicker({
             autoApply: true,
         });
     });
