@@ -130,6 +130,10 @@ var snbMake = (function() {
 				    route: "/pages/plugin/fingerPrint.html",
 				    name: "핑거프린트",
 				},
+				{
+					route: "/pages/plugin/validation.html",
+					name: "jQuery Validation"
+				}
 				// {
 				//     "route": "/pages/plugin/dropzone.html",
 				//     "name": "Dropzone.js",
