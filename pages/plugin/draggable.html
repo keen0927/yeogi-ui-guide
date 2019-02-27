@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/service/style.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div id="snb"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="float-right">
+                <button class="btn btn-primary">
+                    버튼스
+                </button>
+            </div>
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+            <h2 class="content-head">jQuery Validate</h2>
+            <p>
+                플러그인 사이트 : <a href="https://shopify.github.io/draggable/" class="text-danger"><u>https://shopify.github.io/draggable/</u></a><br><br>
+            </p>
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    기본형
+                </div>
+                <div class="block-content">
+                    JS를 추가 해 주세요.
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">&lt;script src="https://static.goodchoice.kr/static/ui/js/library/draggable/draggable.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://static.goodchoice.kr/static/ui/js/library/draggable/Sortable.min.js"&gt;&lt;/script&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy"><script src="https://static.goodchoice.kr/static/ui/js/library/draggable/draggable.min.js"></script>
+<script src="https://static.goodchoice.kr/static/ui/js/library/draggable/Sortable.min.js"></script>
+</textarea>
+</div>
+                    <p class="mt-4 mb-4">적용할 클래스 명을 추가 한 후 해당 스크립트를 실행</p>
+                    <ul class="example-list list-group col">
+                        <li class="list-group-item d-flex justify-content-between">Item 1 <span class="icon-baseline-drag_handle-24px"></span></li>
+                        <li class="list-group-item d-flex justify-content-between">Item 2 <span class="icon-baseline-drag_handle-24px"></span></li>
+                        <li class="list-group-item d-flex justify-content-between">Item 3 <span class="icon-baseline-drag_handle-24px"></span></li>
+                        <li class="list-group-item d-flex justify-content-between">Item 4 <span class="icon-baseline-drag_handle-24px"></span></li>
+                        <li class="list-group-item d-flex justify-content-between">Item 5 <span class="icon-baseline-drag_handle-24px"></span></li>
+                        <li class="list-group-item d-flex justify-content-between">Item 6 <span class="icon-baseline-drag_handle-24px"></span></li>
+                    </ul>
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">&lt;ul class="example-list list-group col"&gt;
+    &lt;li class="list-group-item d-flex justify-content-between"&gt;Item 1 &lt;span class="icon-baseline-drag_handle-24px"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="list-group-item d-flex justify-content-between"&gt;Item 2 &lt;span class="icon-baseline-drag_handle-24px"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="list-group-item d-flex justify-content-between"&gt;Item 3 &lt;span class="icon-baseline-drag_handle-24px"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="list-group-item d-flex justify-content-between"&gt;Item 4 &lt;span class="icon-baseline-drag_handle-24px"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="list-group-item d-flex justify-content-between"&gt;Item 5 &lt;span class="icon-baseline-drag_handle-24px"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="list-group-item d-flex justify-content-between"&gt;Item 6 &lt;span class="icon-baseline-drag_handle-24px"&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy"><ul class="example-list list-group col">
+    <li class="list-group-item d-flex justify-content-between">Item 1 <span class="icon-baseline-drag_handle-24px"></span></li>
+    <li class="list-group-item d-flex justify-content-between">Item 2 <span class="icon-baseline-drag_handle-24px"></span></li>
+    <li class="list-group-item d-flex justify-content-between">Item 3 <span class="icon-baseline-drag_handle-24px"></span></li>
+    <li class="list-group-item d-flex justify-content-between">Item 4 <span class="icon-baseline-drag_handle-24px"></span></li>
+    <li class="list-group-item d-flex justify-content-between">Item 5 <span class="icon-baseline-drag_handle-24px"></span></li>
+    <li class="list-group-item d-flex justify-content-between">Item 6 <span class="icon-baseline-drag_handle-24px"></span></li>
+</ul>
+</textarea>
+</div>
+                </div>
+            </div>
+        </div>
+        <!-- //Container -->
+
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/bootstrap.min.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+    <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/service/snbControl.js"></script>
+    <script src="/static/js/library/draggable/draggable.min.js"></script>
+    <script src="/static/js/library/draggable/Sortable.min.js"></script>
+
+    <!-- JS : service  -->
+    <script src="/static/js/service/common.js"></script>
+    <script>
+    // 코드 하이라이트
+    hljs.initHighlightingOnLoad();
+
+    // jQuery Validate
+    $(function(){
+        var example1 = document.querySelector('.example-list');
+        new Sortable(example1);
+    });
+    </script>
+</body>
+
+</html>
