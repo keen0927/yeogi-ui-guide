@@ -133,6 +133,10 @@ var snbMake = (function() {
 				{
 					route: "/pages/plugin/validation.html",
 					name: "jQuery Validation"
+				},
+				{
+					route: "/pages/plugin/draggable.html",
+					name: "드래그 & 드랍 - Draggable"
 				}
 				// {
 				//     "route": "/pages/plugin/dropzone.html",
