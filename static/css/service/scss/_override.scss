@@ -800,3 +800,15 @@ $tooltip-color: #333;
         opacity: .7;
     }
 }
+
+/* 높이 정렬 */
+$form-height: 34px !important;
+.input-group-prepend {
+    height: $form-height;
+}
+.form-control {
+    height: $form-height;
+}
+.custom-select {
+    height: $form-height;
+}
