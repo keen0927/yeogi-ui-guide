@@ -115,9 +115,6 @@
 
 /* Table */
 .table {
-    th, td {
-        background: #fff;
-    }
     &.table-striped {
         tr:nth-of-type(odd) {
             td {
