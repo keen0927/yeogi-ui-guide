@@ -16,7 +16,7 @@
 <body>
 
     <!-- Wrap -->
-    <div class="wrap">
+    <div class="wrap" data-fade="off">
 
         <!-- SNB -->
         <div id="snb"></div>
@@ -101,6 +101,23 @@ npm i -g live-server
 </div>
                 </div>
             </div>
+
+            <div class="block">
+                <div class="block-head">
+                    초기 페이드인 효과 설정 끄기
+                </div>
+                <div class="block-content">
+                    기본 설정은 초기 진입시 <b class="text-success">페이드인 효과 & 스피너</b>를 사용한다.<br />
+                    이 효과를 끄려면 <b class="text-danger">.wrap</b> 태그에 <b class="text-danger">data-fade="off"</b> 를 추가 하면 된다.
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">&lt;div class="wrap" data-fade="off"&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy"><div class="wrap" data-fade="off">
+</textarea>
+</div>
+                </div>
+            </div>
         </div>
         <!-- //Container -->
 
@@ -123,6 +140,9 @@ npm i -g live-server
     <script>
     // 코드 하이라이트
     hljs.initHighlightingOnLoad();
+
+
+    console.log('11');
     </script>
 </body>
 
