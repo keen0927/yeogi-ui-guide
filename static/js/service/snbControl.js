@@ -33,6 +33,10 @@ var snbMake = (function() {
 			icon: 'icon-outline-flash_on-24px',
 			childrenMenu: [
 				{
+					route: '/pages/style/breadcrumb.html',
+					name: '사이트 이동 경로',
+				},
+				{
 					route: '/pages/style/grid.html',
 					name: '그리드',
 				},

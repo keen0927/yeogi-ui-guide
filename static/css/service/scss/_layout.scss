@@ -11,8 +11,9 @@ div {
 
 .wrap {
     opacity: 0;
-    transition: 0.3s;
+    
     &.show {
+        transition: opacity 0.3s;
         opacity: 1;
     }
 }

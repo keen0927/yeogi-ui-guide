@@ -148,12 +148,23 @@ function resizeThrottler() {
 
 // 로딩 페이드 효과
 function fadeLoad() {
-    setTimeout(function(){
-        $('.wrap').addClass('show');
+
+    var elementWrap = document.querySelector('.wrap'),
+        getFadeType = elementWrap.getAttribute('data-fade');
+
+    if (getFadeType == 'off') {
+        // 페이드인 OFF
+        $('.wrap').css('opacity','1');
+        $('.spinner').remove();
+    } else {
+        // 페이드인 ON
         setTimeout(function(){
-            $('.spinner').remove();
+            $('.wrap').addClass('show');
+            setTimeout(function(){
+                $('.spinner').remove();
+            },900);
         },900);
-    },900);
+    }
 }
 
 // ONLOAD Init
@@ -162,6 +173,7 @@ window.onload = function() {
     sideNavigationScrollRun(); // SNB 스크롤 효과
     fadeLoad(); // 화면 Show
 };
+
 
 // 토스트팝업
 var toastPopupShowing = false;
