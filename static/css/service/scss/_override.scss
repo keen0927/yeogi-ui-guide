@@ -115,6 +115,10 @@
 
 /* Table */
 .table {
+    th,
+    td {
+        vertical-align: middle;
+    }
     &.table-striped {
         tr:nth-of-type(odd) {
             td {
@@ -819,4 +823,9 @@ $form-height: 34px !important;
     @media (min-width: $break-point__desktop) {
         padding: 18px 24px;
     }
+}
+
+/* JSTREE */
+.jstree-font-small {
+    font-size: 13px;
 }
