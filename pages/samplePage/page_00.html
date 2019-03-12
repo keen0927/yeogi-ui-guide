@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/library/daterangepicker.css">
+    <link rel="stylesheet" href="/static/css/service/style.css">
+    <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/jsTree/style.min.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div id="snb"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+
+            <h2 class="content-head">
+                화면관리
+            </h2>
+
+            <!-- Flex Content -->
+            <div class="d-flex">
+                <!-- Left Contents -->
+                <div class="mr-4" style="width: 300px">
+                    <div class="block">
+                        <div class="block-content">
+                            <!-- 화면명 & 검색 -->
+                            <select name="" id="" class="form-control custom-select" style="width:100%;">
+                                <option value="">화면명</option>
+                            </select>
+                            <div class="mt-1 d-flex">
+                                <div class="mr-1">
+                                    <input type="text" style="width:100%" class="form-control " placeholder="text..">
+                                </div>
+                                <div style="width:60px">
+                                    <button type="button" class="btn btn-primary" style="width:60px">검색</button>
+                                </div>
+                            </div>
+                            <!-- //화면명 & 검색 -->
+
+                            <!-- 트리 -->
+                            <div class="mt-4">
+                                <div id="html" class="demo jstree-font-small">
+                                    <ul>
+                                        <li data-jstree='{ "opened" : true }'>여기어때
+                                            <ul>
+                                                <li>홈</li>
+                                                <li data-jstree='{ "opened" : true }'>카테고리
+                                                    <ul>
+                                                        <li data-jstree='{ "selected" : true }'>지역 선택</li>
+                                                        <li>핫스테이 리스트</li>
+                                                        <li>모텔 카테고리 리스트</li>
+                                                        <li>비모텔 카테고리 리스트</li>
+                                                    </ul>
+                                                </li>
+                                                <li>내주변</li>
+                                                <li>검색</li>
+                                                <li>블랙</li>
+                                            </ul>
+                                        </li>
+                                        <li>호텔타임
+                                            <ul>
+                                                <li>홈</li>
+                                                <li>카테고리
+                                                    <ul>
+                                                        <li>지역 선택</li>
+                                                        <li>핫스테이 리스트</li>
+                                                        <li>모텔 카테고리 리스트</li>
+                                                        <li>비모텔 카테고리 리스트</li>
+                                                    </ul>
+                                                </li>
+                                                <li>내주변</li>
+                                                <li>검색</li>
+                                                <li>블랙</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- //트리 -->
+                            <div class="row mt-4">
+                                <div class="col-6 text-left">
+                                    <button type="button" class="btn btn-sm btn-outline-primary">
+                                        <span class="icon-outline-add-24px"></span>
+                                        화면 생성
+                                    </button>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button type="button" class="btn btn-sm btn-outline-primary">순서 수정</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Left Contents -->
+
+                <!-- Right Contents -->
+                <div style="width: 100%">
+
+                    <div class="block">
+                        <div class="block-head">
+                            최근 수정 내역
+                        </div>
+                        <div class="block-content">
+                            <!-- 상단 검색 -->
+                            <div class="row">
+                                <div class="col-10">
+                                    <table class="table mb-0">
+                                        <colgroup>
+                                            <col width="120px">
+                                            <col width="">
+                                        </colgroup>
+                                        <tr>
+                                            <th class="bg-light">전시 채널</th>
+                                            <td>
+                                                <label class="css-control css-checkbox css-control-primary mr-2">
+                                                    <input type="checkbox" class="css-control-input" name="">
+                                                    <span class="css-control-indicator"></span><span>전체</span>
+                                                </label>
+                                                <label class="css-control css-checkbox css-control-primary mr-2">
+                                                    <input type="checkbox" class="css-control-input" name="">
+                                                    <span class="css-control-indicator"></span><span>여기어때</span>
+                                                </label>
+                                                <label class="css-control css-checkbox css-control-primary mr-2">
+                                                    <input type="checkbox" class="css-control-input" name="">
+                                                    <span class="css-control-indicator"></span><span>호텔타임</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light">수정일</th>
+                                            <td>
+                                                <div class="form-group form-inline mb-0">
+                                                    <div class="input-group mr-1" style="width: 300px">
+                                                        <div class="input-group-prepend">
+                                                            <i class="icon-baseline-calendar_today-24px"></i>
+                                                        </div>
+                                                        <input type="text" class="form-control datePickerTest01">
+                                                    </div>
+                                                    <button type="button" class="btn btn-rounded btn-light mr-1">오늘</button>
+                                                    <button type="button" class="btn btn-rounded btn-light mr-1">이번달</button><button type="button" class="btn btn-rounded btn-secondary">최근30일</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light">검색어</th>
+                                            <td>
+                                                <div class="form-group form-inline mb-0">
+                                                    <select name="" id="" class="form-control custom-select mr-1" style="width:150px;">
+                                                        <option value="">화면명</option>
+                                                    </select>
+                                                    <input type="text" style="width:300px" class="form-control mr-1" placeholder="화면 명 입력">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-2">
+                                    <p class="mb-2"><button class="btn btn-primary" style="width: 150px;height:60px;">검색</button></p>
+                                    <p><button class="btn btn-default" style="width: 150px">초기화</button></p>
+                                </div>
+                            </div>
+                            <!-- //상단 검색 -->
+
+                            <!-- 중단 결과 -->
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    <b>・ 총 9999건</b>
+                                    <select name="" id="" class="form-control custom-select ml-2" style="width:150px;">
+                                        <option value="">20개씩 보기</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- //중단 결과 -->
+
+                            <!-- 테이블 -->
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <table class="table text-center">
+                                        <!-- <colgroup>
+                                            <col width="50px">
+                                            <col width="35%">
+                                            <col width="35%">
+                                            <col width="">
+                                        </colgroup> -->
+                                        <thead>
+                                            <tr>
+                                                <th class="bg-light">화면 ID</th>
+                                                <th class="bg-light">루트 그룹</th>
+                                                <th class="bg-light">화면 명</th>
+                                                <th class="bg-light">여기어때 전시 여부</th>
+                                                <th class="bg-light">호텔타임 전시 여부</th>
+                                                <th class="bg-light">수정자</th>
+                                                <th class="bg-light">수정 구분</th>
+                                                <th class="bg-light">최종수정일시</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">A0001</a>
+                                                </td>
+                                                <td>여기어때</td>
+                                                <td>비모텔 카테고리 리스트</td>
+                                                <td>Y</td>
+                                                <td>N</td>
+                                                <td>킨</td>
+                                                <td>추가</td>
+                                                <td>2018/12/31 14:00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">A0001</a>
+                                                </td>
+                                                <td>여기어때</td>
+                                                <td>비모텔 카테고리 리스트</td>
+                                                <td>Y</td>
+                                                <td>N</td>
+                                                <td>킨</td>
+                                                <td>추가</td>
+                                                <td>2018/12/31 14:00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>A0001</td>
+                                                <td>여기어때</td>
+                                                <td>비모텔 카테고리 리스트</td>
+                                                <td>Y</td>
+                                                <td>N</td>
+                                                <td>킨</td>
+                                                <td>추가</td>
+                                                <td>2018/12/31 14:00:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- 페이징 -->
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#">이전</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item active">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">다음</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 테이블 -->
+                        </div>
+                    </div>
+                </div>
+                <!-- //Right Contents -->
+            </div>
+            <!-- //Flex Content -->
+
+            <div class="block">
+                <div class="block-head">
+                    설명
+                </div>
+                <div class="block-content">
+                    <ol>
+                        <li>1. 화면 메뉴는 jstree사용 <b class="text-danger">관련 JS,CSS 필요</b> 참고페이지 <a href="../../pages/plugin/jsTree.html">참고페이지 링크</a></li>
+                        <li>2. datepicker <b class="text-danger">관련 JS,CSS 필요</b> 참고페이지 <a href="../../pages/plugin/dateRangePicker.html">참고페이지 링크</a></li>
+                    </ol>
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">&lt;h2 class="content-head"&gt;
+    화면관리
+&lt;/h2&gt;
+
+&lt;div class="d-flex"&gt;
+    &lt;div class="mr-4" style="width: 300px"&gt;
+        &lt;div class="block"&gt;
+            &lt;div class="block-content"&gt;
+                &lt;!-- 화면명 & 검색 --&gt;
+                &lt;select name="" id="" class="form-control custom-select" style="width:100%;"&gt;
+                    &lt;option value=""&gt;화면명&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;div class="mt-1 d-flex"&gt;
+                    &lt;div class="mr-1"&gt;
+                        &lt;input type="text" style="width:100%" class="form-control " placeholder="text.."&gt;
+                    &lt;/div&gt;
+                    &lt;div style="width:60px"&gt;
+                        &lt;button type="button" class="btn btn-primary" style="width:60px"&gt;검색&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="mt-4"&gt;
+                    &lt;div id="html" class="demo jstree-font-small"&gt;
+                        &lt;ul&gt;
+                            &lt;li data-jstree='{ "opened" : true }'&gt;여기어때
+                                &lt;ul&gt;
+                                    &lt;li&gt;홈&lt;/li&gt;
+                                    &lt;li data-jstree='{ "opened" : true }'&gt;카테고리
+                                        &lt;ul&gt;
+                                            &lt;li data-jstree='{ "selected" : true }'&gt;지역 선택&lt;/li&gt;
+                                            &lt;li&gt;핫스테이 리스트&lt;/li&gt;
+                                            &lt;li&gt;모텔 카테고리 리스트&lt;/li&gt;
+                                            &lt;li&gt;비모텔 카테고리 리스트&lt;/li&gt;
+                                        &lt;/ul&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;내주변&lt;/li&gt;
+                                    &lt;li&gt;검색&lt;/li&gt;
+                                    &lt;li&gt;블랙&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;호텔타임
+                                &lt;ul&gt;
+                                    &lt;li&gt;홈&lt;/li&gt;
+                                    &lt;li&gt;카테고리
+                                        &lt;ul&gt;
+                                            &lt;li&gt;지역 선택&lt;/li&gt;
+                                            &lt;li&gt;핫스테이 리스트&lt;/li&gt;
+                                            &lt;li&gt;모텔 카테고리 리스트&lt;/li&gt;
+                                            &lt;li&gt;비모텔 카테고리 리스트&lt;/li&gt;
+                                        &lt;/ul&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;내주변&lt;/li&gt;
+                                    &lt;li&gt;검색&lt;/li&gt;
+                                    &lt;li&gt;블랙&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="row mt-4"&gt;
+                    &lt;div class="col-6 text-left"&gt;
+                        &lt;button type="button" class="btn btn-sm btn-outline-primary"&gt;
+                            &lt;span class="icon-outline-add-24px"&gt;&lt;/span&gt;
+                            화면 생성
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-6 text-right"&gt;
+                        &lt;button type="button" class="btn btn-sm btn-outline-primary"&gt;순서 수정&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div style="width: 100%"&gt;
+
+        &lt;div class="block"&gt;
+            &lt;div class="block-head"&gt;
+                최근 수정 내역
+            &lt;/div&gt;
+            &lt;div class="block-content"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-10"&gt;
+                        &lt;table class="table mb-0"&gt;
+                            &lt;colgroup&gt;
+                                &lt;col width="120px"&gt;
+                                &lt;col width=""&gt;
+                            &lt;/colgroup&gt;
+                            &lt;tr&gt;
+                                &lt;th class="bg-light"&gt;전시 채널&lt;/th&gt;
+                                &lt;td&gt;
+                                    &lt;label class="css-control css-checkbox css-control-primary mr-2"&gt;
+                                        &lt;input type="checkbox" class="css-control-input" name=""&gt;
+                                        &lt;span class="css-control-indicator"&gt;&lt;/span&gt;&lt;span&gt;전체&lt;/span&gt;
+                                    &lt;/label&gt;
+                                    &lt;label class="css-control css-checkbox css-control-primary mr-2"&gt;
+                                        &lt;input type="checkbox" class="css-control-input" name=""&gt;
+                                        &lt;span class="css-control-indicator"&gt;&lt;/span&gt;&lt;span&gt;여기어때&lt;/span&gt;
+                                    &lt;/label&gt;
+                                    &lt;label class="css-control css-checkbox css-control-primary mr-2"&gt;
+                                        &lt;input type="checkbox" class="css-control-input" name=""&gt;
+                                        &lt;span class="css-control-indicator"&gt;&lt;/span&gt;&lt;span&gt;호텔타임&lt;/span&gt;
+                                    &lt;/label&gt;
+                                &lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;th class="bg-light"&gt;수정일&lt;/th&gt;
+                                &lt;td&gt;
+                                    &lt;div class="form-group form-inline mb-0"&gt;
+                                        &lt;div class="input-group mr-1" style="width: 300px"&gt;
+                                            &lt;div class="input-group-prepend"&gt;
+                                                &lt;i class="icon-baseline-calendar_today-24px"&gt;&lt;/i&gt;
+                                            &lt;/div&gt;
+                                            &lt;input type="text" class="form-control datePickerTest01"&gt;
+                                        &lt;/div&gt;
+                                        &lt;button type="button" class="btn btn-rounded btn-light mr-1"&gt;오늘&lt;/button&gt;
+                                        &lt;button type="button" class="btn btn-rounded btn-light mr-1"&gt;이번달&lt;/button&gt;&lt;button type="button" class="btn btn-rounded btn-secondary"&gt;최근30일&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;th class="bg-light"&gt;검색어&lt;/th&gt;
+                                &lt;td&gt;
+                                    &lt;div class="form-group form-inline mb-0"&gt;
+                                        &lt;select name="" id="" class="form-control custom-select mr-1" style="width:150px;"&gt;
+                                            &lt;option value=""&gt;화면명&lt;/option&gt;
+                                        &lt;/select&gt;
+                                        &lt;input type="text" style="width:300px" class="form-control mr-1" placeholder="화면 명 입력"&gt;
+                                    &lt;/div&gt;
+                                &lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-2"&gt;
+                        &lt;p class="mb-2"&gt;&lt;button class="btn btn-primary" style="width: 150px;height:60px;"&gt;검색&lt;/button&gt;&lt;/p&gt;
+                        &lt;p&gt;&lt;button class="btn btn-default" style="width: 150px"&gt;초기화&lt;/button&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="row mt-5"&gt;
+                    &lt;div class="col-12"&gt;
+                        &lt;b&gt;・ 총 9999건&lt;/b&gt;
+                        &lt;select name="" id="" class="form-control custom-select ml-2" style="width:150px;"&gt;
+                            &lt;option value=""&gt;20개씩 보기&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="row mt-2"&gt;
+                    &lt;div class="col-12"&gt;
+                        &lt;table class="table text-center"&gt;
+                            &lt;thead&gt;
+                                &lt;tr&gt;
+                                    &lt;th class="bg-light"&gt;화면 ID&lt;/th&gt;
+                                    &lt;th class="bg-light"&gt;루트 그룹&lt;/th&gt;
+                                    &lt;th class="bg-light"&gt;화면 명&lt;/th&gt;
+                                    &lt;th class="bg-light"&gt;여기어때 전시 여부&lt;/th&gt;
+                                    &lt;th class="bg-light"&gt;호텔타임 전시 여부&lt;/th&gt;
+                                    &lt;th class="bg-light"&gt;수정자&lt;/th&gt;
+                                    &lt;th class="bg-light"&gt;수정 구분&lt;/th&gt;
+                                    &lt;th class="bg-light"&gt;최종수정일시&lt;/th&gt;
+                                &lt;/tr&gt;
+                            &lt;/thead&gt;
+                            &lt;tbody&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;
+                                        &lt;a href="#"&gt;A0001&lt;/a&gt;
+                                    &lt;/td&gt;
+                                    &lt;td&gt;여기어때&lt;/td&gt;
+                                    &lt;td&gt;비모텔 카테고리 리스트&lt;/td&gt;
+                                    &lt;td&gt;Y&lt;/td&gt;
+                                    &lt;td&gt;N&lt;/td&gt;
+                                    &lt;td&gt;킨&lt;/td&gt;
+                                    &lt;td&gt;추가&lt;/td&gt;
+                                    &lt;td&gt;2018/12/31 14:00:00&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;
+                                        &lt;a href="#"&gt;A0001&lt;/a&gt;
+                                    &lt;/td&gt;
+                                    &lt;td&gt;여기어때&lt;/td&gt;
+                                    &lt;td&gt;비모텔 카테고리 리스트&lt;/td&gt;
+                                    &lt;td&gt;Y&lt;/td&gt;
+                                    &lt;td&gt;N&lt;/td&gt;
+                                    &lt;td&gt;킨&lt;/td&gt;
+                                    &lt;td&gt;추가&lt;/td&gt;
+                                    &lt;td&gt;2018/12/31 14:00:00&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;A0001&lt;/td&gt;
+                                    &lt;td&gt;여기어때&lt;/td&gt;
+                                    &lt;td&gt;비모텔 카테고리 리스트&lt;/td&gt;
+                                    &lt;td&gt;Y&lt;/td&gt;
+                                    &lt;td&gt;N&lt;/td&gt;
+                                    &lt;td&gt;킨&lt;/td&gt;
+                                    &lt;td&gt;추가&lt;/td&gt;
+                                    &lt;td&gt;2018/12/31 14:00:00&lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+                        <!-- 페이징 -->
+                        &lt;ul class="pagination justify-content-center"&gt;
+                            &lt;li class="page-item disabled"&gt;
+                                &lt;a class="page-link" href="#"&gt;이전&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="page-item"&gt;
+                                &lt;a class="page-link" href="#"&gt;1&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="page-item active"&gt;
+                                &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+                            &lt;li class="page-item"&gt;
+                                &lt;a class="page-link" href="#"&gt;다음&lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy"><h2 class="content-head">
+    화면관리
+</h2>
+
+<!-- Flex Content -->
+<div class="d-flex">
+    <!-- Left Contents -->
+    <div class="mr-4" style="width: 300px">
+        <div class="block">
+            <div class="block-content">
+                <!-- 화면명 & 검색 -->
+                <select name="" id="" class="form-control custom-select" style="width:100%;">
+                    <option value="">화면명</option>
+                </select>
+                <div class="mt-1 d-flex">
+                    <div class="mr-1">
+                        <input type="text" style="width:100%" class="form-control " placeholder="text..">
+                    </div>
+                    <div style="width:60px">
+                        <button type="button" class="btn btn-primary" style="width:60px">검색</button>
+                    </div>
+                </div>
+                <!-- //화면명 & 검색 -->
+
+                <!-- 트리 -->
+                <div class="mt-4">
+                    <div id="html" class="demo jstree-font-small">
+                        <ul>
+                            <li data-jstree='{ "opened" : true }'>여기어때
+                                <ul>
+                                    <li>홈</li>
+                                    <li data-jstree='{ "opened" : true }'>카테고리
+                                        <ul>
+                                            <li data-jstree='{ "selected" : true }'>지역 선택</li>
+                                            <li>핫스테이 리스트</li>
+                                            <li>모텔 카테고리 리스트</li>
+                                            <li>비모텔 카테고리 리스트</li>
+                                        </ul>
+                                    </li>
+                                    <li>내주변</li>
+                                    <li>검색</li>
+                                    <li>블랙</li>
+                                </ul>
+                            </li>
+                            <li>호텔타임
+                                <ul>
+                                    <li>홈</li>
+                                    <li>카테고리
+                                        <ul>
+                                            <li>지역 선택</li>
+                                            <li>핫스테이 리스트</li>
+                                            <li>모텔 카테고리 리스트</li>
+                                            <li>비모텔 카테고리 리스트</li>
+                                        </ul>
+                                    </li>
+                                    <li>내주변</li>
+                                    <li>검색</li>
+                                    <li>블랙</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //트리 -->
+                <div class="row mt-4">
+                    <div class="col-6 text-left">
+                        <button type="button" class="btn btn-sm btn-outline-primary">
+                            <span class="icon-outline-add-24px"></span>
+                            화면 생성
+                        </button>
+                    </div>
+                    <div class="col-6 text-right">
+                        <button type="button" class="btn btn-sm btn-outline-primary">순서 수정</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Left Contents -->
+
+    <!-- Right Contents -->
+    <div style="width: 100%">
+
+        <div class="block">
+            <div class="block-head">
+                최근 수정 내역
+            </div>
+            <div class="block-content">
+                <!-- 상단 검색 -->
+                <div class="row">
+                    <div class="col-10">
+                        <table class="table mb-0">
+                            <colgroup>
+                                <col width="120px">
+                                <col width="">
+                            </colgroup>
+                            <tr>
+                                <th class="bg-light">전시 채널</th>
+                                <td>
+                                    <label class="css-control css-checkbox css-control-primary mr-2">
+                                        <input type="checkbox" class="css-control-input" name="">
+                                        <span class="css-control-indicator"></span><span>전체</span>
+                                    </label>
+                                    <label class="css-control css-checkbox css-control-primary mr-2">
+                                        <input type="checkbox" class="css-control-input" name="">
+                                        <span class="css-control-indicator"></span><span>여기어때</span>
+                                    </label>
+                                    <label class="css-control css-checkbox css-control-primary mr-2">
+                                        <input type="checkbox" class="css-control-input" name="">
+                                        <span class="css-control-indicator"></span><span>호텔타임</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="bg-light">수정일</th>
+                                <td>
+                                    <div class="form-group form-inline mb-0">
+                                        <div class="input-group mr-1" style="width: 300px">
+                                            <div class="input-group-prepend">
+                                                <i class="icon-baseline-calendar_today-24px"></i>
+                                            </div>
+                                            <input type="text" class="form-control datePickerTest01">
+                                        </div>
+                                        <button type="button" class="btn btn-rounded btn-light mr-1">오늘</button>
+                                        <button type="button" class="btn btn-rounded btn-light mr-1">이번달</button><button type="button" class="btn btn-rounded btn-secondary">최근30일</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="bg-light">검색어</th>
+                                <td>
+                                    <div class="form-group form-inline mb-0">
+                                        <select name="" id="" class="form-control custom-select mr-1" style="width:150px;">
+                                            <option value="">화면명</option>
+                                        </select>
+                                        <input type="text" style="width:300px" class="form-control mr-1" placeholder="화면 명 입력">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-2">
+                        <p class="mb-2"><button class="btn btn-primary" style="width: 150px;height:60px;">검색</button></p>
+                        <p><button class="btn btn-default" style="width: 150px">초기화</button></p>
+                    </div>
+                </div>
+                <!-- //상단 검색 -->
+
+                <!-- 중단 결과 -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <b>・ 총 9999건</b>
+                        <select name="" id="" class="form-control custom-select ml-2" style="width:150px;">
+                            <option value="">20개씩 보기</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- //중단 결과 -->
+
+                <!-- 테이블 -->
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <table class="table text-center">
+                            <!-- <colgroup>
+                                <col width="50px">
+                                <col width="35%">
+                                <col width="35%">
+                                <col width="">
+                            </colgroup> -->
+                            <thead>
+                                <tr>
+                                    <th class="bg-light">화면 ID</th>
+                                    <th class="bg-light">루트 그룹</th>
+                                    <th class="bg-light">화면 명</th>
+                                    <th class="bg-light">여기어때 전시 여부</th>
+                                    <th class="bg-light">호텔타임 전시 여부</th>
+                                    <th class="bg-light">수정자</th>
+                                    <th class="bg-light">수정 구분</th>
+                                    <th class="bg-light">최종수정일시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="#">A0001</a>
+                                    </td>
+                                    <td>여기어때</td>
+                                    <td>비모텔 카테고리 리스트</td>
+                                    <td>Y</td>
+                                    <td>N</td>
+                                    <td>킨</td>
+                                    <td>추가</td>
+                                    <td>2018/12/31 14:00:00</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#">A0001</a>
+                                    </td>
+                                    <td>여기어때</td>
+                                    <td>비모텔 카테고리 리스트</td>
+                                    <td>Y</td>
+                                    <td>N</td>
+                                    <td>킨</td>
+                                    <td>추가</td>
+                                    <td>2018/12/31 14:00:00</td>
+                                </tr>
+                                <tr>
+                                    <td>A0001</td>
+                                    <td>여기어때</td>
+                                    <td>비모텔 카테고리 리스트</td>
+                                    <td>Y</td>
+                                    <td>N</td>
+                                    <td>킨</td>
+                                    <td>추가</td>
+                                    <td>2018/12/31 14:00:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 페이징 -->
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">이전</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">다음</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 테이블 -->
+            </div>
+        </div>
+    </div>
+    <!-- //Right Contents -->
+</div>
+<!-- //Flex Content -->
+</textarea>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <!-- //Container -->
+
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/bootstrap.min.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+    <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/library/moment.min.js"></script>
+    <script src="/static/js/library/daterangepicker.js"></script>
+    <script src="/static/js/service/snbControl.js"></script>
+    <script src="https://static.goodchoice.kr/static/ui/js/library/jsTree/jstree.min.js"></script>
+
+    <!-- JS : service  -->
+    <script src="/static/js/service/common.js"></script>
+    <script>
+    // 코드 하이라이트
+    hljs.initHighlightingOnLoad();
+
+    $(function(){
+        $('.datePickerTest01').daterangepicker({
+            autoApply: true,
+        });
+
+        $('#html').jstree();
+    });
+    </script>
+
+</body>
+
+</html>

@@ -17,13 +17,17 @@ var snbMake = (function() {
 			icon: 'icon-outline-assignment-24px',
 			childrenMenu: [
 				{
+					route: '/pages/samplePage/page_00.html',
+					name: '자주 사용하는 폼',
+				},
+				{
 					route: '/pages/samplePage/page_01.html',
 					name: '기본형 1',
 				},
 				{
 					route: '/pages/samplePage/page_02.html',
 					name: '기본형 2',
-				},
+				}
 			],
 		},
 		{
