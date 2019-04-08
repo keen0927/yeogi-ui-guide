@@ -80,6 +80,10 @@ $(function(){
     $('body').on('click','.snb-sub',function(e){
         iscrollUpdate();
     });
+
+    $('body').on('click','.snb-expand a',function(e){
+        iscrollUpdate();
+    });    
    
 });
 
@@ -87,7 +91,7 @@ $(function(){
 var sideNavigationScroll;
 
 function sideNavigationScrollRun() {
-    if ($('.snb').length == 0) {
+    if ($('#snb').length == 0) {
         return;
     } else {
         sideNavigationScroll = new IScroll('nav', {
