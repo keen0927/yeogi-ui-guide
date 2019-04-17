@@ -206,13 +206,14 @@ function toastPopup(text) {
 * spinner function
 * parm :: crt (string) [ 'show' , 'hide' ]
 */
-function spinner(ctr){
+function spinner(ctr,zIndex){
     ctr ? ctr = ctr : ctr = 'show';
     var elBody = $('body'),
         $dims = $('<div>').attr('class','modal-backdrop fade show'),
         $svgRoding = $('<div>').attr('class','spinner-item').html('<svg class="spinner_i"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg>'),
         spinnerObj = $('.spinner-item'),
-        modal = $('.modal-backdrop');
+        modal = $('.modal-backdrop'),
+        zIndex = zIndex || null;
     if(ctr=='show') spinnerShow();
     if(ctr=='hide') spinnerHide();
     // spinner off 
@@ -225,6 +226,10 @@ function spinner(ctr){
     function spinnerShow() {
         elBody.append($dims,$svgRoding);
         elBody.addClass('spinner-active');
+        setTimeout(function(){
+            $('.modal-backdrop').css('z-index',zIndex);
+            $('.spinner-item').css('z-index',zIndex);
+        },0);
     }
 }
 
