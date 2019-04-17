@@ -70,25 +70,31 @@
                         <button type="button" class="btn btn-primary mr-1" onclick="spinner()">
                             스피너 실행
                         </button>
-                        <button type="button" class="btn btn-primary" style="position: absolute; z-index: 1050;" onclick="spinner('hide')">
+                        <button type="button" class="btn btn-primary mr-1" style="position:relative;z-index:1050" onclick="spinner('hide')">
                             스피너 종료
                         </button>
+                        <button type="button" class="btn btn-primary" onclick="spinner('show',9999)">
+                            스피너 z-index값 적용
+                        </button>                        
                     </p>
                     <p class="mt-4">
-                        자바스크립트를 통한 호출을 하고 싶은 경우
+                        1. 자바스크립트를 통한 호출을 하고 싶은 경우
                         <b class="text-danger">spinner('show') / spinner('hide')</b> 를 통하여 컨트롤이 가능합니다. <br>
-                        parameter 값이 없을 경우 ( <b class="text-danger">spinner()</b> ) 'show' 와 동일하게 스피너가 실행됩니다. 
+                        2. parameter 값이 없을 경우 ( <b class="text-danger">spinner()</b> ) 'show' 와 동일하게 스피너가 실행됩니다. <br>
+                        3. 스피너를 최상단이나 <b class="text-danger">z-index</b>값을 조절하여 팝업 레이어 위치를 조정하고 싶으면 두번째 파라미터에 z-index값을 추가하여 사용합니다. <br>
+                        4. z-index 값이 높을수록 레이어층의 상단에 위치하게 됨. 기본 1040으로 설정<b class="text-danger">(z-index값은 1만을 넘어가지 않도록 사용합니다)</b>
                     </p>
 <div class="code-copy mb-6 mt-4 d-block">
 <pre><code class="js">spinner();  // 실행   
 spinner('show');  // 실행   
 spinner('hide');  // 종료   
+spinner('show',9999);  // 실행 Z-index값 추가
 </code></pre>
 <button type="button" class="button-copy">Copy</button>
-<textarea class="textarea-copy">
-spinner();  // 실행   
-spinner('show');  // 실행
-spinner('hide');  // 종료
+<textarea class="textarea-copy">spinner();
+spinner('show');
+spinner('hide');
+spinner('show',9999);
 </textarea>
 </div>
                 </div>
