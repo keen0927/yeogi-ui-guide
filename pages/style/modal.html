@@ -156,8 +156,6 @@ $('').modal('show');
 
                     <p class="mt-4">모달의 정렬을 세로의 중앙에 위치하고 싶은 경우 <b class="text-danger">modal-dialog</b>클래스와 동일한 속성에 <b class="text-danger">modal-dialog-centered</b> 클래스 추가로 변경 가능 합니다.</p>
 
-
-
                     <p class="mt-3">
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
                             세로 중앙 정렬 모달
@@ -207,6 +205,162 @@ $('').modal('show');
 </div>
 </textarea>
 </div>
+
+<p class="mt-4">모달의 가로 사이즈 조절은 부트스트랩에서 기본으로 3가지 타입을 제공한다.<br/> 기본형을 제외한 <b class="text-danger">Small, Large</b> 사이즈를 제공하며 해당 모달HTML코드에서 <b class="text-danger">modal-dialog 클래스에 modal-sm / modal-lg</b> 로 크기를 변경할 수 있다.</p>
+
+<p class="mt-3">
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalSmall">
+        스몰 사이즈 
+    </button>
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalLarge">
+        라지 사이즈 
+    </button>        
+</p>
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">// 스몰 사이즈
+&lt;div class="modal fade" tabindex="-1" id="exampleModalSmall"&gt;
+    &lt;div class="modal-dialog modal-sm"&gt;
+        &lt;div class="modal-content"&gt;
+        &lt;div class="modal-header"&gt;
+            &lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+            &lt;button type="button" class="close" data-dismiss="modal"&gt;
+                &lt;span&gt;&times;&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="modal-body"&gt;
+            modal-sm
+        &lt;/div&gt;
+        &lt;div class="modal-footer"&gt;
+            &lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+            &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy"><div class="modal fade" tabindex="-1" id="exampleModalSmall">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal">
+                <span>&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            modal-sm
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+</div></textarea>
+</div>
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">// 라지 사이즈
+&lt;div class="modal fade" tabindex="-1" id="exampleModalSmall"&gt;
+    &lt;div class="modal-dialog modal-sm"&gt;
+        &lt;div class="modal-content"&gt;
+        &lt;div class="modal-header"&gt;
+            &lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+            &lt;button type="button" class="close" data-dismiss="modal"&gt;
+                &lt;span&gt;&times;&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="modal-body"&gt;
+            modal-sm
+        &lt;/div&gt;
+        &lt;div class="modal-footer"&gt;
+            &lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+            &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy"><div class="modal fade" tabindex="-1" id="exampleModalLarge">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal">
+                <span>&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            modal-lg
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+</div></textarea>
+</div>
+
+                    <p class="mt-4">모달의 가로사이즈를 커스텀 하고 싶을떄는 해당 모달 HTML코드에 <b class="text-danger">인라인 스타일</b>을 추가하여 사용한다.<br/>아래 코드처럼 디폴트로 style="padding: 0 15px"을 추가해주며<br/>modal-dialog클래스에 인라인 스타일을 추가시켜 사용하면 된다.<br/>
+                    기본적으로 부트스트랩 모달은 반응형을 지원해주기 때문에<br/>브라우저 크기와 상관없이 고정값으로 사용하려면 width값을 max-width값과 같도록 추가를하면 된다.
+                    </p>
+
+                    <p class="mt-3">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalRange">
+                            width 커스텀 모달
+                        </button>
+                    </p>        
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">// 1. modal 클래스에 인라인 스타일 style="padding: 0 15px" 을 추가.
+// 2. modal-dialog에 style="max-width: 1024px" 추가. 필요한 가로 사이즈를 수정하여 사용
+// 3. 가로사이즈를 고정으로 사용하고 싶으면 max-width값 옆에 width값을 같은 사이즈로 추가시켜 준다.
+&lt;div class="modal fade" tabindex="-1" id="exampleModalRange" style="padding: 0 15px;"&gt;
+    &lt;div class="modal-dialog" style="max-width: 1024px;width: 1024px;"&gt;
+        &lt;div class="modal-content"&gt;
+        &lt;div class="modal-header"&gt;
+            &lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+            &lt;button type="button" class="close" data-dismiss="modal"&gt;
+                &lt;span&gt;&times;&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="modal-body"&gt;
+            테스트
+        &lt;/div&gt;
+        &lt;div class="modal-footer"&gt;
+            &lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+            &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;   
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy"><div class="modal fade" tabindex="-1" id="exampleModalRange" style="padding: 0 15px;">
+<div class="modal-dialog" style="max-width: 1024px;width: 1024px;">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        테스트
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+    </div>
+</div>
+</div></textarea>
+</div>
+
+
+
                 </div>
             </div>
             <!-- // #1 Block -->
@@ -302,6 +456,70 @@ $('').modal('show');
         </div>
     </div>
     <!-- //#3 모달 : 세로중앙형 -->
+
+    <!-- #4 모달 : 사이즈 -->
+    <div class="modal fade" tabindex="-1" id="exampleModalSmall">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                modal-sm
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="exampleModalLarge">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                modal-lg
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- //#4 모달 : 사이즈 -->
+
+    <!-- #5 모달 : 가로사이즈 커스텀 -->
+    <div class="modal fade" tabindex="-1" id="exampleModalRange" style="padding: 0 15px;">
+        <div class="modal-dialog" style="max-width: 1024px;width: 1024px;">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                테스트
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>    
+    <!-- //#5 모달 : 가로사이즈 커스텀 -->
 
     <!-- JS : library  -->
     <script src="/static/js/library/jquery-3.3.1.min.js"></script>
