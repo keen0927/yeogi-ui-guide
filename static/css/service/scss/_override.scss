@@ -810,6 +810,7 @@ $tooltip-color: #333;
     background: #000;
     opacity: 1;
     transition: opacity 0.4s;
+    z-index: 1020;
     &.show {
         opacity: .7;
     }
