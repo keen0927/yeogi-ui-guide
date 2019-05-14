@@ -209,10 +209,10 @@ function toastPopup(text) {
 function spinner(ctr,zIndex){
     ctr ? ctr = ctr : ctr = 'show';
     var elBody = $('body'),
-        $dims = $('<div>').attr('class','modal-backdrop fade show'),
+        $dims = $('<div>').attr('class','modal-backdrop-custom fade show'),
         $svgRoding = $('<div>').attr('class','spinner-item').html('<svg class="spinner_i"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg>'),
         spinnerObj = $('.spinner-item'),
-        modal = $('.modal-backdrop'),
+        modal = $('.modal-backdrop-custom'),
         zIndex = zIndex || null;
     if(ctr=='show') spinnerShow();
     if(ctr=='hide') spinnerHide();
