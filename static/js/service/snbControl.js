@@ -145,11 +145,11 @@ var snbMake = (function() {
 				{
 					route: "/pages/plugin/draggable.html",
 					name: "드래그 & 드랍 - Draggable"
-				}
-				// {
-				//     "route": "/pages/plugin/dropzone.html",
-				//     "name": "Dropzone.js",
-				// },
+				},
+				{
+				    "route": "/pages/plugin/fineUploader.html",
+				    "name": "fineUploader.js(파일업로드)",
+				},
 			],
 		},
 		{
