@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>여기어때 - 표준 템플릿 가이드</title>
+    <link rel="shortcut icon" href="https://static.goodchoice.kr/images/favicon/kong.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/library/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/library/atom-one-dark.css">
+    <link rel="stylesheet" href="/static/css/library/fine-uploader/fine-uploader-gallery.css">
+    <!-- <link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/fine-uploader/fine-uploader-gallery.css"> -->    
+    <link rel="stylesheet" href="/static/css/service/style.css">
+    <link rel="stylesheet" href="/static/css/library/datatables.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- SNB -->
+        <div id="snb"></div>
+
+        <!-- Header -->
+        <header>
+            <button type="button" class="float-left button-nav__open"><i class="icon-outline-list-24px"></i><span>메뉴열기</span></button>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    유저네임
+                    <!-- <span class="icon-outline-keyboard_arrow_down-24px"></span> -->
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">내 정보</a>
+                    <a class="dropdown-item" href="#">로그아웃</a>
+                </div>
+            </div>
+
+            <div class="dropdown float-right">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    테마변경
+                </button>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-primary btn-sm" data-theme-change="blue">테마 변경 BLUE</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-success btn-sm" data-theme-change="green">테마 변경 GREEN</button>
+                    </div>
+                    <div class="dropdown-item">
+                        <button type="button" class="btn btn-info btn-sm" data-theme-change="purple">테마 변경 PURPLE</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Container -->
+        <div class="container">
+            <h2 class="content-head">Fine Uploader.js (AWS S3용)</h2>
+            <p>
+                플러그인 사이트 : <a href="https://fineuploader.com/demos.html" class="text-danger"><u>https://fineuploader.com/demos.html</u></a><br>
+                플러그인 API : <a href="https://docs.fineuploader.com/branch/master/api/options.html" class="text-danger"><u>https://docs.fineuploader.com/branch/master/api/options.html</u></a><br>
+            </p>
+
+            <!-- #1 Block : 샘플 -->
+            <div class="block bd mt-4">
+                <div class="block-head">샘플</div>
+                <div class="block-content">
+                    <div id="fine-uploader-s3"></div>
+                </div>
+            </div>
+            
+            <!-- #2 Block : 설명-->
+            <div class="block bd mt-4">
+                <div class="block-head">
+                    플러그인 추가
+                </div>
+                <div class="block-content">
+                    <p class="mb-4">1. CSS / JS 를 추가 후 업로드가 들어간 엘리먼트 태그를 원하는 위치에 추가 해 주세요.</p>
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">// CSS
+&lt;link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/fine-uploader/fine-uploader-gallery.css"&gt;
+
+// JS
+&lt;script src="https://static.goodchoice.kr/static/ui/js/library/fine-uploader/s3.fine-uploader.min.js"&gt;&lt;/script&gt;
+
+// HTML APPEND
+&lt;div id="fine-uploader-gallery"&gt;&lt;/div&gt;
+</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">// CSS
+<link rel="stylesheet" href="https://static.goodchoice.kr/static/ui/css/library/fine-uploader/fine-uploader-gallery.css">
+
+// JS
+<script src="https://static.goodchoice.kr/static/ui/js/library/fine-uploader/s3.fine-uploader.min.js"></script>
+
+// HTML APPEND
+<div id="fine-uploader-s3"></div>
+</textarea>
+</div>
+                            
+                    <p class="mt-4 mb-4">2. 업로드 스크립트를 추가 하세요.</p>
+
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="html">&lt;script type="text/template" id="qq-template-s3"&gt;
+    &lt;div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="Drop files here"&gt;
+        &lt;div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container"&gt;
+            &lt;div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone&gt;
+            &lt;span class="qq-upload-drop-area-text-selector"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="qq-upload-button-selector qq-upload-button"&gt;
+            &lt;div&gt;Upload a file&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;span class="qq-drop-processing-selector qq-drop-processing"&gt;
+            &lt;span&gt;Processing dropped files...&lt;/span&gt;
+            &lt;span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;ul class="qq-upload-list-selector qq-upload-list" role="region" aria-live="polite" aria-relevant="additions removals"&gt;
+            &lt;li&gt;
+                &lt;span role="status" class="qq-upload-status-text-selector qq-upload-status-text"&gt;&lt;/span&gt;
+                &lt;div class="qq-progress-bar-container-selector qq-progress-bar-container"&gt;
+                    &lt;div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-progress-bar-selector qq-progress-bar"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;span class="qq-upload-spinner-selector qq-upload-spinner"&gt;&lt;/span&gt;
+                &lt;div class="qq-thumbnail-wrapper"&gt;
+                    &lt;a class="preview-link" target="_blank"&gt;
+                        &lt;img class="qq-thumbnail-selector" qq-max-size="120" qq-server-scale&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;button type="button" class="qq-upload-cancel-selector qq-upload-cancel"&gt;X&lt;/button&gt;
+                &lt;button type="button" class="qq-upload-retry-selector qq-upload-retry"&gt;
+                    &lt;span class="qq-btn qq-retry-icon" aria-label="Retry"&gt;&lt;/span&gt;
+                    Retry
+                &lt;/button&gt;
+
+                &lt;div class="qq-file-info"&gt;
+                    &lt;div class="qq-file-name"&gt;
+                        &lt;span class="qq-upload-file-selector qq-upload-file"&gt;&lt;/span&gt;
+                        &lt;span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text"&gt;
+                    &lt;span class="qq-upload-size-selector qq-upload-size"&gt;&lt;/span&gt;
+                    &lt;button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete"&gt;
+                        &lt;span class="qq-btn qq-delete-icon" aria-label="Delete"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button type="button" class="qq-btn qq-upload-pause-selector qq-upload-pause"&gt;
+                        &lt;span class="qq-btn qq-pause-icon" aria-label="Pause"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button type="button" class="qq-btn qq-upload-continue-selector qq-upload-continue"&gt;
+                        &lt;span class="qq-btn qq-continue-icon" aria-label="Continue"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;dialog class="qq-alert-dialog-selector"&gt;
+            &lt;div class="qq-dialog-message-selector"&gt;&lt;/div&gt;
+            &lt;div class="qq-dialog-buttons"&gt;
+                &lt;button type="button" class="qq-cancel-button-selector"&gt;Close&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/dialog&gt;
+
+        &lt;dialog class="qq-confirm-dialog-selector"&gt;
+            &lt;div class="qq-dialog-message-selector"&gt;&lt;/div&gt;
+            &lt;div class="qq-dialog-buttons"&gt;
+                &lt;button type="button" class="qq-cancel-button-selector"&gt;No&lt;/button&gt;
+                &lt;button type="button" class="qq-ok-button-selector"&gt;Yes&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/dialog&gt;
+
+        &lt;dialog class="qq-prompt-dialog-selector"&gt;
+            &lt;div class="qq-dialog-message-selector"&gt;&lt;/div&gt;
+            &lt;input type="text"&gt;
+            &lt;div class="qq-dialog-buttons"&gt;
+                &lt;button type="button" class="qq-cancel-button-selector"&gt;Cancel&lt;/button&gt;
+                &lt;button type="button" class="qq-ok-button-selector"&gt;Ok&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/dialog&gt;
+    &lt;/div&gt;
+&lt;/script&gt;</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy"><script type="text/template" id="qq-template-s3">
+    <div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="Drop files here">
+        <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container">
+            <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
+        </div>
+        <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+            <span class="qq-upload-drop-area-text-selector"></span>
+        </div>
+        <div class="qq-upload-button-selector qq-upload-button">
+            <div>Upload a file</div>
+        </div>
+        <span class="qq-drop-processing-selector qq-drop-processing">
+            <span>Processing dropped files...</span>
+            <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+        </span>
+        <ul class="qq-upload-list-selector qq-upload-list" role="region" aria-live="polite" aria-relevant="additions removals">
+            <li>
+                <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                <div class="qq-progress-bar-container-selector qq-progress-bar-container">
+                    <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-progress-bar-selector qq-progress-bar"></div>
+                </div>
+                <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                <div class="qq-thumbnail-wrapper">
+                    <a class="preview-link" target="_blank">
+                        <img class="qq-thumbnail-selector" qq-max-size="120" qq-server-scale>
+                    </a>
+                </div>
+                <button type="button" class="qq-upload-cancel-selector qq-upload-cancel">X</button>
+                <button type="button" class="qq-upload-retry-selector qq-upload-retry">
+                    <span class="qq-btn qq-retry-icon" aria-label="Retry"></span>
+                    Retry
+                </button>
+
+                <div class="qq-file-info">
+                    <div class="qq-file-name">
+                        <span class="qq-upload-file-selector qq-upload-file"></span>
+                        <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"></span>
+                    </div>
+                    <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                    <span class="qq-upload-size-selector qq-upload-size"></span>
+                    <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">
+                        <span class="qq-btn qq-delete-icon" aria-label="Delete"></span>
+                    </button>
+                    <button type="button" class="qq-btn qq-upload-pause-selector qq-upload-pause">
+                        <span class="qq-btn qq-pause-icon" aria-label="Pause"></span>
+                    </button>
+                    <button type="button" class="qq-btn qq-upload-continue-selector qq-upload-continue">
+                        <span class="qq-btn qq-continue-icon" aria-label="Continue"></span>
+                    </button>
+                </div>
+            </li>
+        </ul>
+
+        <dialog class="qq-alert-dialog-selector">
+            <div class="qq-dialog-message-selector"></div>
+            <div class="qq-dialog-buttons">
+                <button type="button" class="qq-cancel-button-selector">Close</button>
+            </div>
+        </dialog>
+
+        <dialog class="qq-confirm-dialog-selector">
+            <div class="qq-dialog-message-selector"></div>
+            <div class="qq-dialog-buttons">
+                <button type="button" class="qq-cancel-button-selector">No</button>
+                <button type="button" class="qq-ok-button-selector">Yes</button>
+            </div>
+        </dialog>
+
+        <dialog class="qq-prompt-dialog-selector">
+            <div class="qq-dialog-message-selector"></div>
+            <input type="text">
+            <div class="qq-dialog-buttons">
+                <button type="button" class="qq-cancel-button-selector">Cancel</button>
+                <button type="button" class="qq-ok-button-selector">Ok</button>
+            </div>
+        </dialog>
+    </div>
+</script></textarea>
+</div>
+
+                    <p class="mt-4 mb-4">3. 실행 스크립트를 추가 하세요.</p>
+
+<div class="code-copy mt-4 d-block">
+<pre><code class="js">var s3Uploader = new qq.s3.FineUploader({
+    debug: true,
+    element: document.getElementById('fine-uploader-s3'),
+    template: 'qq-template-s3',
+    request: {
+        endpoint: "https://upload.fineuploader.com",
+        accessKey: "AKIAJB6BSMFWTAXC5M2Q"
+    },
+    signature: {
+        endpoint: "https://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php"
+    },
+    uploadSuccess: {
+        endpoint: "https://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php?success",
+        params: {
+            isBrowserPreviewCapable: qq.supportedFeatures.imagePreviews
+        }
+    },
+    iframeSupport: {
+        localBlankPagePath: "/server/success.html"
+    },
+    cors: {
+        expected: true
+    },
+    chunking: {
+        enabled: true
+    },
+    resume: {
+        enabled: true
+    },
+    deleteFile: {
+        enabled: true,
+        method: "POST",
+        endpoint: "https://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php"
+    },
+    validation: {
+        itemLimit: 5,
+        sizeLimit: 15000000
+    },
+    thumbnails: {
+        placeholders: {
+            waitingPath: 'https://static.goodchoice.kr/static/ui/js/library/fine-uploader/images/waiting-generic.png',
+            notAvailablePath: 'https://static.goodchoice.kr/static/ui/js/library/fine-uploader/images/not_available-generic.png'
+        }
+    },
+    callbacks: {
+        onComplete: function(id, name, response) {
+            var previewLink = qq(this.getItemByFileId(id)).getByClass('preview-link')[0];
+
+            if (response.success) {
+                previewLink.setAttribute("href", response.tempLink)
+            }
+        }
+    }
+});</code></pre>
+<button type="button" class="button-copy">Copy</button>
+<textarea class="textarea-copy">var s3Uploader = new qq.s3.FineUploader({
+    debug: true,
+    element: document.getElementById('fine-uploader-s3'),
+    template: 'qq-template-s3',
+    request: {
+        endpoint: "https://upload.fineuploader.com",
+        accessKey: "AKIAJB6BSMFWTAXC5M2Q"
+    },
+    signature: {
+        endpoint: "https://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php"
+    },
+    uploadSuccess: {
+        endpoint: "https://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php?success",
+        params: {
+            isBrowserPreviewCapable: qq.supportedFeatures.imagePreviews
+        }
+    },
+    iframeSupport: {
+        localBlankPagePath: "/server/success.html"
+    },
+    cors: {
+        expected: true
+    },
+    chunking: {
+        enabled: true
+    },
+    resume: {
+        enabled: true
+    },
+    deleteFile: {
+        enabled: true,
+        method: "POST",
+        endpoint: "https://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php"
+    },
+    validation: {
+        itemLimit: 5,
+        sizeLimit: 15000000
+    },
+    thumbnails: {
+        placeholders: {
+            waitingPath: 'https://static.goodchoice.kr/static/ui/js/library/fine-uploader/images/waiting-generic.png',
+            notAvailablePath: 'https://static.goodchoice.kr/static/ui/js/library/fine-uploader/images/not_available-generic.png'
+        }
+    },
+    callbacks: {
+        onComplete: function(id, name, response) {
+            var previewLink = qq(this.getItemByFileId(id)).getByClass('preview-link')[0];
+
+            if (response.success) {
+                previewLink.setAttribute("href", response.tempLink)
+            }
+        }
+    }
+});    
+</textarea>
+</div>
+                </div>
+            </div>
+            <!-- //#1 Block -->
+
+  
+        </div>
+        <!-- //Container -->
+
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Spinner -->
+    <div class="spinner"></div>
+
+    <!-- JS : library  -->
+    <script src="/static/js/library/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/library/popper.min.js"></script>
+    <script src="/static/js/library/bootstrap.min.js"></script>
+    <script src="/static/js/library/highlight.pack.js"></script>
+    <script src="/static/js/library/iscroll.js"></script>
+    <script src="/static/js/library/fine-uploader/s3.fine-uploader.min.js"></script>
+    <script src="/static/js/service/snbControl.js"></script>
+
+    <!-- JS : service  -->
+    <script src="/static/js/service/common.js"></script>
+    <script>
+
+    // 코드 하이라이트
+    hljs.initHighlightingOnLoad();
+ 
+    </script>
+
+    <!-- S3 -->
+    <script type="text/template" id="qq-template-s3">
+        <div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="Drop files here">
+            <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container">
+                <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
+            </div>
+            <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                <span class="qq-upload-drop-area-text-selector"></span>
+            </div>
+            <div class="qq-upload-button-selector qq-upload-button">
+                <div>Upload a file</div>
+            </div>
+            <span class="qq-drop-processing-selector qq-drop-processing">
+                <span>Processing dropped files...</span>
+                <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+            </span>
+            <ul class="qq-upload-list-selector qq-upload-list" role="region" aria-live="polite" aria-relevant="additions removals">
+                <li>
+                    <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                    <div class="qq-progress-bar-container-selector qq-progress-bar-container">
+                        <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-progress-bar-selector qq-progress-bar"></div>
+                    </div>
+                    <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                    <div class="qq-thumbnail-wrapper">
+                        <a class="preview-link" target="_blank">
+                            <img class="qq-thumbnail-selector" qq-max-size="120" qq-server-scale>
+                        </a>
+                    </div>
+                    <button type="button" class="qq-upload-cancel-selector qq-upload-cancel">X</button>
+                    <button type="button" class="qq-upload-retry-selector qq-upload-retry">
+                        <span class="qq-btn qq-retry-icon" aria-label="Retry"></span>
+                        Retry
+                    </button>
+
+                    <div class="qq-file-info">
+                        <div class="qq-file-name">
+                            <span class="qq-upload-file-selector qq-upload-file"></span>
+                            <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"></span>
+                        </div>
+                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                        <span class="qq-upload-size-selector qq-upload-size"></span>
+                        <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">
+                            <span class="qq-btn qq-delete-icon" aria-label="Delete"></span>
+                        </button>
+                        <button type="button" class="qq-btn qq-upload-pause-selector qq-upload-pause">
+                            <span class="qq-btn qq-pause-icon" aria-label="Pause"></span>
+                        </button>
+                        <button type="button" class="qq-btn qq-upload-continue-selector qq-upload-continue">
+                            <span class="qq-btn qq-continue-icon" aria-label="Continue"></span>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+
+            <dialog class="qq-alert-dialog-selector">
+                <div class="qq-dialog-message-selector"></div>
+                <div class="qq-dialog-buttons">
+                    <button type="button" class="qq-cancel-button-selector">Close</button>
+                </div>
+            </dialog>
+
+            <dialog class="qq-confirm-dialog-selector">
+                <div class="qq-dialog-message-selector"></div>
+                <div class="qq-dialog-buttons">
+                    <button type="button" class="qq-cancel-button-selector">No</button>
+                    <button type="button" class="qq-ok-button-selector">Yes</button>
+                </div>
+            </dialog>
+
+            <dialog class="qq-prompt-dialog-selector">
+                <div class="qq-dialog-message-selector"></div>
+                <input type="text">
+                <div class="qq-dialog-buttons">
+                    <button type="button" class="qq-cancel-button-selector">Cancel</button>
+                    <button type="button" class="qq-ok-button-selector">Ok</button>
+                </div>
+            </dialog>
+        </div>
+    </script>    
+
+    <script>
+        // S3
+        var s3Uploader = new qq.s3.FineUploader({
+            debug: true,
+            element: document.getElementById('fine-uploader-s3'),
+            template: 'qq-template-s3',
+            request: {
+                endpoint: "https://upload.fineuploader.com",
+                accessKey: "AKIAJB6BSMFWTAXC5M2Q"
+            },
+            signature: {
+                endpoint: "https://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php"
+            },
+            uploadSuccess: {
+                endpoint: "https://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php?success",
+                params: {
+                    isBrowserPreviewCapable: qq.supportedFeatures.imagePreviews
+                }
+            },
+            iframeSupport: {
+                localBlankPagePath: "/server/success.html"
+            },
+            cors: {
+                expected: true
+            },
+            chunking: {
+                enabled: true
+            },
+            resume: {
+                enabled: true
+            },
+            deleteFile: {
+                enabled: true,
+                method: "POST",
+                endpoint: "https://s3-demo.fineuploader.com/s3demo-thumbnails-cors.php"
+            },
+            validation: {
+                itemLimit: 5,
+                sizeLimit: 15000000
+            },
+            thumbnails: {
+                placeholders: {
+                    waitingPath: 'https://static.goodchoice.kr/static/ui/js/library/fine-uploader/images/waiting-generic.png',
+                    notAvailablePath: 'https://static.goodchoice.kr/static/ui/js/library/fine-uploader/images/not_available-generic.png'
+                }
+            },
+            callbacks: {
+                onComplete: function(id, name, response) {
+                    var previewLink = qq(this.getItemByFileId(id)).getByClass('preview-link')[0];
+
+                    if (response.success) {
+                        previewLink.setAttribute("href", response.tempLink)
+                    }
+                }
+            }
+        });        
+    </script>
+
+</body>
+
+</html>
