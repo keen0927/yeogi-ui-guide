@@ -150,6 +150,10 @@ var snbMake = (function() {
 				    "route": "/pages/plugin/fineUploader.html",
 				    "name": "fineUploader.js(파일업로드)",
 				},
+				{
+				    "route": "/pages/plugin/fineUploaderS3.html",
+				    "name": "fineUploader.js(S3)",
+				},				
 			],
 		},
 		{
