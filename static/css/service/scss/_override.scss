@@ -821,9 +821,16 @@ $form-height: 34px !important;
 .input-group-prepend {
     height: $form-height;
 }
-.form-control {
+input.form-control {
+    border: 1px solid #000;
+}
+input.form-control {
     height: $form-height;
 }
+textarea.form-control {
+    min-height: 110px;
+}
+
 .custom-select {
     height: $form-height;
 }
